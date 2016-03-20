@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		4292EE871C9DAB8300D56C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4292EE861C9DAB8300D56C16 /* AppDelegate.swift */; };
-		4292EE891C9DAB8300D56C16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4292EE881C9DAB8300D56C16 /* ViewController.swift */; };
 		4292EE8C1C9DAB8300D56C16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4292EE8A1C9DAB8300D56C16 /* Main.storyboard */; };
 		4292EE8E1C9DAB8300D56C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4292EE8D1C9DAB8300D56C16 /* Assets.xcassets */; };
 		4292EE911C9DAB8300D56C16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4292EE8F1C9DAB8300D56C16 /* LaunchScreen.storyboard */; };
+		4292EE991C9DABA600D56C16 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4292EE981C9DABA600D56C16 /* APIKey.plist */; };
+		4292EE9F1C9DADDE00D56C16 /* BattleNetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4292EE9E1C9DADDE00D56C16 /* BattleNetService.swift */; };
+		4292EEBF1C9E657700D56C16 /* RealmStatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4292EEBE1C9E657700D56C16 /* RealmStatusTableViewController.swift */; };
+		AFF12B1D47DE691AFE43F073 /* Pods_WoW_Database.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13382DEBA84B885223E21927 /* Pods_WoW_Database.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13382DEBA84B885223E21927 /* Pods_WoW_Database.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WoW_Database.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4292EE831C9DAB8300D56C16 /* WoW Database.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WoW Database.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4292EE861C9DAB8300D56C16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4292EE881C9DAB8300D56C16 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4292EE8B1C9DAB8300D56C16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4292EE8D1C9DAB8300D56C16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4292EE901C9DAB8300D56C16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4292EE921C9DAB8300D56C16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4292EE981C9DABA600D56C16 /* APIKey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
+		4292EE9E1C9DADDE00D56C16 /* BattleNetService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BattleNetService.swift; path = Services/BattleNetService.swift; sourceTree = "<group>"; };
+		4292EEBE1C9E657700D56C16 /* RealmStatusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmStatusTableViewController.swift; path = Controllers/RealmStatusTableViewController.swift; sourceTree = "<group>"; };
+		500A6E8595A370C8BDDAB133 /* Pods-WoW Database.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoW Database.release.xcconfig"; path = "Pods/Target Support Files/Pods-WoW Database/Pods-WoW Database.release.xcconfig"; sourceTree = "<group>"; };
+		798E19901809D9D1B9A77297 /* Pods-WoW Database.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoW Database.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WoW Database/Pods-WoW Database.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFF12B1D47DE691AFE43F073 /* Pods_WoW_Database.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,8 @@
 			children = (
 				4292EE851C9DAB8300D56C16 /* WoW Database */,
 				4292EE841C9DAB8300D56C16 /* Products */,
+				F507054A680386BBD9519348 /* Pods */,
+				462425EEAF795840362DC7EF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +65,65 @@
 		4292EE851C9DAB8300D56C16 /* WoW Database */ = {
 			isa = PBXGroup;
 			children = (
+				4292EE9D1C9DADB600D56C16 /* Controllers */,
+				4292EE9C1C9DADB200D56C16 /* Model */,
+				4292EE9B1C9DADAE00D56C16 /* View */,
+				4292EE9A1C9DADA800D56C16 /* Services */,
 				4292EE861C9DAB8300D56C16 /* AppDelegate.swift */,
-				4292EE881C9DAB8300D56C16 /* ViewController.swift */,
-				4292EE8A1C9DAB8300D56C16 /* Main.storyboard */,
 				4292EE8D1C9DAB8300D56C16 /* Assets.xcassets */,
 				4292EE8F1C9DAB8300D56C16 /* LaunchScreen.storyboard */,
 				4292EE921C9DAB8300D56C16 /* Info.plist */,
+				4292EE981C9DABA600D56C16 /* APIKey.plist */,
 			);
 			path = "WoW Database";
+			sourceTree = "<group>";
+		};
+		4292EE9A1C9DADA800D56C16 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4292EE9E1C9DADDE00D56C16 /* BattleNetService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		4292EE9B1C9DADAE00D56C16 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4292EE8A1C9DAB8300D56C16 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4292EE9C1C9DADB200D56C16 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4292EE9D1C9DADB600D56C16 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4292EEBE1C9E657700D56C16 /* RealmStatusTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		462425EEAF795840362DC7EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13382DEBA84B885223E21927 /* Pods_WoW_Database.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F507054A680386BBD9519348 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				798E19901809D9D1B9A77297 /* Pods-WoW Database.debug.xcconfig */,
+				500A6E8595A370C8BDDAB133 /* Pods-WoW Database.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +133,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4292EE951C9DAB8300D56C16 /* Build configuration list for PBXNativeTarget "WoW Database" */;
 			buildPhases = (
+				E7E692C80554E0CFE927C257 /* Check Pods Manifest.lock */,
 				4292EE7F1C9DAB8300D56C16 /* Sources */,
 				4292EE801C9DAB8300D56C16 /* Frameworks */,
 				4292EE811C9DAB8300D56C16 /* Resources */,
+				215F6A910A8BE4EE9BB5ED28 /* Embed Pods Frameworks */,
+				D0E97C041ADCCD77969A5A6B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4292EE911C9DAB8300D56C16 /* LaunchScreen.storyboard in Resources */,
+				4292EE991C9DABA600D56C16 /* APIKey.plist in Resources */,
 				4292EE8E1C9DAB8300D56C16 /* Assets.xcassets in Resources */,
 				4292EE8C1C9DAB8300D56C16 /* Main.storyboard in Resources */,
 			);
@@ -130,13 +196,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		215F6A910A8BE4EE9BB5ED28 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WoW Database/Pods-WoW Database-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0E97C041ADCCD77969A5A6B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WoW Database/Pods-WoW Database-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7E692C80554E0CFE927C257 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4292EE7F1C9DAB8300D56C16 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4292EE891C9DAB8300D56C16 /* ViewController.swift in Sources */,
+				4292EE9F1C9DADDE00D56C16 /* BattleNetService.swift in Sources */,
 				4292EE871C9DAB8300D56C16 /* AppDelegate.swift in Sources */,
+				4292EEBF1C9E657700D56C16 /* RealmStatusTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +362,7 @@
 		};
 		4292EE961C9DAB8300D56C16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 798E19901809D9D1B9A77297 /* Pods-WoW Database.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "WoW Database/Info.plist";
@@ -258,6 +374,7 @@
 		};
 		4292EE971C9DAB8300D56C16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 500A6E8595A370C8BDDAB133 /* Pods-WoW Database.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "WoW Database/Info.plist";
@@ -286,6 +403,7 @@
 				4292EE971C9DAB8300D56C16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
