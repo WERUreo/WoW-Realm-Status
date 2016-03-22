@@ -61,7 +61,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nds-xn-yyF">
                                 <rect key="frame" x="20" y="64" width="560" height="487"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RealmCell" rowHeight="50" id="cDX-wG-Pa7" customClass="RealmCell" customModule="WoW_Database" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="560" height="50"/>
@@ -76,7 +76,6 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Realm Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sok-LV-xXk">
                                                             <rect key="frame" x="18" y="5" width="103" height="24"/>
                                                             <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9RX-mQ-cGP">
@@ -93,7 +92,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.8784313725490196" green="0.41960784313725491" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="9RX-mQ-cGP" secondAttribute="bottom" id="0e7-EO-BLh"/>
                                                         <constraint firstItem="Sok-LV-xXk" firstAttribute="centerY" secondItem="pXD-RD-s8Z" secondAttribute="centerY" id="MwW-AI-bec"/>
@@ -118,7 +117,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="pXD-RD-s8Z" secondAttribute="trailing" constant="8" id="tMd-Xr-Rho"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.23529411764705882" green="0.56470588235294117" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="realmName" destination="Sok-LV-xXk" id="8pB-8C-D8z"/>
                                             <outlet property="realmPopulation" destination="usf-AV-9EU" id="wf5-q5-chP"/>
@@ -128,7 +127,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.23529411764705882" green="0.56470588235294117" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pje-Lx-7BR" firstAttribute="top" secondItem="nds-xn-yyF" secondAttribute="bottom" id="LaA-p0-Chw"/>
                             <constraint firstItem="nds-xn-yyF" firstAttribute="leading" secondItem="Rff-qx-Eni" secondAttribute="leading" constant="20" id="g28-yK-uVz"/>
