@@ -7,18 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		424F1A881C9F00F400FDC16E /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 424F1A841C9F00F400FDC16E /* NotoSans-Bold.ttf */; };
+		424F1A891C9F00F400FDC16E /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 424F1A851C9F00F400FDC16E /* NotoSans-BoldItalic.ttf */; };
+		424F1A8A1C9F00F400FDC16E /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 424F1A861C9F00F400FDC16E /* NotoSans-Italic.ttf */; };
+		424F1A8B1C9F00F400FDC16E /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 424F1A871C9F00F400FDC16E /* NotoSans-Regular.ttf */; };
+		424F1A8D1C9FA07500FDC16E /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424F1A8C1C9FA07500FDC16E /* Realm.swift */; };
 		4292EE871C9DAB8300D56C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4292EE861C9DAB8300D56C16 /* AppDelegate.swift */; };
 		4292EE8C1C9DAB8300D56C16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4292EE8A1C9DAB8300D56C16 /* Main.storyboard */; };
 		4292EE8E1C9DAB8300D56C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4292EE8D1C9DAB8300D56C16 /* Assets.xcassets */; };
 		4292EE911C9DAB8300D56C16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4292EE8F1C9DAB8300D56C16 /* LaunchScreen.storyboard */; };
 		4292EE991C9DABA600D56C16 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4292EE981C9DABA600D56C16 /* APIKey.plist */; };
 		4292EE9F1C9DADDE00D56C16 /* BattleNetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4292EE9E1C9DADDE00D56C16 /* BattleNetService.swift */; };
-		4292EEBF1C9E657700D56C16 /* RealmStatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4292EEBE1C9E657700D56C16 /* RealmStatusTableViewController.swift */; };
+		4292EEBF1C9E657700D56C16 /* RealmStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4292EEBE1C9E657700D56C16 /* RealmStatusViewController.swift */; };
+		42C21EC21CA1EF3C00227A70 /* UIView+RoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C21EC11CA1EF3C00227A70 /* UIView+RoundCorners.swift */; };
+		42E57A491CA017E5000A79A4 /* RealmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E57A481CA017E5000A79A4 /* RealmCell.swift */; };
+		42E57A4B1CA056C1000A79A4 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E57A4A1CA056C1000A79A4 /* MaterialView.swift */; };
+		42E57A4E1CA056EB000A79A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E57A4D1CA056EB000A79A4 /* Constants.swift */; };
+		42E57A521CA05914000A79A4 /* ColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E57A511CA05914000A79A4 /* ColorExt.swift */; };
 		AFF12B1D47DE691AFE43F073 /* Pods_WoW_Database.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13382DEBA84B885223E21927 /* Pods_WoW_Database.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		13382DEBA84B885223E21927 /* Pods_WoW_Database.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WoW_Database.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		424F1A841C9F00F400FDC16E /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
+		424F1A851C9F00F400FDC16E /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		424F1A861C9F00F400FDC16E /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
+		424F1A871C9F00F400FDC16E /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
+		424F1A8C1C9FA07500FDC16E /* Realm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Realm.swift; path = Model/Realm.swift; sourceTree = "<group>"; };
 		4292EE831C9DAB8300D56C16 /* WoW Database.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WoW Database.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4292EE861C9DAB8300D56C16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4292EE8B1C9DAB8300D56C16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -27,7 +42,12 @@
 		4292EE921C9DAB8300D56C16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4292EE981C9DABA600D56C16 /* APIKey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		4292EE9E1C9DADDE00D56C16 /* BattleNetService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BattleNetService.swift; path = Services/BattleNetService.swift; sourceTree = "<group>"; };
-		4292EEBE1C9E657700D56C16 /* RealmStatusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmStatusTableViewController.swift; path = Controllers/RealmStatusTableViewController.swift; sourceTree = "<group>"; };
+		4292EEBE1C9E657700D56C16 /* RealmStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmStatusViewController.swift; path = Controllers/RealmStatusViewController.swift; sourceTree = "<group>"; };
+		42C21EC11CA1EF3C00227A70 /* UIView+RoundCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+RoundCorners.swift"; sourceTree = "<group>"; };
+		42E57A481CA017E5000A79A4 /* RealmCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmCell.swift; path = View/RealmCell.swift; sourceTree = "<group>"; };
+		42E57A4A1CA056C1000A79A4 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MaterialView.swift; path = View/MaterialView.swift; sourceTree = "<group>"; };
+		42E57A4D1CA056EB000A79A4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Util/Constants.swift; sourceTree = "<group>"; };
+		42E57A511CA05914000A79A4 /* ColorExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorExt.swift; path = Util/ColorExt.swift; sourceTree = "<group>"; };
 		500A6E8595A370C8BDDAB133 /* Pods-WoW Database.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoW Database.release.xcconfig"; path = "Pods/Target Support Files/Pods-WoW Database/Pods-WoW Database.release.xcconfig"; sourceTree = "<group>"; };
 		798E19901809D9D1B9A77297 /* Pods-WoW Database.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoW Database.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WoW Database/Pods-WoW Database.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,6 +64,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		424F1A831C9F00A300FDC16E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				424F1A841C9F00F400FDC16E /* NotoSans-Bold.ttf */,
+				424F1A851C9F00F400FDC16E /* NotoSans-BoldItalic.ttf */,
+				424F1A861C9F00F400FDC16E /* NotoSans-Italic.ttf */,
+				424F1A871C9F00F400FDC16E /* NotoSans-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		4292EE7A1C9DAB8300D56C16 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +96,8 @@
 		4292EE851C9DAB8300D56C16 /* WoW Database */ = {
 			isa = PBXGroup;
 			children = (
+				42E57A4C1CA056D8000A79A4 /* Util */,
+				424F1A831C9F00A300FDC16E /* Resources */,
 				4292EE9D1C9DADB600D56C16 /* Controllers */,
 				4292EE9C1C9DADB200D56C16 /* Model */,
 				4292EE9B1C9DADAE00D56C16 /* View */,
@@ -90,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				4292EE8A1C9DAB8300D56C16 /* Main.storyboard */,
+				42E57A481CA017E5000A79A4 /* RealmCell.swift */,
+				42E57A4A1CA056C1000A79A4 /* MaterialView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -97,6 +132,7 @@
 		4292EE9C1C9DADB200D56C16 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				424F1A8C1C9FA07500FDC16E /* Realm.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -104,9 +140,19 @@
 		4292EE9D1C9DADB600D56C16 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4292EEBE1C9E657700D56C16 /* RealmStatusTableViewController.swift */,
+				4292EEBE1C9E657700D56C16 /* RealmStatusViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		42E57A4C1CA056D8000A79A4 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				42E57A4D1CA056EB000A79A4 /* Constants.swift */,
+				42E57A511CA05914000A79A4 /* ColorExt.swift */,
+				42C21EC11CA1EF3C00227A70 /* UIView+RoundCorners.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		462425EEAF795840362DC7EF /* Frameworks */ = {
@@ -187,9 +233,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				424F1A891C9F00F400FDC16E /* NotoSans-BoldItalic.ttf in Resources */,
 				4292EE911C9DAB8300D56C16 /* LaunchScreen.storyboard in Resources */,
 				4292EE991C9DABA600D56C16 /* APIKey.plist in Resources */,
 				4292EE8E1C9DAB8300D56C16 /* Assets.xcassets in Resources */,
+				424F1A8B1C9F00F400FDC16E /* NotoSans-Regular.ttf in Resources */,
+				424F1A8A1C9F00F400FDC16E /* NotoSans-Italic.ttf in Resources */,
+				424F1A881C9F00F400FDC16E /* NotoSans-Bold.ttf in Resources */,
 				4292EE8C1C9DAB8300D56C16 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,9 +299,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42C21EC21CA1EF3C00227A70 /* UIView+RoundCorners.swift in Sources */,
 				4292EE9F1C9DADDE00D56C16 /* BattleNetService.swift in Sources */,
+				42E57A521CA05914000A79A4 /* ColorExt.swift in Sources */,
 				4292EE871C9DAB8300D56C16 /* AppDelegate.swift in Sources */,
-				4292EEBF1C9E657700D56C16 /* RealmStatusTableViewController.swift in Sources */,
+				4292EEBF1C9E657700D56C16 /* RealmStatusViewController.swift in Sources */,
+				42E57A4B1CA056C1000A79A4 /* MaterialView.swift in Sources */,
+				42E57A4E1CA056EB000A79A4 /* Constants.swift in Sources */,
+				42E57A491CA017E5000A79A4 /* RealmCell.swift in Sources */,
+				424F1A8D1C9FA07500FDC16E /* Realm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

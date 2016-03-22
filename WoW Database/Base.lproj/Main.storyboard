@@ -1,39 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MpP-LK-4ln">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MpP-LK-4ln">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="NotoSans-Regular.ttf">
+            <string>NotoSans</string>
+            <string>NotoSans</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
-        <!--Realm Status Table View Controller-->
-        <scene sceneID="7Pa-wh-Abi">
-            <objects>
-                <tableViewController id="kin-Fu-esx" customClass="RealmStatusTableViewController" customModule="WoW_Database" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="c5s-ef-Rlm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="BKm-JZ-vZo">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BKm-JZ-vZo" id="1F3-52-dq6">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="kin-Fu-esx" id="WSJ-B1-hlm"/>
-                            <outlet property="delegate" destination="kin-Fu-esx" id="Ax2-Lb-At6"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="t2T-Ba-tvx"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qiV-lg-hJ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2095" y="446"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="RPB-8m-bQ7">
             <objects>
@@ -63,12 +40,110 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="kin-Fu-esx" kind="relationship" relationship="rootViewController" id="yWK-je-H2L"/>
+                        <segue destination="wPx-Nh-ti3" kind="relationship" relationship="rootViewController" id="Xd4-Rp-WTN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHg-K5-F2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1377" y="446"/>
+        </scene>
+        <!--Realm Status-->
+        <scene sceneID="faa-5O-UWa">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="wPx-Nh-ti3" customClass="RealmStatusViewController" customModule="WoW_Database" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1xd-m8-II3"/>
+                        <viewControllerLayoutGuide type="bottom" id="pje-Lx-7BR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rff-qx-Eni">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nds-xn-yyF">
+                                <rect key="frame" x="20" y="64" width="560" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RealmCell" rowHeight="50" id="cDX-wG-Pa7" customClass="RealmCell" customModule="WoW_Database" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cDX-wG-Pa7" id="Vqn-xB-2dC">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXD-RD-s8Z" customClass="MaterialView" customModule="WoW_Database" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="544" height="34"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Realm Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sok-LV-xXk">
+                                                            <rect key="frame" x="18" y="5" width="103" height="24"/>
+                                                            <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9RX-mQ-cGP">
+                                                            <rect key="frame" x="0.0" y="0.0" width="10" height="34"/>
+                                                            <color key="backgroundColor" red="1" green="0.012037085249999999" blue="0.035618050589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="10" id="RKv-lN-hGh"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="high" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usf-AV-9EU">
+                                                            <rect key="frame" x="510" y="9" width="26" height="17"/>
+                                                            <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.8784313725490196" green="0.41960784313725491" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="9RX-mQ-cGP" secondAttribute="bottom" id="0e7-EO-BLh"/>
+                                                        <constraint firstItem="Sok-LV-xXk" firstAttribute="centerY" secondItem="pXD-RD-s8Z" secondAttribute="centerY" id="MwW-AI-bec"/>
+                                                        <constraint firstAttribute="trailing" secondItem="usf-AV-9EU" secondAttribute="trailing" constant="8" id="ZFf-cv-rRY"/>
+                                                        <constraint firstItem="Sok-LV-xXk" firstAttribute="leading" secondItem="9RX-mQ-cGP" secondAttribute="trailing" constant="8" id="Zev-4z-yuH"/>
+                                                        <constraint firstItem="9RX-mQ-cGP" firstAttribute="leading" secondItem="pXD-RD-s8Z" secondAttribute="leading" id="ccn-mG-rQO"/>
+                                                        <constraint firstItem="usf-AV-9EU" firstAttribute="centerY" secondItem="pXD-RD-s8Z" secondAttribute="centerY" id="gmi-Hf-z5m"/>
+                                                        <constraint firstItem="9RX-mQ-cGP" firstAttribute="top" secondItem="pXD-RD-s8Z" secondAttribute="top" id="t0C-V5-s2g"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="pXD-RD-s8Z" firstAttribute="top" secondItem="Vqn-xB-2dC" secondAttribute="top" constant="8" id="4GX-mp-oyo"/>
+                                                <constraint firstAttribute="bottom" secondItem="pXD-RD-s8Z" secondAttribute="bottom" constant="8" id="EYY-SJ-syk"/>
+                                                <constraint firstItem="pXD-RD-s8Z" firstAttribute="leading" secondItem="Vqn-xB-2dC" secondAttribute="leading" constant="8" id="IIV-lO-O5a"/>
+                                                <constraint firstAttribute="trailing" secondItem="pXD-RD-s8Z" secondAttribute="trailing" constant="8" id="tMd-Xr-Rho"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.23529411764705882" green="0.56470588235294117" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="realmName" destination="Sok-LV-xXk" id="8pB-8C-D8z"/>
+                                            <outlet property="realmPopulation" destination="usf-AV-9EU" id="wf5-q5-chP"/>
+                                            <outlet property="realmStatusView" destination="9RX-mQ-cGP" id="3CH-na-jVy"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.23529411764705882" green="0.56470588235294117" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="pje-Lx-7BR" firstAttribute="top" secondItem="nds-xn-yyF" secondAttribute="bottom" id="LaA-p0-Chw"/>
+                            <constraint firstItem="nds-xn-yyF" firstAttribute="leading" secondItem="Rff-qx-Eni" secondAttribute="leading" constant="20" id="g28-yK-uVz"/>
+                            <constraint firstAttribute="trailing" secondItem="nds-xn-yyF" secondAttribute="trailing" constant="20" id="jQC-fs-fJO"/>
+                            <constraint firstItem="nds-xn-yyF" firstAttribute="top" secondItem="1xd-m8-II3" secondAttribute="bottom" id="vC0-sT-Zda"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Realm Status" id="1TQ-ki-hej"/>
+                    <connections>
+                        <outlet property="tableView" destination="nds-xn-yyF" id="U62-1g-Erf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KgY-Lv-4Z5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2083" y="446"/>
         </scene>
     </scenes>
 </document>
