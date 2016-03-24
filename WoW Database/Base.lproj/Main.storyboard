@@ -122,6 +122,7 @@
                                             <outlet property="realmName" destination="Sok-LV-xXk" id="8pB-8C-D8z"/>
                                             <outlet property="realmPopulation" destination="usf-AV-9EU" id="wf5-q5-chP"/>
                                             <outlet property="realmStatusView" destination="9RX-mQ-cGP" id="3CH-na-jVy"/>
+                                            <segue destination="UyA-RI-nn4" kind="show" id="Gdo-hR-aS6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -143,6 +144,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KgY-Lv-4Z5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2083" y="446"/>
+        </scene>
+        <!--Realm Name-->
+        <scene sceneID="2Dy-F1-R97">
+            <objects>
+                <tableViewController id="yY3-1d-lhh" customClass="RealmStatusDetailTVC" customModule="WoW_Database" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ojI-EG-BtM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="hMN-Lw-Yaz">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="103" id="SAB-fy-Nxy">
+                                        <rect key="frame" x="0.0" y="64" width="600" height="103"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SAB-fy-Nxy" id="XLN-mB-Gag">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="103"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bqv-lr-OW7" customClass="MaterialView" customModule="WoW_Database" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="584" height="95"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="qBb-yo-FMS">
+                                        <rect key="frame" x="0.0" y="167" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qBb-yo-FMS" id="y6J-Id-GO7">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="BJo-gS-YD7">
+                                        <rect key="frame" x="0.0" y="211" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BJo-gS-YD7" id="Cif-X0-FO1">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="yY3-1d-lhh" id="yy0-Q4-sBd"/>
+                            <outlet property="delegate" destination="yY3-1d-lhh" id="PrX-HN-Wpm"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Realm Name" id="9vU-ZD-dzp">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="4NN-fD-6N9"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QVf-70-WTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3378" y="446"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Y1O-mp-Eo7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UyA-RI-nn4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Olr-u3-Usf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yY3-1d-lhh" kind="relationship" relationship="rootViewController" id="d1V-ay-fhh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x89-h8-5go" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2722" y="446"/>
         </scene>
     </scenes>
 </document>
