@@ -17,6 +17,23 @@ enum RealmType: String
     case PvE = "pve"
     case RP = "rp"
     case RPPvP = "rppvp"
+
+    func toString() -> String
+    {
+        var returnString: String
+        switch self
+        {
+        case .PvP:
+            returnString = "PvP"
+        case .PvE:
+            returnString = "PvE"
+        case .RP:
+            returnString = "RP"
+        case .RPPvP:
+            returnString = "RPPvP"
+        }
+        return returnString
+    }
 }
 
 ////////////////////////////////////////////////////////////
@@ -26,6 +43,22 @@ enum Faction: Int
     case Alliance = 0
     case Horde = 1
     case Neutral = 2
+
+    func toString() -> String
+    {
+        var returnString: String
+        switch self
+        {
+        case .Alliance:
+            returnString = "Alliance"
+        case .Horde:
+            returnString = "Horde"
+        case .Neutral:
+            returnString = "Neutral"
+        }
+
+        return returnString
+    }
 }
 
 ////////////////////////////////////////////////////////////
@@ -37,6 +70,25 @@ enum ZoneStatus: Int
     case Populating = 1
     case Active = 2
     case Concluded = 3
+
+    func toString() -> String
+    {
+        var returnString: String
+        switch self
+        {
+        case .Unknown:
+            returnString = "Unknown"
+        case .Idle:
+            returnString = "Idle"
+        case .Populating:
+            returnString = "Populating"
+        case .Active:
+            returnString = "Active"
+        case .Concluded:
+            returnString = "Concluded"
+        }
+        return returnString
+    }
 }
 
 ////////////////////////////////////////////////////////////

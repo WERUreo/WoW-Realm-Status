@@ -15,6 +15,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
 {
     @IBOutlet weak var tableView: UITableView!
 
+    let realmSegueIdentifier = "RealmDetailSegue"
     var realms = [Realm]()
 
     ////////////////////////////////////////////////////////////
@@ -22,11 +23,10 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
-        self.canDisplayBannerAds = true
-
         tableView.delegate = self
         tableView.dataSource = self
+
+        self.canDisplayBannerAds = true
 
         let parameters =
         [
@@ -109,7 +109,15 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == realmSegueIdentifier
+        {
+            if let destination = segue.destinationViewController as? RealmDetailVC
+            {
+                if let indexPathRow = tableView.indexPathForSelectedRow?.row
+                {
+                    destination.realm = realms[indexPathRow]
+                }
+            }
+        }
     }
 }
