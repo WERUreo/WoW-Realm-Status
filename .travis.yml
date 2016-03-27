@@ -1,5 +1,4 @@
 language: objective-c
 osx-image: xcode7.3
 xcode_workspace: WoW\ Database.xcworkspace
-xcode_sdk: iphonesimulator9.2
-podfile: Podfile
+xcode_sdk: iphonesimulator9.3
