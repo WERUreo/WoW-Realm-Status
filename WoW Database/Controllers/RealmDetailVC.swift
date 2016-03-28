@@ -42,15 +42,17 @@ class RealmDetailVC: UIViewController
             realmType.text = realm.type.toString()
             battlegroup.text =  "Battlegroup: \(realm.battlegroup)"
 
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
             wintergraspFaction.text = realm.wintergrasp.controllingFaction.toString()
             wintergraspStatus.text = realm.wintergrasp.status.toString()
+            wintergraspNext.text = formatter.stringFromDate(realm.wintergrasp.next)
 
             tolBaradFaction.text = realm.tolBarad.controllingFaction.toString()
             tolBaradStatus.text = realm.tolBarad.status.toString()
+            tolBaradNext.text = formatter.stringFromDate(realm.tolBarad.next)
 
-            let formatter = NSDateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            print(formatter.stringFromDate(realm.wintergrasp.next))
         }
     }
 }

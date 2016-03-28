@@ -139,10 +139,10 @@ class Realm
         timezone = NSTimeZone(name: json["timezone"].stringValue)!
 
         let wintergraspJSON = json["wintergrasp"]
-        wintergrasp = PvPZone(area: wintergraspJSON["area"].intValue, controllingFaction: Faction(rawValue: wintergraspJSON["controlling-faction"].intValue)!, status: ZoneStatus(rawValue: wintergraspJSON["status"].intValue)!, next: NSDate(timeIntervalSince1970: wintergraspJSON["next"].doubleValue))
+        wintergrasp = PvPZone(area: wintergraspJSON["area"].intValue, controllingFaction: Faction(rawValue: wintergraspJSON["controlling-faction"].intValue)!, status: ZoneStatus(rawValue: wintergraspJSON["status"].intValue)!, next: NSDate(timeIntervalSince1970: wintergraspJSON["next"].doubleValue / 1000))
 
         let tolBaradJSON = json["tol-barad"]
-        tolBarad = PvPZone(area: tolBaradJSON["area"].intValue, controllingFaction: Faction(rawValue: tolBaradJSON["controlling-faction"].intValue)!, status: ZoneStatus(rawValue: tolBaradJSON["status"].intValue)!, next: NSDate(timeIntervalSince1970: tolBaradJSON["next"].doubleValue))
+        tolBarad = PvPZone(area: tolBaradJSON["area"].intValue, controllingFaction: Faction(rawValue: tolBaradJSON["controlling-faction"].intValue)!, status: ZoneStatus(rawValue: tolBaradJSON["status"].intValue)!, next: NSDate(timeIntervalSince1970: tolBaradJSON["next"].doubleValue / 1000))
 
         for realm in json["connected_realms"]
         {
