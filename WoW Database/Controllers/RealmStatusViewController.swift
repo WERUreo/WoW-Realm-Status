@@ -151,9 +151,10 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
         {
             if let destination = segue.destinationViewController as? RealmDetailVC
             {
-                if let indexPathRow = tableView.indexPathForSelectedRow?.row
+                if let indexPathRow = tableView.indexPathForSelectedRow?.row,
+                    let indexPathSection = tableView.indexPathForSelectedRow?.section
                 {
-                    destination.realm = realms[indexPathRow]
+                    destination.realm = realms[sections[indexPathSection].index + indexPathRow]
                 }
             }
         }
