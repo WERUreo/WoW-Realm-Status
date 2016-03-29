@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/WERUreo/WoW-Database.svg?branch=master)](https://travis-ci.org/WERUreo/WoW-Database)
 
-# WoW-Database
+# WoW Realm Status
 
-This is a simple iOS app I am creating that utilizes the Battle.net game API for World of Warcraft to pull down data.  Currently, it only pulls down realm status for US realms, but eventually I'd like to include an Items database as well as a Recipes database to allow for easy lookups.
+This is a simple iOS app I am creating that utilizes the Battle.net game API for World of Warcraft to pull down realm status data.  The first release will only handle US servers but I hope to expand this in future releases.
