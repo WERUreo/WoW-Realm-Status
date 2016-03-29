@@ -11,12 +11,14 @@ import Alamofire
 import SwiftyJSON
 import iAd
 
-class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate
+class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate
 {
     @IBOutlet weak var tableView: UITableView!
 
     let realmSegueIdentifier = "RealmDetailSegue"
+    let searchController = UISearchController(searchResultsController: nil)
     var realms = [Realm]()
+    var filteredRealms = [Realm]()
     var sections: [(index: Int, length: Int, title: String)] = Array()
 
     ////////////////////////////////////////////////////////////
@@ -27,6 +29,14 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.delegate = self
         tableView.dataSource = self
 
+        // Set up searchController
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+
+        // Set up iAD banner
         canDisplayBannerAds = true
 
         // FIXME: - remove this from the view controller
@@ -48,20 +58,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
                         self.realms.append(Realm(json: subJson))
                     }
 
-                    var index = 0
-                    for i in 0..<self.realms.count
-                    {
-                        let commonPrefix = self.realms[i].name.commonPrefixWithString(self.realms[index].name, options: .CaseInsensitiveSearch)
-                        if commonPrefix.characters.count == 0
-                        {
-                            let string = self.realms[index].name.uppercaseString
-                            let firstCharacter = string[string.startIndex]
-                            let title = "\(firstCharacter)"
-                            let newSection = (index: index, length: i - index, title: title)
-                            self.sections.append(newSection)
-                            index = i
-                        }
-                    }
+                    self.createSections(self.realms)
 
                     self.tableView.reloadData()
 
@@ -89,6 +86,29 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
 
     ////////////////////////////////////////////////////////////
 
+    func createSections(realms: [Realm])
+    {
+        // clear sections
+        sections.removeAll()
+
+        var index = 0
+        for i in 0..<realms.count
+        {
+            let commonPrefix = realms[i].name.commonPrefixWithString(realms[index].name, options: .CaseInsensitiveSearch)
+            if commonPrefix.characters.count == 0
+            {
+                let string = realms[index].name.uppercaseString
+                let firstCharacter = string[string.startIndex]
+                let title = "\(firstCharacter)"
+                let newSection = (index: index, length: i - index, title: title)
+                sections.append(newSection)
+                index = i
+            }
+        }
+    }
+
+    ////////////////////////////////////////////////////////////
+
     // MARK: - Table view data source
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int
@@ -107,7 +127,17 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let realm = realms[sections[indexPath.section].index + indexPath.row]
+        let realm: Realm
+
+        if searchIsActive()
+        {
+            realm = filteredRealms[sections[indexPath.section].index + indexPath.row]
+        }
+        else
+        {
+            realm = realms[sections[indexPath.section].index + indexPath.row]
+        }
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("RealmCell", forIndexPath: indexPath) as? RealmCell
         if let realmCell = cell
         {
@@ -158,5 +188,50 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
                 }
             }
         }
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    // MARK: - UISearchBarDelegate
+
+    func searchBarCancelButtonClicked(searchBar: UISearchBar)
+    {
+        createSections(realms)
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    // MARK: - UISearchResultsUpdater
+
+    func updateSearchResultsForSearchController(searchController: UISearchController)
+    {
+        if let searchText = searchController.searchBar.text
+        {
+            filterContentForSearchText(searchText)
+        }
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    func filterContentForSearchText(searchText: String, scope: String = "All")
+    {
+        filteredRealms = realms.filter { realm in
+            return realm.name.lowercaseString.containsString(searchText.lowercaseString)
+        }
+
+        // only start creating sections if there is text in the searchbar
+        if searchIsActive()
+        {
+            createSections(filteredRealms)
+        }
+
+        tableView.reloadData()
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    func searchIsActive() -> Bool
+    {
+        return searchController.active && searchController.searchBar.text != ""
     }
 }
