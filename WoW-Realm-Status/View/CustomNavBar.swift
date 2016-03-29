@@ -16,13 +16,13 @@ class CustomNavBar: UINavigationBar
         if let navBarFont = UIFont(name: "NotoSans", size: 16.0)
         {
             let navBarAttributesDictionary: [String: AnyObject]? = [
-                NSForegroundColorAttributeName: UIColor.blackColor(),
+                NSForegroundColorAttributeName: UIColor(red:0.94, green:0.77, blue:0.50, alpha:1.00),
                 NSFontAttributeName: navBarFont
             ]
 
             self.titleTextAttributes = navBarAttributesDictionary
         }
 
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor(red:0.11, green:0.06, blue:0.04, alpha:1.00)
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pKs-pz-6Ue">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zJ6-fm-3kl">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -29,7 +29,7 @@
         <!--Realm DetailVC-->
         <scene sceneID="fyt-L8-LLx">
             <objects>
-                <viewController id="UlH-I0-JfM" customClass="RealmDetailVC" customModule="WoW_Database" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UlH-I0-JfM" customClass="RealmDetailVC" customModule="WoW_Realm_Status" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EXc-Kr-U0g"/>
                         <viewControllerLayoutGuide type="bottom" id="3bF-bx-07G"/>
@@ -38,7 +38,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9WB-g6-8ri" customClass="MaterialView" customModule="WoW_Database" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9WB-g6-8ri" customClass="MaterialView" customModule="WoW_Realm_Status" customModuleProvider="target">
                                 <rect key="frame" x="20" y="20" width="560" height="75"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="firstBaseline" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QCX-gb-LMi">
@@ -52,7 +52,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PvP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O46-c8-4pY">
                                                 <rect key="frame" x="151" y="10" width="23" height="18"/>
                                                 <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="13"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -60,7 +60,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Battlegroup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6G5-tg-7yR">
                                         <rect key="frame" x="238" y="46" width="85" height="21"/>
                                         <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -73,13 +73,13 @@
                                     <constraint firstItem="6G5-tg-7yR" firstAttribute="top" secondItem="QCX-gb-LMi" secondAttribute="bottom" constant="8" id="qGI-O6-1QU"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABJ-eB-msd" customClass="MaterialView" customModule="WoW_Database" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABJ-eB-msd" customClass="MaterialView" customModule="WoW_Realm_Status" customModuleProvider="target">
                                 <rect key="frame" x="20" y="103" width="560" height="86"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wintergrasp" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxK-kI-1bO">
                                         <rect key="frame" x="8" y="31" width="99" height="24"/>
                                         <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vEo-UG-4qP">
@@ -88,19 +88,19 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Faction" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNz-MR-w8j">
                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="21"/>
                                                 <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fri-MP-96U">
                                                 <rect key="frame" x="8" y="26" width="44" height="21"/>
                                                 <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ic1-P4-mga">
                                                 <rect key="frame" x="18" y="52" width="34" height="21"/>
                                                 <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -115,7 +115,7 @@
                                     <constraint firstItem="jxK-kI-1bO" firstAttribute="centerY" secondItem="ABJ-eB-msd" secondAttribute="centerY" id="udt-e0-wjH"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ch-x0-39r" customClass="MaterialView" customModule="WoW_Database" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ch-x0-39r" customClass="MaterialView" customModule="WoW_Realm_Status" customModuleProvider="target">
                                 <rect key="frame" x="20" y="197" width="560" height="86"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lwm-op-16E">
@@ -124,19 +124,19 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Faction" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBE-bq-TeC">
                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="21"/>
                                                 <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPi-u1-fHg">
                                                 <rect key="frame" x="8" y="26" width="44" height="21"/>
                                                 <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvK-I6-BP5">
                                                 <rect key="frame" x="18" y="52" width="34" height="21"/>
                                                 <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -144,7 +144,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tol Barad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbH-Dj-txE">
                                         <rect key="frame" x="8" y="31" width="76" height="24"/>
                                         <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -191,7 +191,7 @@
         <!--Realm Status-->
         <scene sceneID="NDo-2b-BB3">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="otr-Jz-ADX" customClass="RealmStatusViewController" customModule="WoW_Database" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="otr-Jz-ADX" customClass="RealmStatusViewController" customModule="WoW_Realm_Status" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9sj-5M-SLw"/>
                         <viewControllerLayoutGuide type="bottom" id="auC-lM-N9C"/>
@@ -200,11 +200,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z7g-ZT-izC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z7g-ZT-izC">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RealmCell" id="yzV-jp-fji" customClass="RealmCell" customModule="WoW_Database" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RealmCell" id="yzV-jp-fji" customClass="RealmCell" customModule="WoW_Realm_Status" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yzV-jp-fji" id="ALM-VF-lve">
@@ -212,7 +212,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGM-9e-B9s">
-                                                    <rect key="frame" x="0.0" y="0.0" width="10" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="10" height="41"/>
                                                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="10" id="IJN-f0-IFq"/>
@@ -221,19 +221,19 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="high" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8l-Pl-vED">
                                                     <rect key="frame" x="564" y="13" width="28" height="18"/>
                                                     <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="13"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.93725490196078431" green="0.77254901960784317" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Realm Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWH-HT-FgL">
                                                     <rect key="frame" x="18" y="9" width="103" height="24"/>
                                                     <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.93725490196078431" green="0.77254901960784317" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="d8l-Pl-vED" firstAttribute="trailing" secondItem="ALM-VF-lve" secondAttribute="trailingMargin" id="2ml-4v-dsz"/>
-                                                <constraint firstAttribute="bottom" secondItem="iGM-9e-B9s" secondAttribute="bottom" id="5ac-M3-ZlO"/>
+                                                <constraint firstAttribute="bottom" secondItem="iGM-9e-B9s" secondAttribute="bottom" constant="2" id="5ac-M3-ZlO"/>
                                                 <constraint firstItem="iGM-9e-B9s" firstAttribute="leading" secondItem="ALM-VF-lve" secondAttribute="leading" id="Ur1-BA-eCF"/>
                                                 <constraint firstItem="iGM-9e-B9s" firstAttribute="top" secondItem="ALM-VF-lve" secondAttribute="top" id="Vtg-w5-IKG"/>
                                                 <constraint firstItem="MWH-HT-FgL" firstAttribute="centerY" secondItem="ALM-VF-lve" secondAttribute="centerY" id="YMP-wM-5P6"/>
@@ -241,6 +241,7 @@
                                                 <constraint firstItem="d8l-Pl-vED" firstAttribute="centerY" secondItem="ALM-VF-lve" secondAttribute="centerY" id="u6Z-Bs-lFA"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.11372549019607843" green="0.062745098039215685" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="realmName" destination="MWH-HT-FgL" id="wnl-gv-Yez"/>
                                             <outlet property="realmPopulation" destination="d8l-Pl-vED" id="RiJ-xR-U2a"/>
@@ -273,7 +274,7 @@
             <objects>
                 <navigationController id="hiw-Sx-Flz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="rai-Oi-MxO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eK7-rF-VLT" customClass="CustomNavBar" customModule="WoW_Database" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eK7-rF-VLT" customClass="CustomNavBar" customModule="WoW_Realm_Status" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -300,7 +301,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Realm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VqF-hv-AWv">
                                 <rect key="frame" x="218" y="284" width="164" height="33"/>
                                 <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -315,27 +316,10 @@
             </objects>
             <point key="canvasLocation" x="3691" y="697"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="mfW-tl-NfC">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="pKs-pz-6Ue" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="ijp-Oq-bKo">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="zJ6-fm-3kl" kind="relationship" relationship="viewControllers" id="MDr-DP-u1W"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jPt-fa-161" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2409" y="-531"/>
-        </scene>
         <!--Item-->
         <scene sceneID="Q6q-Kb-aST">
             <objects>
-                <splitViewController id="zJ6-fm-3kl" customClass="RealmStatusSplitViewController" customModule="WoW_Database" customModuleProvider="target" sceneMemberID="viewController">
+                <splitViewController id="zJ6-fm-3kl" customClass="RealmStatusSplitViewController" customModule="WoW_Realm_Status" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Fk4-tl-WsH"/>
                     <connections>
                         <segue destination="hiw-Sx-Flz" kind="relationship" relationship="masterViewController" id="dvW-uV-KbX"/>

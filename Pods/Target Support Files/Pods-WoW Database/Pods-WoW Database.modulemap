@@ -1,6 +1,0 @@
-framework module Pods_WoW_Database {
-  umbrella header "Pods-WoW Database-umbrella.h"
-
-  export *
-  module * { export * }
-}
