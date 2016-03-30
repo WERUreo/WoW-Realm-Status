@@ -14,8 +14,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+    {
+        // Change the font and size of nav bar text
+        if let navBarFont = UIFont(name: "NotoSans", size: 16.0)
+        {
+            let navBarAttributesDictionary: [String: AnyObject]? = [
+                NSForegroundColorAttributeName: UIColor.whiteColor(),
+                NSFontAttributeName: navBarFont
+            ]
+
+            //UINavigationBar.appearance().
+            UIBarButtonItem.appearance().setTitleTextAttributes(navBarAttributesDictionary, forState: .Normal)
+        }
+
         return true
     }
 

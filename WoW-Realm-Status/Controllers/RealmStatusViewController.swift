@@ -11,14 +11,12 @@ import Alamofire
 import SwiftyJSON
 import iAd
 
-class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate
+class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate
 {
     @IBOutlet weak var tableView: UITableView!
 
     let realmSegueIdentifier = "RealmDetailSegue"
-    let searchController = UISearchController(searchResultsController: nil)
     var realms = [Realm]()
-    var filteredRealms = [Realm]()
     var sections: [(index: Int, length: Int, title: String)] = Array()
 
     ////////////////////////////////////////////////////////////
@@ -29,12 +27,8 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.delegate = self
         tableView.dataSource = self
 
-        // Set up searchController
-        searchController.searchResultsUpdater = self
-        searchController.searchBar.delegate = self
-        searchController.dimsBackgroundDuringPresentation = false
-        definesPresentationContext = true
-        tableView.tableHeaderView = searchController.searchBar
+        tableView.sectionIndexBackgroundColor = UIColor.viewBackgroundColor()
+        tableView.sectionIndexColor = UIColor.whiteColor()
 
         // Set up iAD banner
         canDisplayBannerAds = true
@@ -74,14 +68,6 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidAppear(animated: Bool)
     {
         super.viewDidAppear(animated)
-    }
-
-    ////////////////////////////////////////////////////////////
-
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     ////////////////////////////////////////////////////////////
@@ -127,21 +113,14 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let realm: Realm
+        let indexPathRow = sections[indexPath.section].index + indexPath.row
+        let realm = realms[indexPathRow]
 
-        if searchIsActive()
-        {
-            realm = filteredRealms[sections[indexPath.section].index + indexPath.row]
-        }
-        else
-        {
-            realm = realms[sections[indexPath.section].index + indexPath.row]
-        }
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("RealmCell", forIndexPath: indexPath) as? RealmCell
         if let realmCell = cell
         {
             realmCell.configureCell(realm)
+            realmCell.backgroundColor = indexPathRow % 2 == 0 ? UIColor.cellBackgroundColor1() : UIColor.cellBackgroundColor2()
             return realmCell
         }
         else
@@ -179,7 +158,8 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
     {
         if segue.identifier == realmSegueIdentifier
         {
-            if let destination = segue.destinationViewController as? RealmDetailVC
+            if let topNav = segue.destinationViewController as? UINavigationController,
+                let destination = topNav.topViewController as? RealmDetailVC
             {
                 if let indexPathRow = tableView.indexPathForSelectedRow?.row,
                     let indexPathSection = tableView.indexPathForSelectedRow?.section
@@ -191,47 +171,4 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
     ////////////////////////////////////////////////////////////
-
-    // MARK: - UISearchBarDelegate
-
-    func searchBarCancelButtonClicked(searchBar: UISearchBar)
-    {
-        createSections(realms)
-    }
-
-    ////////////////////////////////////////////////////////////
-
-    // MARK: - UISearchResultsUpdater
-
-    func updateSearchResultsForSearchController(searchController: UISearchController)
-    {
-        if let searchText = searchController.searchBar.text
-        {
-            filterContentForSearchText(searchText)
-        }
-    }
-
-    ////////////////////////////////////////////////////////////
-
-    func filterContentForSearchText(searchText: String, scope: String = "All")
-    {
-        filteredRealms = realms.filter { realm in
-            return realm.name.lowercaseString.containsString(searchText.lowercaseString)
-        }
-
-        // only start creating sections if there is text in the searchbar
-        if searchIsActive()
-        {
-            createSections(filteredRealms)
-        }
-
-        tableView.reloadData()
-    }
-
-    ////////////////////////////////////////////////////////////
-
-    func searchIsActive() -> Bool
-    {
-        return searchController.active && searchController.searchBar.text != ""
-    }
 }

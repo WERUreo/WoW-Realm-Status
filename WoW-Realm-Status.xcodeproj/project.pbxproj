@@ -24,6 +24,8 @@
 		4292EEBF1C9E657700D56C16 /* RealmStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4292EEBE1C9E657700D56C16 /* RealmStatusViewController.swift */; };
 		42BC6D011CA3311A00B9880A /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42BC6D001CA3311A00B9880A /* iAd.framework */; };
 		42C21EC21CA1EF3C00227A70 /* UIView+RoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C21EC11CA1EF3C00227A70 /* UIView+RoundCorners.swift */; };
+		42CC174E1CAB2C92006292A6 /* UIColor+DarkThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CC174D1CAB2C92006292A6 /* UIColor+DarkThemeColors.swift */; };
+		42CC17501CAB4B09006292A6 /* UIColor+RealmStatusColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CC174F1CAB4B09006292A6 /* UIColor+RealmStatusColors.swift */; };
 		42E57A491CA017E5000A79A4 /* RealmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E57A481CA017E5000A79A4 /* RealmCell.swift */; };
 		42E57A4B1CA056C1000A79A4 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E57A4A1CA056C1000A79A4 /* MaterialView.swift */; };
 		42E57A4E1CA056EB000A79A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E57A4D1CA056EB000A79A4 /* Constants.swift */; };
@@ -52,6 +54,8 @@
 		4292EEBE1C9E657700D56C16 /* RealmStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmStatusViewController.swift; path = Controllers/RealmStatusViewController.swift; sourceTree = "<group>"; };
 		42BC6D001CA3311A00B9880A /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		42C21EC11CA1EF3C00227A70 /* UIView+RoundCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+RoundCorners.swift"; path = "Util/UIView+RoundCorners.swift"; sourceTree = "<group>"; };
+		42CC174D1CAB2C92006292A6 /* UIColor+DarkThemeColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+DarkThemeColors.swift"; path = "Util/UIColor+DarkThemeColors.swift"; sourceTree = "<group>"; };
+		42CC174F1CAB4B09006292A6 /* UIColor+RealmStatusColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+RealmStatusColors.swift"; path = "Util/UIColor+RealmStatusColors.swift"; sourceTree = "<group>"; };
 		42E57A481CA017E5000A79A4 /* RealmCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmCell.swift; path = View/RealmCell.swift; sourceTree = "<group>"; };
 		42E57A4A1CA056C1000A79A4 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MaterialView.swift; path = View/MaterialView.swift; sourceTree = "<group>"; };
 		42E57A4D1CA056EB000A79A4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Util/Constants.swift; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 				42E57A4D1CA056EB000A79A4 /* Constants.swift */,
 				42E57A511CA05914000A79A4 /* ColorExt.swift */,
 				42C21EC11CA1EF3C00227A70 /* UIView+RoundCorners.swift */,
+				42CC174D1CAB2C92006292A6 /* UIColor+DarkThemeColors.swift */,
+				42CC174F1CAB4B09006292A6 /* UIColor+RealmStatusColors.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -324,9 +330,11 @@
 				42E57A521CA05914000A79A4 /* ColorExt.swift in Sources */,
 				4292EE871C9DAB8300D56C16 /* AppDelegate.swift in Sources */,
 				4292EEBF1C9E657700D56C16 /* RealmStatusViewController.swift in Sources */,
+				42CC174E1CAB2C92006292A6 /* UIColor+DarkThemeColors.swift in Sources */,
 				4229F1811CA48DA300707983 /* RealmDetailVC.swift in Sources */,
 				421414BB1CA5630700EA4381 /* CustomNavBar.swift in Sources */,
 				4229F1831CA4D27B00707983 /* RealmStatusSplitViewController.swift in Sources */,
+				42CC17501CAB4B09006292A6 /* UIColor+RealmStatusColors.swift in Sources */,
 				42E57A4B1CA056C1000A79A4 /* MaterialView.swift in Sources */,
 				42E57A4E1CA056EB000A79A4 /* Constants.swift in Sources */,
 				42E57A491CA017E5000A79A4 /* RealmCell.swift in Sources */,

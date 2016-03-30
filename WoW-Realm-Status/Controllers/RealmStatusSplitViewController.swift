@@ -19,6 +19,13 @@ class RealmStatusSplitViewController: UISplitViewController, UISplitViewControll
 
     ////////////////////////////////////////////////////////////
 
+    override func preferredStatusBarStyle() -> UIStatusBarStyle
+    {
+        return .LightContent
+    }
+
+    ////////////////////////////////////////////////////////////
+
     func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool
     {
         return true
