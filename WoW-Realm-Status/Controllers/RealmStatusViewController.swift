@@ -18,6 +18,13 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
     let realmSegueIdentifier = "RealmDetailSegue"
     var realms = [Realm]()
     var sections: [(index: Int, length: Int, title: String)] = Array()
+    lazy var refreshControl: UIRefreshControl =
+    {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(RealmStatusViewController.handleRefresh), forControlEvents: .ValueChanged)
+
+        return refreshControl
+    }()
 
     ////////////////////////////////////////////////////////////
 
@@ -26,6 +33,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.addSubview(refreshControl)
 
         tableView.sectionIndexBackgroundColor = UIColor.viewBackgroundColor()
         tableView.sectionIndexColor = UIColor.whiteColor()
@@ -33,7 +41,20 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
         // Set up iAD banner
         canDisplayBannerAds = true
 
-        // FIXME: - remove this from the view controller
+        retrieveRealms()
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    override func viewDidAppear(animated: Bool)
+    {
+        super.viewDidAppear(animated)
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    func retrieveRealms()
+    {
         let parameters =
         [
             "locale" : "en-US",
@@ -46,28 +67,31 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
             case .Success:
                 if let value = response.result.value
                 {
+                    // If the realms array has been populated before (we are refreshing the table view),
+                    // we must clear the array before re-populating it.
+                    self.realms.removeAll()
+                    
                     let json = JSON(value)
                     for (_, subJson) in json["realms"]
                     {
                         self.realms.append(Realm(json: subJson))
                     }
 
-                    self.createSections(self.realms)
-
-                    self.tableView.reloadData()
-
+                    dispatch_async(dispatch_get_main_queue(), { 
+                        self.createSections(self.realms)
+                        self.tableView.reloadData()
+                        self.refreshControl.endRefreshing()
+                    })
+                }
+                else
+                {
+                    self.showErrorAlert("No realms found", msg: "There appears to be a problem retrieving realms from Battle.net.  Please try again later.")
                 }
             case .Failure(let error):
                 print(error)
+                self.showErrorAlert("Connection error", msg: "There appears to be a problem with the connection to Battle.net.  Please try again later.")
             }
         }
-    }
-
-    ////////////////////////////////////////////////////////////
-
-    override func viewDidAppear(animated: Bool)
-    {
-        super.viewDidAppear(animated)
     }
 
     ////////////////////////////////////////////////////////////
@@ -91,6 +115,23 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
                 index = i
             }
         }
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    func showErrorAlert(title: String, msg: String)
+    {
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
+        let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alert.addAction(action)
+        presentViewController(alert, animated: true, completion: nil)
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    func handleRefresh(refreshControl: UIRefreshControl)
+    {
+        retrieveRealms()
     }
 
     ////////////////////////////////////////////////////////////
