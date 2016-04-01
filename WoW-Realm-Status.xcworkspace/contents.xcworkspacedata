@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:WoW-Realm-Status.xcodeproj">
+      location = "group:/Users/WERUreo/Documents/Apps/WoW-Realm-Status/WoW-Realm-Status.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

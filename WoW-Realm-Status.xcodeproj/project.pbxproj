@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		421414BB1CA5630700EA4381 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421414BA1CA5630700EA4381 /* CustomNavBar.swift */; };
-		4229F1811CA48DA300707983 /* RealmDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4229F1801CA48DA300707983 /* RealmDetailVC.swift */; };
-		4229F1831CA4D27B00707983 /* RealmStatusSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4229F1821CA4D27B00707983 /* RealmStatusSplitViewController.swift */; };
+		423649921CADDB4000A72884 /* UIColor+WoWClassColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423649911CADDB4000A72884 /* UIColor+WoWClassColor.swift */; };
 		424F1A881C9F00F400FDC16E /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 424F1A841C9F00F400FDC16E /* NotoSans-Bold.ttf */; };
 		424F1A891C9F00F400FDC16E /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 424F1A851C9F00F400FDC16E /* NotoSans-BoldItalic.ttf */; };
 		424F1A8A1C9F00F400FDC16E /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 424F1A861C9F00F400FDC16E /* NotoSans-Italic.ttf */; };
@@ -27,24 +26,20 @@
 		42CC174E1CAB2C92006292A6 /* UIColor+DarkThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CC174D1CAB2C92006292A6 /* UIColor+DarkThemeColors.swift */; };
 		42CC17501CAB4B09006292A6 /* UIColor+RealmStatusColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CC174F1CAB4B09006292A6 /* UIColor+RealmStatusColors.swift */; };
 		42E57A491CA017E5000A79A4 /* RealmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E57A481CA017E5000A79A4 /* RealmCell.swift */; };
-		42E57A4B1CA056C1000A79A4 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E57A4A1CA056C1000A79A4 /* MaterialView.swift */; };
-		42E57A4E1CA056EB000A79A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E57A4D1CA056EB000A79A4 /* Constants.swift */; };
-		42E57A521CA05914000A79A4 /* ColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E57A511CA05914000A79A4 /* ColorExt.swift */; };
 		FFA63265E2B78B4E39E777F1 /* Pods_WoW_Realm_Status.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4B94E82D8810D38E8877AF /* Pods_WoW_Realm_Status.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		13382DEBA84B885223E21927 /* Pods_WoW_Database.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WoW_Database.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		421414BA1CA5630700EA4381 /* CustomNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomNavBar.swift; path = View/CustomNavBar.swift; sourceTree = "<group>"; };
-		4229F1801CA48DA300707983 /* RealmDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmDetailVC.swift; path = Controllers/RealmDetailVC.swift; sourceTree = "<group>"; };
-		4229F1821CA4D27B00707983 /* RealmStatusSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmStatusSplitViewController.swift; path = Controllers/RealmStatusSplitViewController.swift; sourceTree = "<group>"; };
+		423649911CADDB4000A72884 /* UIColor+WoWClassColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+WoWClassColor.swift"; sourceTree = "<group>"; };
 		424F1A841C9F00F400FDC16E /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
 		424F1A851C9F00F400FDC16E /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		424F1A861C9F00F400FDC16E /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
 		424F1A871C9F00F400FDC16E /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		424F1A8C1C9FA07500FDC16E /* Realm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Realm.swift; path = Model/Realm.swift; sourceTree = "<group>"; };
 		42584A6B1CA8092700DF0E11 /* APIKey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
-		4292EE831C9DAB8300D56C16 /* WoW Realm Status.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WoW Realm Status.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4292EE831C9DAB8300D56C16 /* WoW WoW-Realm-Status.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WoW WoW-Realm-Status.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4292EE861C9DAB8300D56C16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4292EE8B1C9DAB8300D56C16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4292EE8D1C9DAB8300D56C16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,9 +52,6 @@
 		42CC174D1CAB2C92006292A6 /* UIColor+DarkThemeColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+DarkThemeColors.swift"; path = "Util/UIColor+DarkThemeColors.swift"; sourceTree = "<group>"; };
 		42CC174F1CAB4B09006292A6 /* UIColor+RealmStatusColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+RealmStatusColors.swift"; path = "Util/UIColor+RealmStatusColors.swift"; sourceTree = "<group>"; };
 		42E57A481CA017E5000A79A4 /* RealmCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmCell.swift; path = View/RealmCell.swift; sourceTree = "<group>"; };
-		42E57A4A1CA056C1000A79A4 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MaterialView.swift; path = View/MaterialView.swift; sourceTree = "<group>"; };
-		42E57A4D1CA056EB000A79A4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Util/Constants.swift; sourceTree = "<group>"; };
-		42E57A511CA05914000A79A4 /* ColorExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorExt.swift; path = Util/ColorExt.swift; sourceTree = "<group>"; };
 		500A6E8595A370C8BDDAB133 /* Pods-WoW Database.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoW Database.release.xcconfig"; path = "Pods/Target Support Files/Pods-WoW Database/Pods-WoW Database.release.xcconfig"; sourceTree = "<group>"; };
 		6E6D115A661F1FEA8EAC18E8 /* Pods-WoW Realm Status.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoW Realm Status.release.xcconfig"; path = "Pods/Target Support Files/Pods-WoW Realm Status/Pods-WoW Realm Status.release.xcconfig"; sourceTree = "<group>"; };
 		798E19901809D9D1B9A77297 /* Pods-WoW Database.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoW Database.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WoW Database/Pods-WoW Database.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,7 +96,7 @@
 		4292EE841C9DAB8300D56C16 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4292EE831C9DAB8300D56C16 /* WoW Realm Status.app */,
+				4292EE831C9DAB8300D56C16 /* WoW WoW-Realm-Status.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,7 +133,6 @@
 			children = (
 				4292EE8A1C9DAB8300D56C16 /* Main.storyboard */,
 				42E57A481CA017E5000A79A4 /* RealmCell.swift */,
-				42E57A4A1CA056C1000A79A4 /* MaterialView.swift */,
 				421414BA1CA5630700EA4381 /* CustomNavBar.swift */,
 			);
 			name = View;
@@ -159,8 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				4292EEBE1C9E657700D56C16 /* RealmStatusViewController.swift */,
-				4229F1801CA48DA300707983 /* RealmDetailVC.swift */,
-				4229F1821CA4D27B00707983 /* RealmStatusSplitViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -168,11 +157,10 @@
 		42E57A4C1CA056D8000A79A4 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				42E57A4D1CA056EB000A79A4 /* Constants.swift */,
-				42E57A511CA05914000A79A4 /* ColorExt.swift */,
 				42C21EC11CA1EF3C00227A70 /* UIView+RoundCorners.swift */,
 				42CC174D1CAB2C92006292A6 /* UIColor+DarkThemeColors.swift */,
 				42CC174F1CAB4B09006292A6 /* UIColor+RealmStatusColors.swift */,
+				423649911CADDB4000A72884 /* UIColor+WoWClassColor.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -201,9 +189,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4292EE821C9DAB8300D56C16 /* WoW Realm Status */ = {
+		4292EE821C9DAB8300D56C16 /* WoW-Realm-Status */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4292EE951C9DAB8300D56C16 /* Build configuration list for PBXNativeTarget "WoW Realm Status" */;
+			buildConfigurationList = 4292EE951C9DAB8300D56C16 /* Build configuration list for PBXNativeTarget "WoW-Realm-Status" */;
 			buildPhases = (
 				E7E692C80554E0CFE927C257 /* Check Pods Manifest.lock */,
 				4292EE7F1C9DAB8300D56C16 /* Sources */,
@@ -216,9 +204,9 @@
 			);
 			dependencies = (
 			);
-			name = "WoW Realm Status";
+			name = "WoW-Realm-Status";
 			productName = "WoW Database";
-			productReference = 4292EE831C9DAB8300D56C16 /* WoW Realm Status.app */;
+			productReference = 4292EE831C9DAB8300D56C16 /* WoW WoW-Realm-Status.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -233,6 +221,7 @@
 				TargetAttributes = {
 					4292EE821C9DAB8300D56C16 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 4X359D924E;
 					};
 				};
 			};
@@ -249,7 +238,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4292EE821C9DAB8300D56C16 /* WoW Realm Status */,
+				4292EE821C9DAB8300D56C16 /* WoW-Realm-Status */,
 			);
 		};
 /* End PBXProject section */
@@ -327,16 +316,12 @@
 			files = (
 				42C21EC21CA1EF3C00227A70 /* UIView+RoundCorners.swift in Sources */,
 				4292EE9F1C9DADDE00D56C16 /* BattleNetService.swift in Sources */,
-				42E57A521CA05914000A79A4 /* ColorExt.swift in Sources */,
 				4292EE871C9DAB8300D56C16 /* AppDelegate.swift in Sources */,
 				4292EEBF1C9E657700D56C16 /* RealmStatusViewController.swift in Sources */,
 				42CC174E1CAB2C92006292A6 /* UIColor+DarkThemeColors.swift in Sources */,
-				4229F1811CA48DA300707983 /* RealmDetailVC.swift in Sources */,
 				421414BB1CA5630700EA4381 /* CustomNavBar.swift in Sources */,
-				4229F1831CA4D27B00707983 /* RealmStatusSplitViewController.swift in Sources */,
+				423649921CADDB4000A72884 /* UIColor+WoWClassColor.swift in Sources */,
 				42CC17501CAB4B09006292A6 /* UIColor+RealmStatusColors.swift in Sources */,
-				42E57A4B1CA056C1000A79A4 /* MaterialView.swift in Sources */,
-				42E57A4E1CA056EB000A79A4 /* Constants.swift in Sources */,
 				42E57A491CA017E5000A79A4 /* RealmCell.swift in Sources */,
 				424F1A8D1C9FA07500FDC16E /* Realm.swift in Sources */,
 			);
@@ -452,10 +437,11 @@
 			baseConfigurationReference = A470F2B2249ACE9008263F3D /* Pods-WoW Realm Status.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/WoW-Realm-Status/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.WERUreo.WoW-Realm-Status";
-				PRODUCT_NAME = "WoW Realm Status";
+				PRODUCT_NAME = "WoW WoW-Realm-Status";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -465,10 +451,11 @@
 			baseConfigurationReference = 6E6D115A661F1FEA8EAC18E8 /* Pods-WoW Realm Status.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/WoW-Realm-Status/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.WERUreo.WoW-Realm-Status";
-				PRODUCT_NAME = "WoW Realm Status";
+				PRODUCT_NAME = "WoW WoW-Realm-Status";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -485,7 +472,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4292EE951C9DAB8300D56C16 /* Build configuration list for PBXNativeTarget "WoW Realm Status" */ = {
+		4292EE951C9DAB8300D56C16 /* Build configuration list for PBXNativeTarget "WoW-Realm-Status" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4292EE961C9DAB8300D56C16 /* Debug */,

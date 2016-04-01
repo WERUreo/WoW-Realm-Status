@@ -53,6 +53,13 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
 
     ////////////////////////////////////////////////////////////
 
+    override func preferredStatusBarStyle() -> UIStatusBarStyle
+    {
+        return .LightContent
+    }
+
+    ////////////////////////////////////////////////////////////
+
     func retrieveRealms()
     {
         let parameters =
@@ -190,26 +197,4 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
     {
         return index
     }
-
-    ////////////////////////////////////////////////////////////
-
-    // MARK: - Navigation
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
-    {
-        if segue.identifier == realmSegueIdentifier
-        {
-            if let topNav = segue.destinationViewController as? UINavigationController,
-                let destination = topNav.topViewController as? RealmDetailVC
-            {
-                if let indexPathRow = tableView.indexPathForSelectedRow?.row,
-                    let indexPathSection = tableView.indexPathForSelectedRow?.section
-                {
-                    destination.realm = realms[sections[indexPathSection].index + indexPathRow]
-                }
-            }
-        }
-    }
-
-    ////////////////////////////////////////////////////////////
 }

@@ -14,6 +14,7 @@ class RealmCell: UITableViewCell
     @IBOutlet weak var realmName: UILabel!
     @IBOutlet weak var realmStatusView: UIView!
     @IBOutlet weak var realmPopulation: UILabel!
+    @IBOutlet weak var realmType: UILabel!
 
     ////////////////////////////////////////////////////////////
 
@@ -39,5 +40,6 @@ class RealmCell: UITableViewCell
         realmStatusView.backgroundColor = realm.status ? UIColor.realmOnlineColor() : UIColor.realmOfflineColor()
         realmStatusView.roundCorners([.TopLeft, .BottomLeft], radius: 2.0)
         realmPopulation.text = realm.population
+        realmType.text = realm.type.toString()
     }
 }
