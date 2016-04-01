@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hiw-Sx-Flz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hiw-Sx-Flz">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -12,10 +13,10 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--WoW-Realm-Status-->
+        <!--Realm Status-->
         <scene sceneID="NDo-2b-BB3">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="otr-Jz-ADX" customClass="RealmStatusViewController" customModule="WoW_Realm_Status" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="otr-Jz-ADX" customClass="RealmStatusViewController" customModule="WoW_WoW_Realm_Status" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9sj-5M-SLw"/>
                         <viewControllerLayoutGuide type="bottom" id="auC-lM-N9C"/>
@@ -28,7 +29,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" red="0.12941176470588234" green="0.22745098039215686" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RealmCell" id="yzV-jp-fji" customClass="RealmCell" customModule="WoW_Realm_Status" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RealmCell" id="yzV-jp-fji" customClass="RealmCell" customModule="WoW_WoW_Realm_Status" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yzV-jp-fji" id="ALM-VF-lve">
@@ -49,16 +50,16 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="lastBaseline" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jv6-JM-TuX">
-                                                    <rect key="frame" x="18" y="10" width="132" height="20"/>
+                                                    <rect key="frame" x="18" y="10" width="136" height="24"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Realm Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWH-HT-FgL">
-                                                            <rect key="frame" x="0.0" y="0.0" width="98" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="103" height="24"/>
                                                             <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PvP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIw-Ur-WZ9">
-                                                            <rect key="frame" x="108" y="4" width="24" height="16"/>
+                                                            <rect key="frame" x="113" y="4" width="23" height="18"/>
                                                             <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="13"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -98,7 +99,7 @@
                             <constraint firstItem="Z7g-ZT-izC" firstAttribute="leading" secondItem="EyF-WY-RSq" secondAttribute="leading" id="yyS-Cb-VxV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="WoW-Realm-Status" id="n5F-Ic-GmL"/>
+                    <navigationItem key="navigationItem" title="Realm Status" id="n5F-Ic-GmL"/>
                     <connections>
                         <outlet property="tableView" destination="Z7g-ZT-izC" id="YqX-jh-2ud"/>
                     </connections>
@@ -112,7 +113,7 @@
             <objects>
                 <navigationController id="hiw-Sx-Flz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="rai-Oi-MxO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="eK7-rF-VLT" customClass="CustomNavBar" customModule="WoW_Realm_Status" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="eK7-rF-VLT" customClass="CustomNavBar" customModule="WoW_WoW_Realm_Status" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.10196078431372549" green="0.1764705882352941" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>

@@ -32,7 +32,7 @@
 /* Begin PBXFileReference section */
 		13382DEBA84B885223E21927 /* Pods_WoW_Database.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WoW_Database.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		421414BA1CA5630700EA4381 /* CustomNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomNavBar.swift; path = View/CustomNavBar.swift; sourceTree = "<group>"; };
-		423649911CADDB4000A72884 /* UIColor+WoWClassColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+WoWClassColor.swift"; sourceTree = "<group>"; };
+		423649911CADDB4000A72884 /* UIColor+WoWClassColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+WoWClassColor.swift"; path = "Util/UIColor+WoWClassColor.swift"; sourceTree = "<group>"; };
 		424F1A841C9F00F400FDC16E /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
 		424F1A851C9F00F400FDC16E /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		424F1A861C9F00F400FDC16E /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
@@ -437,11 +437,12 @@
 			baseConfigurationReference = A470F2B2249ACE9008263F3D /* Pods-WoW Realm Status.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Keli'i Martin (4YQALHJJ7G)";
 				INFOPLIST_FILE = "$(SRCROOT)/WoW-Realm-Status/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.WERUreo.WoW-Realm-Status";
 				PRODUCT_NAME = "WoW WoW-Realm-Status";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -451,11 +452,12 @@
 			baseConfigurationReference = 6E6D115A661F1FEA8EAC18E8 /* Pods-WoW Realm Status.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Keli'i Martin (4X359D924E)";
 				INFOPLIST_FILE = "$(SRCROOT)/WoW-Realm-Status/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.WERUreo.WoW-Realm-Status";
 				PRODUCT_NAME = "WoW WoW-Realm-Status";
+				PROVISIONING_PROFILE = "608ffadc-759e-4987-bfb2-e9519cf2af82";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
