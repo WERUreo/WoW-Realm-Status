@@ -440,7 +440,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Keli'i Martin (4YQALHJJ7G)";
 				INFOPLIST_FILE = "$(SRCROOT)/WoW-Realm-Status/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.WERUreo.WoW-Realm-Status";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.werureo.WoW-Realm-Status";
 				PRODUCT_NAME = "WoW WoW-Realm-Status";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -455,7 +455,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Keli'i Martin (4X359D924E)";
 				INFOPLIST_FILE = "$(SRCROOT)/WoW-Realm-Status/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.WERUreo.WoW-Realm-Status";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.werureo.WoW-Realm-Status";
 				PRODUCT_NAME = "WoW WoW-Realm-Status";
 				PROVISIONING_PROFILE = "608ffadc-759e-4987-bfb2-e9519cf2af82";
 				TARGETED_DEVICE_FAMILY = 1;
