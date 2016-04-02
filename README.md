@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/WERUreo/WoW-Database.svg?branch=master)](https://travis-ci.org/WERUreo/WoW-Database)
+[![Build Status](https://travis-ci.org/WERUreo/WoW-Realm-Status.svg?branch=master)](https://travis-ci.org/WERUreo/WoW-Realm-Status)
 
 # WoW Realm Status
 
