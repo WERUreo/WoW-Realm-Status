@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hiw-Sx-Flz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hiw-Sx-Flz">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -7,6 +7,8 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="NotoSans-Regular.ttf">
+            <string>NotoSans</string>
+            <string>NotoSans</string>
             <string>NotoSans</string>
             <string>NotoSans</string>
             <string>NotoSans</string>
@@ -99,7 +101,14 @@
                             <constraint firstItem="Z7g-ZT-izC" firstAttribute="leading" secondItem="EyF-WY-RSq" secondAttribute="leading" id="yyS-Cb-VxV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Realm Status" id="n5F-Ic-GmL"/>
+                    <navigationItem key="navigationItem" title="Realm Status" id="n5F-Ic-GmL">
+                        <barButtonItem key="rightBarButtonItem" image="Settings" id="8x7-eV-ils">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="y1y-yf-jf9" kind="show" id="VJg-3f-sPU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Z7g-ZT-izC" id="YqX-jh-2ud"/>
                     </connections>
@@ -107,6 +116,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pmf-rn-DPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4409" y="5"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="8NE-cO-t19">
+            <objects>
+                <viewController id="y1y-yf-jf9" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cVR-S8-4fP"/>
+                        <viewControllerLayoutGuide type="bottom" id="a4w-7Q-BFc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bYn-Nn-lEl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNa-x3-Whh">
+                                <rect key="frame" x="223" y="284" width="154" height="33"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="15"/>
+                                <state key="normal" title="Remove Ads for $0.99">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaD-AG-Wl5">
+                                <rect key="frame" x="235" y="325" width="130" height="33"/>
+                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="15"/>
+                                <state key="normal" title="Restore Purchases"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12941176469999999" green="0.2274509804" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="rNa-x3-Whh" firstAttribute="centerX" secondItem="bYn-Nn-lEl" secondAttribute="centerX" id="66a-Pa-aB6"/>
+                            <constraint firstItem="qaD-AG-Wl5" firstAttribute="centerX" secondItem="bYn-Nn-lEl" secondAttribute="centerX" id="YFH-pD-2uM"/>
+                            <constraint firstItem="qaD-AG-Wl5" firstAttribute="top" secondItem="rNa-x3-Whh" secondAttribute="bottom" constant="8" id="g6d-24-8Y2"/>
+                            <constraint firstItem="rNa-x3-Whh" firstAttribute="centerY" secondItem="bYn-Nn-lEl" secondAttribute="centerY" id="ntT-f8-JJS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="sSk-hB-lQs">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="jO6-ze-xa9">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c8I-TT-eO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5161" y="5"/>
         </scene>
         <!--Item-->
         <scene sceneID="MJQ-pv-u4J">
@@ -127,4 +180,7 @@
             <point key="canvasLocation" x="3691" y="5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Settings" width="22" height="22"/>
+    </resources>
 </document>

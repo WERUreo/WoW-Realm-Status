@@ -26,6 +26,8 @@
 		42CC174E1CAB2C92006292A6 /* UIColor+DarkThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CC174D1CAB2C92006292A6 /* UIColor+DarkThemeColors.swift */; };
 		42CC17501CAB4B09006292A6 /* UIColor+RealmStatusColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CC174F1CAB4B09006292A6 /* UIColor+RealmStatusColors.swift */; };
 		42E57A491CA017E5000A79A4 /* RealmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E57A481CA017E5000A79A4 /* RealmCell.swift */; };
+		42F5265C1CB3F3CC0065D5CF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F5265B1CB3F3CC0065D5CF /* SettingsViewController.swift */; };
+		42F5265E1CB4347D0065D5CF /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F5265D1CB4347D0065D5CF /* CustomButton.swift */; };
 		FFA63265E2B78B4E39E777F1 /* Pods_WoW_Realm_Status.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4B94E82D8810D38E8877AF /* Pods_WoW_Realm_Status.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,8 @@
 		42CC174D1CAB2C92006292A6 /* UIColor+DarkThemeColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+DarkThemeColors.swift"; path = "Util/UIColor+DarkThemeColors.swift"; sourceTree = "<group>"; };
 		42CC174F1CAB4B09006292A6 /* UIColor+RealmStatusColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+RealmStatusColors.swift"; path = "Util/UIColor+RealmStatusColors.swift"; sourceTree = "<group>"; };
 		42E57A481CA017E5000A79A4 /* RealmCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmCell.swift; path = View/RealmCell.swift; sourceTree = "<group>"; };
+		42F5265B1CB3F3CC0065D5CF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controllers/SettingsViewController.swift; sourceTree = "<group>"; };
+		42F5265D1CB4347D0065D5CF /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = View/CustomButton.swift; sourceTree = "<group>"; };
 		500A6E8595A370C8BDDAB133 /* Pods-WoW Database.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoW Database.release.xcconfig"; path = "Pods/Target Support Files/Pods-WoW Database/Pods-WoW Database.release.xcconfig"; sourceTree = "<group>"; };
 		6E6D115A661F1FEA8EAC18E8 /* Pods-WoW Realm Status.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoW Realm Status.release.xcconfig"; path = "Pods/Target Support Files/Pods-WoW Realm Status/Pods-WoW Realm Status.release.xcconfig"; sourceTree = "<group>"; };
 		798E19901809D9D1B9A77297 /* Pods-WoW Database.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoW Database.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WoW Database/Pods-WoW Database.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 				4292EE8A1C9DAB8300D56C16 /* Main.storyboard */,
 				42E57A481CA017E5000A79A4 /* RealmCell.swift */,
 				421414BA1CA5630700EA4381 /* CustomNavBar.swift */,
+				42F5265D1CB4347D0065D5CF /* CustomButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				4292EEBE1C9E657700D56C16 /* RealmStatusViewController.swift */,
+				42F5265B1CB3F3CC0065D5CF /* SettingsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -316,11 +322,13 @@
 			files = (
 				42C21EC21CA1EF3C00227A70 /* UIView+RoundCorners.swift in Sources */,
 				4292EE9F1C9DADDE00D56C16 /* BattleNetService.swift in Sources */,
+				42F5265C1CB3F3CC0065D5CF /* SettingsViewController.swift in Sources */,
 				4292EE871C9DAB8300D56C16 /* AppDelegate.swift in Sources */,
 				4292EEBF1C9E657700D56C16 /* RealmStatusViewController.swift in Sources */,
 				42CC174E1CAB2C92006292A6 /* UIColor+DarkThemeColors.swift in Sources */,
 				421414BB1CA5630700EA4381 /* CustomNavBar.swift in Sources */,
 				423649921CADDB4000A72884 /* UIColor+WoWClassColor.swift in Sources */,
+				42F5265E1CB4347D0065D5CF /* CustomButton.swift in Sources */,
 				42CC17501CAB4B09006292A6 /* UIColor+RealmStatusColors.swift in Sources */,
 				42E57A491CA017E5000A79A4 /* RealmCell.swift in Sources */,
 				424F1A8D1C9FA07500FDC16E /* Realm.swift in Sources */,
