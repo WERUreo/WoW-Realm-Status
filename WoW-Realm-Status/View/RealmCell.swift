@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import MGSwipeTableCell
 
 @IBDesignable
-class RealmCell: UITableViewCell
+class RealmCell: MGSwipeTableCell
 {
     @IBOutlet weak var realmName: UILabel!
     @IBOutlet weak var realmStatusView: UIView!
