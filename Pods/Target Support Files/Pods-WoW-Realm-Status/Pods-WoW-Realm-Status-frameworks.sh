@@ -84,10 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-WoW Realm Status/Alamofire.framework"
-  install_framework "Pods-WoW Realm Status/SwiftyJSON.framework"
+  install_framework "Pods-WoW-Realm-Status/Alamofire.framework"
+  install_framework "Pods-WoW-Realm-Status/MGSwipeTableCell.framework"
+  install_framework "Pods-WoW-Realm-Status/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-WoW Realm Status/Alamofire.framework"
-  install_framework "Pods-WoW Realm Status/SwiftyJSON.framework"
+  install_framework "Pods-WoW-Realm-Status/Alamofire.framework"
+  install_framework "Pods-WoW-Realm-Status/MGSwipeTableCell.framework"
+  install_framework "Pods-WoW-Realm-Status/SwiftyJSON.framework"
 fi

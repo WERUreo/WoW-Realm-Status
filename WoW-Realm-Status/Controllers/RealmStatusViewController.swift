@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import iAd
+import MGSwipeTableCell
 
 class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate
 {
@@ -142,8 +143,8 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
     ////////////////////////////////////////////////////////////
-
     // MARK: - Table view data source
+    ////////////////////////////////////////////////////////////
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
@@ -169,6 +170,17 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
         {
             realmCell.configureCell(realm)
             realmCell.backgroundColor = indexPathRow % 2 == 0 ? UIColor.cellBackgroundColor1() : UIColor.cellBackgroundColor2()
+            let favButton = MGSwipeButton(title: "", icon: UIImage(named: "Favorite Filled")!, backgroundColor: realmCell.backgroundColor)
+            realmCell.leftButtons = [favButton]
+
+            // set up button expansion settings
+            let expansionSettings = MGSwipeExpansionSettings()
+            expansionSettings.fillOnTrigger = false
+            expansionSettings.buttonIndex = 0 // only one button
+
+            realmCell.leftSwipeSettings.transition = MGSwipeTransition.Rotate3D
+            realmCell.leftExpansion = expansionSettings
+
             return realmCell
         }
         else
