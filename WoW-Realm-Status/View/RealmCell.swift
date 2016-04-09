@@ -43,5 +43,6 @@ class RealmCell: MGSwipeTableCell
         realmStatusView.roundCorners([.TopLeft, .BottomLeft], radius: 2.0)
         realmPopulation.text = realm.population
         realmType.text = realm.type.toString()
+        favoriteIcon.image = realm.favorite ? UIImage(named: "Favorite Filled") : nil
     }
 }

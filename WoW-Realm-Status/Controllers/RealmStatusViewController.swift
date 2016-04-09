@@ -12,7 +12,7 @@ import SwiftyJSON
 import iAd
 import MGSwipeTableCell
 
-class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate
+class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, MGSwipeTableCellDelegate
 {
     @IBOutlet weak var tableView: UITableView!
 
@@ -168,23 +168,9 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCellWithIdentifier("RealmCell", forIndexPath: indexPath) as? RealmCell
         if let realmCell = cell
         {
+            realmCell.delegate = self
             realmCell.configureCell(realm)
             realmCell.backgroundColor = indexPathRow % 2 == 0 ? UIColor.cellBackgroundColor1() : UIColor.cellBackgroundColor2()
-            let favButton = MGSwipeButton(title: "", icon: UIImage(named: "Favorite Filled")!, backgroundColor: realmCell.backgroundColor)
-            { sender -> Bool in
-                print("Realm: \(self.realms[indexPath.row].name)")
-                return true
-            }
-            realmCell.leftButtons = [favButton]
-
-            // set up button expansion settings
-            let expansionSettings = MGSwipeExpansionSettings()
-            expansionSettings.fillOnTrigger = false
-            expansionSettings.buttonIndex = 0 // only one button
-
-            realmCell.leftSwipeSettings.transition = MGSwipeTransition.Rotate3D
-            realmCell.leftExpansion = expansionSettings
-
             return realmCell
         }
         else
@@ -212,5 +198,41 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int
     {
         return index
+    }
+
+    ////////////////////////////////////////////////////////////
+    // MARK: - MGSwipeTableCellDelegate
+    ////////////////////////////////////////////////////////////
+
+    func swipeTableCell(cell: MGSwipeTableCell!, canSwipe direction: MGSwipeDirection) -> Bool
+    {
+        return true
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    func swipeTableCell(cell: MGSwipeTableCell!, swipeButtonsForDirection direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [AnyObject]!
+    {
+        swipeSettings.transition = .Border
+        expansionSettings.buttonIndex = 0
+
+        let indexPath = tableView.indexPathForCell(cell)
+        let indexPathRow = sections[indexPath!.section].index + indexPath!.row
+        let realm = realms[indexPathRow]
+
+        if direction == .LeftToRight
+        {
+            expansionSettings.fillOnTrigger = false
+            expansionSettings.threshold = 2
+            return [MGSwipeButton(title: "Star", icon: nil, backgroundColor: UIColor.realmOnlineColor())
+            { cell -> Bool in
+                realm.favorite = true
+                self.tableView.reloadData()
+                print("Realm: \(realm.name)")
+                return true
+            }]
+        }
+
+        return nil
     }
 }

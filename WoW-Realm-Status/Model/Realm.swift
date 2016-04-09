@@ -125,6 +125,7 @@ class Realm
     var wintergrasp: PvPZone
     var tolBarad: PvPZone
     var connectedRealms = [String]()
+    var favorite: Bool = false
 
     init(json: JSON)
     {
