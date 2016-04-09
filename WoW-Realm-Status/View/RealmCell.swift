@@ -16,6 +16,7 @@ class RealmCell: MGSwipeTableCell
     @IBOutlet weak var realmStatusView: UIView!
     @IBOutlet weak var realmPopulation: UILabel!
     @IBOutlet weak var realmType: UILabel!
+    @IBOutlet weak var favoriteIcon: UIImageView!
 
     ////////////////////////////////////////////////////////////
 

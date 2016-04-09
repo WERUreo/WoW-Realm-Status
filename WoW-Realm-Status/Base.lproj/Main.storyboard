@@ -90,6 +90,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.11764705882352941" green="0.20392156862745098" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
+                                            <outlet property="favoriteIcon" destination="m09-SX-OIh" id="aSN-2S-BLm"/>
                                             <outlet property="realmName" destination="MWH-HT-FgL" id="wnl-gv-Yez"/>
                                             <outlet property="realmPopulation" destination="d8l-Pl-vED" id="RiJ-xR-U2a"/>
                                             <outlet property="realmStatusView" destination="iGM-9e-B9s" id="tHm-DL-lu0"/>

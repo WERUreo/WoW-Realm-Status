@@ -171,6 +171,10 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
             realmCell.configureCell(realm)
             realmCell.backgroundColor = indexPathRow % 2 == 0 ? UIColor.cellBackgroundColor1() : UIColor.cellBackgroundColor2()
             let favButton = MGSwipeButton(title: "", icon: UIImage(named: "Favorite Filled")!, backgroundColor: realmCell.backgroundColor)
+            { sender -> Bool in
+                print("Realm: \(self.realms[indexPath.row].name)")
+                return true
+            }
             realmCell.leftButtons = [favButton]
 
             // set up button expansion settings
