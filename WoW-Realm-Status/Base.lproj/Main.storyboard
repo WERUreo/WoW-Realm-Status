@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hiw-Sx-Flz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hiw-Sx-Flz">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -49,8 +49,8 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="lastBaseline" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jv6-JM-TuX">
-                                                    <rect key="frame" x="18" y="10" width="136" height="24"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jv6-JM-TuX">
+                                                    <rect key="frame" x="18" y="10" width="168" height="24"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Realm Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWH-HT-FgL">
                                                             <rect key="frame" x="0.0" y="0.0" width="103" height="24"/>
@@ -59,13 +59,21 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PvP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIw-Ur-WZ9">
-                                                            <rect key="frame" x="113" y="4" width="23" height="18"/>
+                                                            <rect key="frame" x="113" y="3" width="23" height="18"/>
                                                             <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="13"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m09-SX-OIh">
+                                                            <rect key="frame" x="146" y="1" width="22" height="22"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="22" id="suo-BC-Zi7"/>
+                                                                <constraint firstAttribute="height" constant="22" id="u2Q-D7-2or"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstItem="m09-SX-OIh" firstAttribute="centerY" secondItem="jv6-JM-TuX" secondAttribute="centerY" id="DzS-NM-Gam"/>
                                                         <constraint firstItem="MWH-HT-FgL" firstAttribute="centerY" secondItem="jv6-JM-TuX" secondAttribute="centerY" id="Hfg-6C-eCC"/>
                                                     </constraints>
                                                 </stackView>
@@ -82,6 +90,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.11764705882352941" green="0.20392156862745098" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
+                                            <outlet property="favoriteIcon" destination="m09-SX-OIh" id="aSN-2S-BLm"/>
                                             <outlet property="realmName" destination="MWH-HT-FgL" id="wnl-gv-Yez"/>
                                             <outlet property="realmPopulation" destination="d8l-Pl-vED" id="RiJ-xR-U2a"/>
                                             <outlet property="realmStatusView" destination="iGM-9e-B9s" id="tHm-DL-lu0"/>
@@ -99,8 +108,16 @@
                             <constraint firstItem="Z7g-ZT-izC" firstAttribute="leading" secondItem="EyF-WY-RSq" secondAttribute="leading" id="yyS-Cb-VxV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Realm Status" id="n5F-Ic-GmL"/>
+                    <navigationItem key="navigationItem" title="Realm Status" id="n5F-Ic-GmL">
+                        <barButtonItem key="leftBarButtonItem" image="Favorite Outline" id="mmb-uA-Grl">
+                            <color key="tintColor" red="0.83333333333333337" green="0.78260724742706278" blue="0.0085340219526822136" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="toggleFavorites:" destination="otr-Jz-ADX" id="Y6d-zu-S70"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="favoritesBarButton" destination="mmb-uA-Grl" id="hJ3-6R-9rK"/>
                         <outlet property="tableView" destination="Z7g-ZT-izC" id="YqX-jh-2ud"/>
                     </connections>
                 </viewController>
@@ -127,4 +144,7 @@
             <point key="canvasLocation" x="3691" y="5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Favorite Outline" width="26" height="25"/>
+    </resources>
 </document>

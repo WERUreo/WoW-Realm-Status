@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import MGSwipeTableCell
 
 @IBDesignable
-class RealmCell: UITableViewCell
+class RealmCell: MGSwipeTableCell
 {
     @IBOutlet weak var realmName: UILabel!
     @IBOutlet weak var realmStatusView: UIView!
     @IBOutlet weak var realmPopulation: UILabel!
     @IBOutlet weak var realmType: UILabel!
+    @IBOutlet weak var favoriteIcon: UIImageView!
 
     ////////////////////////////////////////////////////////////
 
@@ -41,5 +43,6 @@ class RealmCell: UITableViewCell
         realmStatusView.roundCorners([.TopLeft, .BottomLeft], radius: 2.0)
         realmPopulation.text = realm.population
         realmType.text = realm.type.toString()
+        favoriteIcon.image = realm.favorite ? UIImage(named: "Favorite Filled") : nil
     }
 }
