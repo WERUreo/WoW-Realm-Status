@@ -109,11 +109,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Realm Status" id="n5F-Ic-GmL">
-                        <barButtonItem key="leftBarButtonItem" image="Favorite Filled" id="mmb-uA-Grl">
+                        <barButtonItem key="leftBarButtonItem" image="Favorite Outline" id="mmb-uA-Grl">
                             <color key="tintColor" red="0.83333333333333337" green="0.78260724742706278" blue="0.0085340219526822136" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="toggleFavorites:" destination="otr-Jz-ADX" id="Y6d-zu-S70"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="favoritesBarButton" destination="mmb-uA-Grl" id="hJ3-6R-9rK"/>
                         <outlet property="tableView" destination="Z7g-ZT-izC" id="YqX-jh-2ud"/>
                     </connections>
                 </viewController>
@@ -141,6 +145,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Favorite Filled" width="22" height="20"/>
+        <image name="Favorite Outline" width="26" height="25"/>
     </resources>
 </document>

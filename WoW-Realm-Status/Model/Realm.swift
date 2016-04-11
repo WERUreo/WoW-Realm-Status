@@ -149,5 +149,19 @@ class Realm
         {
             connectedRealms.append(realm.0)
         }
+
+        // check if this realm has been added to Favorites
+
+        if let favoriteRealms = USER_DEFAULTS.arrayForKey(FAVORITE_REALMS_KEY) as? [String]
+        {
+            for realmSlug in favoriteRealms
+            {
+                if realmSlug == slug
+                {
+                    favorite = true
+                    break
+                }
+            }
+        }
     }
 }
