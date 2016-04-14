@@ -8,5 +8,8 @@
 
 import Foundation
 
-let FAVORITE_REALMS_KEY = "Favorites"
-let USER_DEFAULTS = NSUserDefaults.standardUserDefaults()
+struct Constants
+{
+    static let FavoriteRealmsKey = "Favorites"
+    static let UserDefaults = NSUserDefaults.standardUserDefaults()
+}

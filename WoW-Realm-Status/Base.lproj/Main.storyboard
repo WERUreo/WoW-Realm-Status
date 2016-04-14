@@ -99,12 +99,22 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEE-bW-7tR" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3b8-Sd-Xif"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.12941176470588234" green="0.22745098039215686" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Z7g-ZT-izC" secondAttribute="trailing" id="9F0-1j-IeE"/>
                             <constraint firstItem="Z7g-ZT-izC" firstAttribute="top" secondItem="9sj-5M-SLw" secondAttribute="bottom" id="CbM-iq-bWQ"/>
                             <constraint firstItem="auC-lM-N9C" firstAttribute="top" secondItem="Z7g-ZT-izC" secondAttribute="bottom" id="VEp-ar-XT9"/>
+                            <constraint firstAttribute="trailing" secondItem="sEE-bW-7tR" secondAttribute="trailing" id="ivq-9z-cVy"/>
+                            <constraint firstItem="sEE-bW-7tR" firstAttribute="leading" secondItem="EyF-WY-RSq" secondAttribute="leading" id="v4e-2l-tlc"/>
+                            <constraint firstItem="auC-lM-N9C" firstAttribute="top" secondItem="sEE-bW-7tR" secondAttribute="bottom" id="vxq-PZ-cae"/>
                             <constraint firstItem="Z7g-ZT-izC" firstAttribute="leading" secondItem="EyF-WY-RSq" secondAttribute="leading" id="yyS-Cb-VxV"/>
                         </constraints>
                     </view>
@@ -117,6 +127,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bannerView" destination="sEE-bW-7tR" id="gpW-mW-YA0"/>
                         <outlet property="favoritesBarButton" destination="mmb-uA-Grl" id="hJ3-6R-9rK"/>
                         <outlet property="tableView" destination="Z7g-ZT-izC" id="YqX-jh-2ud"/>
                     </connections>

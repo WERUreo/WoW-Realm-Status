@@ -152,7 +152,7 @@ class Realm
 
         // check if this realm has been added to Favorites
 
-        if let favoriteRealms = USER_DEFAULTS.arrayForKey(FAVORITE_REALMS_KEY) as? [String]
+        if let favoriteRealms = Constants.UserDefaults.arrayForKey(Constants.FavoriteRealmsKey) as? [String]
         {
             for realmSlug in favoriteRealms
             {

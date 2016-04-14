@@ -9,19 +9,22 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-import iAd
+import GoogleMobileAds
 import MGSwipeTableCell
 
-class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, MGSwipeTableCellDelegate
+class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, MGSwipeTableCellDelegate, GADBannerViewDelegate
 {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var favoritesBarButton: UIBarButtonItem!
+    @IBOutlet weak var bannerView: GADBannerView!
 
     var realms = [Realm]()
     var favorites = [String]()
     var favoriteRealms = [Realm]()
     var filterOnFavorites = false
     var sections: [(index: Int, length: Int, title: String)] = Array()
+    var adReceived: Bool = false
+
     lazy var refreshControl: UIRefreshControl =
     {
         let refreshControl = UIRefreshControl()
@@ -42,13 +45,20 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.sectionIndexBackgroundColor = UIColor.viewBackgroundColor()
         tableView.sectionIndexColor = UIColor.whiteColor()
 
-        if let favRealms = USER_DEFAULTS.arrayForKey(FAVORITE_REALMS_KEY) as? [String]
+        if let favRealms = Constants.UserDefaults.arrayForKey(Constants.FavoriteRealmsKey) as? [String]
         {
             favorites = favRealms
         }
 
-        // Set up iAD banner
-        canDisplayBannerAds = true
+        bannerView.adSize = kGADAdSizeSmartBannerPortrait
+        bannerView.adUnitID = "ca-app-pub-9741170647819017/2972782284"
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+
+        let request = GADRequest()
+        request.testDevices = [kGADSimulatorID, "24edecbea61290d7bcf0fe031443b00e"]
+
+        bannerView.loadRequest(request)
 
         retrieveRealms()
     }
@@ -77,7 +87,8 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
             "apikey" : BattleNetService.sharedInstance.getAPIKey()!
         ]
 
-        Alamofire.request(.GET, BattleNetService.sharedInstance.realmStatusUrl, parameters: parameters).validate().responseJSON { response in
+        Alamofire.request(.GET, BattleNetService.sharedInstance.realmStatusUrl, parameters: parameters).validate().responseJSON
+        { response in
             switch response.result
             {
             case .Success:
@@ -165,7 +176,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
     func addToFavorites(realm: Realm)
     {
         favorites.append(realm.slug)
-        USER_DEFAULTS.setObject(favorites, forKey: FAVORITE_REALMS_KEY)
+        Constants.UserDefaults.setObject(favorites, forKey: Constants.FavoriteRealmsKey)
         favoriteRealms.append(realm)
     }
 
@@ -176,7 +187,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
         if let index = favorites.indexOf(realm.slug)
         {
             favorites.removeAtIndex(index)
-            USER_DEFAULTS.setObject(favorites, forKey: FAVORITE_REALMS_KEY)
+            Constants.UserDefaults.setObject(favorites, forKey: Constants.FavoriteRealmsKey)
 
             if let realmIndex = favoriteRealms.indexOf({$0.slug == realm.slug})
             {
@@ -305,5 +316,29 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
         }
 
         return nil
+    }
+
+    ////////////////////////////////////////////////////////////
+    // MARK: - GADBannerViewDelegate
+    ////////////////////////////////////////////////////////////
+
+    func adViewDidReceiveAd(bannerView: GADBannerView!)
+    {
+        print("adViewDidReceiveAd")
+
+        if !adReceived
+        {
+            var currentRect = tableView.frame
+            currentRect.size.height -= CGRectGetHeight(bannerView.frame)
+            tableView.frame = currentRect
+            adReceived = true
+        }
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    func adView(bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!)
+    {
+        print("adView:didFailToReceiveAdWIthError: \(error.localizedDescription)")
     }
 }
