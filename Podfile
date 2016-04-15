@@ -7,5 +7,6 @@ target 'WoW-Realm-Status' do
   pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
   pod 'MGSwipeTableCell'
   pod 'Google-Mobile-Ads-SDK', '~> 7.0'
+  pod 'Google/Analytics'
 end
 

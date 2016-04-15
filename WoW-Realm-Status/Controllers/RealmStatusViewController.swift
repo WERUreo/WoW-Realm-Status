@@ -54,11 +54,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
         bannerView.adUnitID = "ca-app-pub-9741170647819017/2972782284"
         bannerView.rootViewController = self
         bannerView.delegate = self
-
-        let request = GADRequest()
-        request.testDevices = [kGADSimulatorID, "24edecbea61290d7bcf0fe031443b00e"]
-
-        bannerView.loadRequest(request)
+        bannerView.loadRequest(GADRequest())
 
         retrieveRealms()
     }
@@ -68,6 +64,12 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidAppear(animated: Bool)
     {
         super.viewDidAppear(animated)
+
+        let tracker = GAI.sharedInstance().defaultTracker
+        tracker.set(kGAIScreenName, value: "Realm List")
+
+        let builder = GAIDictionaryBuilder.createScreenView()
+        tracker.send(builder.build() as [NSObject : AnyObject])
     }
 
     ////////////////////////////////////////////////////////////
@@ -324,8 +326,6 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
 
     func adViewDidReceiveAd(bannerView: GADBannerView!)
     {
-        print("adViewDidReceiveAd")
-
         if !adReceived
         {
             var currentRect = tableView.frame

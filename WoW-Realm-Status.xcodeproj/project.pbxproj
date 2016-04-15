@@ -15,6 +15,7 @@
 		424F1A8B1C9F00F400FDC16E /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 424F1A871C9F00F400FDC16E /* NotoSans-Regular.ttf */; };
 		424F1A8D1C9FA07500FDC16E /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424F1A8C1C9FA07500FDC16E /* Realm.swift */; };
 		42584A6C1CA8092700DF0E11 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42584A6B1CA8092700DF0E11 /* APIKey.plist */; };
+		426EF2341CC0760A00EEAEEF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 426EF2331CC0760A00EEAEEF /* GoogleService-Info.plist */; };
 		4292EE871C9DAB8300D56C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4292EE861C9DAB8300D56C16 /* AppDelegate.swift */; };
 		4292EE8C1C9DAB8300D56C16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4292EE8A1C9DAB8300D56C16 /* Main.storyboard */; };
 		4292EE8E1C9DAB8300D56C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4292EE8D1C9DAB8300D56C16 /* Assets.xcassets */; };
@@ -39,6 +40,8 @@
 		424F1A871C9F00F400FDC16E /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSans-Regular.ttf"; path = "Resources/NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		424F1A8C1C9FA07500FDC16E /* Realm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Realm.swift; path = Model/Realm.swift; sourceTree = "<group>"; };
 		42584A6B1CA8092700DF0E11 /* APIKey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
+		426EF2331CC0760A00EEAEEF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		426EF2351CC0761E00EEAEEF /* WoW-Realm-Status-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WoW-Realm-Status-Bridging-Header.h"; sourceTree = "<group>"; };
 		4292EE831C9DAB8300D56C16 /* WoW WoW-Realm-Status.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WoW WoW-Realm-Status.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4292EE861C9DAB8300D56C16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4292EE8B1C9DAB8300D56C16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,7 +92,7 @@
 		4292EE7A1C9DAB8300D56C16 = {
 			isa = PBXGroup;
 			children = (
-				4292EE851C9DAB8300D56C16 /* WoW Realm Status */,
+				4292EE851C9DAB8300D56C16 /* WoW-Realm-Status */,
 				4292EE841C9DAB8300D56C16 /* Products */,
 				F507054A680386BBD9519348 /* Pods */,
 				462425EEAF795840362DC7EF /* Frameworks */,
@@ -104,7 +107,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4292EE851C9DAB8300D56C16 /* WoW Realm Status */ = {
+		4292EE851C9DAB8300D56C16 /* WoW-Realm-Status */ = {
 			isa = PBXGroup;
 			children = (
 				42E57A4C1CA056D8000A79A4 /* Util */,
@@ -118,8 +121,9 @@
 				4292EE8F1C9DAB8300D56C16 /* LaunchScreen.storyboard */,
 				4292EE921C9DAB8300D56C16 /* Info.plist */,
 				42584A6B1CA8092700DF0E11 /* APIKey.plist */,
+				426EF2331CC0760A00EEAEEF /* GoogleService-Info.plist */,
+				426EF2351CC0761E00EEAEEF /* WoW-Realm-Status-Bridging-Header.h */,
 			);
-			name = "WoW Realm Status";
 			path = "WoW-Realm-Status";
 			sourceTree = "<group>";
 		};
@@ -255,6 +259,7 @@
 			files = (
 				424F1A891C9F00F400FDC16E /* NotoSans-BoldItalic.ttf in Resources */,
 				42584A6C1CA8092700DF0E11 /* APIKey.plist in Resources */,
+				426EF2341CC0760A00EEAEEF /* GoogleService-Info.plist in Resources */,
 				4292EE911C9DAB8300D56C16 /* LaunchScreen.storyboard in Resources */,
 				4292EE8E1C9DAB8300D56C16 /* Assets.xcassets in Resources */,
 				424F1A8B1C9F00F400FDC16E /* NotoSans-Regular.ttf in Resources */,
@@ -449,6 +454,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.werureo.WoW-Realm-Status";
 				PRODUCT_NAME = "WoW WoW-Realm-Status";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WoW-Realm-Status/WoW-Realm-Status-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -464,6 +470,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.werureo.WoW-Realm-Status";
 				PRODUCT_NAME = "WoW WoW-Realm-Status";
 				PROVISIONING_PROFILE = "608ffadc-759e-4987-bfb2-e9519cf2af82";
+				SWIFT_OBJC_BRIDGING_HEADER = "WoW-Realm-Status/WoW-Realm-Status-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
