@@ -11,5 +11,5 @@ import Foundation
 struct Constants
 {
     static let FavoriteRealmsKey = "Favorites"
-    static let UserDefaults = NSUserDefaults.standardUserDefaults()
+    static let UserDefaults = Foundation.UserDefaults.standard
 }

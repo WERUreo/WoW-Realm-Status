@@ -16,11 +16,11 @@ struct BattleNetService
 
     // MARK: - Private instance variables
 
-    private var _achievementUrl = "\(BASE_URL)achievement/"
-    private var _auctionDataUrl = "\(BASE_URL)auction/data/"
-    private var _bossUrl = "\(BASE_URL)boss/"
-    private var _characterUrl = "\(BASE_URL)character/"
-    private var _realmStatusUrl = "\(BASE_URL)realm/status"
+    fileprivate var _achievementUrl = "\(BASE_URL)achievement/"
+    fileprivate var _auctionDataUrl = "\(BASE_URL)auction/data/"
+    fileprivate var _bossUrl = "\(BASE_URL)boss/"
+    fileprivate var _characterUrl = "\(BASE_URL)character/"
+    fileprivate var _realmStatusUrl = "\(BASE_URL)realm/status"
 
     // MARK: - Public properties
 
@@ -40,7 +40,7 @@ struct BattleNetService
     {
         var keys: NSDictionary?
 
-        if let path = NSBundle.mainBundle().pathForResource("APIKey", ofType: "plist")
+        if let path = Bundle.main.path(forResource: "APIKey", ofType: "plist")
         {
             keys = NSDictionary(contentsOfFile: path)
         }

@@ -55,7 +55,7 @@ extension UIColor
 
     class func priestColor() -> UIColor
     {
-        return UIColor.whiteColor()
+        return UIColor.white
     }
 
     ////////////////////////////////////////////////////////////

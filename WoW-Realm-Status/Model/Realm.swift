@@ -40,20 +40,20 @@ enum RealmType: String
 
 enum Faction: Int
 {
-    case Alliance = 0
-    case Horde = 1
-    case Neutral = 2
+    case alliance = 0
+    case horde = 1
+    case neutral = 2
 
     func toString() -> String
     {
         var returnString: String
         switch self
         {
-        case .Alliance:
+        case .alliance:
             returnString = "Alliance"
-        case .Horde:
+        case .horde:
             returnString = "Horde"
-        case .Neutral:
+        case .neutral:
             returnString = "Neutral"
         }
 
@@ -65,26 +65,26 @@ enum Faction: Int
 
 enum ZoneStatus: Int
 {
-    case Unknown = -1
-    case Idle = 0
-    case Populating = 1
-    case Active = 2
-    case Concluded = 3
+    case unknown = -1
+    case idle = 0
+    case populating = 1
+    case active = 2
+    case concluded = 3
 
     func toString() -> String
     {
         var returnString: String
         switch self
         {
-        case .Unknown:
+        case .unknown:
             returnString = "Unknown"
-        case .Idle:
+        case .idle:
             returnString = "Idle"
-        case .Populating:
+        case .populating:
             returnString = "Populating"
-        case .Active:
+        case .active:
             returnString = "Active"
-        case .Concluded:
+        case .concluded:
             returnString = "Concluded"
         }
         return returnString
@@ -98,9 +98,9 @@ class PvPZone
     var area: Int
     var controllingFaction: Faction
     var status: ZoneStatus
-    var next: NSDate
+    var next: Date
 
-    init(area: Int, controllingFaction: Faction, status: ZoneStatus, next: NSDate)
+    init(area: Int, controllingFaction: Faction, status: ZoneStatus, next: Date)
     {
         self.area = area
         self.controllingFaction = controllingFaction
@@ -120,8 +120,8 @@ class Realm
     var queue: Bool
     var population: String
     var battlegroup: String
-    var locale: NSLocale
-    var timezone: NSTimeZone
+    var locale: Locale
+    var timezone: TimeZone
     var wintergrasp: PvPZone
     var tolBarad: PvPZone
     var connectedRealms = [String]()
@@ -136,14 +136,14 @@ class Realm
         queue = json["queue"].boolValue
         population = json["population"].stringValue
         battlegroup = json["battlegroup"].stringValue
-        locale = NSLocale(localeIdentifier: json["locale"].stringValue)
-        timezone = NSTimeZone(name: json["timezone"].stringValue)!
+        locale = Locale(identifier: json["locale"].stringValue)
+        timezone = TimeZone(identifier: json["timezone"].stringValue)!
 
         let wintergraspJSON = json["wintergrasp"]
-        wintergrasp = PvPZone(area: wintergraspJSON["area"].intValue, controllingFaction: Faction(rawValue: wintergraspJSON["controlling-faction"].intValue)!, status: ZoneStatus(rawValue: wintergraspJSON["status"].intValue)!, next: NSDate(timeIntervalSince1970: wintergraspJSON["next"].doubleValue / 1000))
+        wintergrasp = PvPZone(area: wintergraspJSON["area"].intValue, controllingFaction: Faction(rawValue: wintergraspJSON["controlling-faction"].intValue)!, status: ZoneStatus(rawValue: wintergraspJSON["status"].intValue)!, next: Date(timeIntervalSince1970: wintergraspJSON["next"].doubleValue / 1000))
 
         let tolBaradJSON = json["tol-barad"]
-        tolBarad = PvPZone(area: tolBaradJSON["area"].intValue, controllingFaction: Faction(rawValue: tolBaradJSON["controlling-faction"].intValue)!, status: ZoneStatus(rawValue: tolBaradJSON["status"].intValue)!, next: NSDate(timeIntervalSince1970: tolBaradJSON["next"].doubleValue / 1000))
+        tolBarad = PvPZone(area: tolBaradJSON["area"].intValue, controllingFaction: Faction(rawValue: tolBaradJSON["controlling-faction"].intValue)!, status: ZoneStatus(rawValue: tolBaradJSON["status"].intValue)!, next: Date(timeIntervalSince1970: tolBaradJSON["next"].doubleValue / 1000))
 
         for realm in json["connected_realms"]
         {
@@ -152,7 +152,7 @@ class Realm
 
         // check if this realm has been added to Favorites
 
-        if let favoriteRealms = Constants.UserDefaults.arrayForKey(Constants.FavoriteRealmsKey) as? [String]
+        if let favoriteRealms = Constants.UserDefaults.array(forKey: Constants.FavoriteRealmsKey) as? [String]
         {
             for realmSlug in favoriteRealms
             {

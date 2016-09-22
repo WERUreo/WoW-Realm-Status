@@ -27,7 +27,7 @@ class RealmCell: MGSwipeTableCell
 
     ////////////////////////////////////////////////////////////
 
-    override func setSelected(selected: Bool, animated: Bool)
+    override func setSelected(_ selected: Bool, animated: Bool)
     {
         super.setSelected(selected, animated: animated)
 
@@ -36,11 +36,11 @@ class RealmCell: MGSwipeTableCell
 
     ////////////////////////////////////////////////////////////
 
-    func configureCell(realm: Realm)
+    func configureCell(_ realm: Realm)
     {
         realmName.text = realm.name
         realmStatusView.backgroundColor = realm.status ? UIColor.realmOnlineColor() : UIColor.realmOfflineColor()
-        realmStatusView.roundCorners([.TopLeft, .BottomLeft], radius: 2.0)
+        realmStatusView.roundCorners([.topLeft, .bottomLeft], radius: 2.0)
         realmPopulation.text = realm.population
         realmType.text = realm.type.toString()
         favoriteIcon.image = realm.favorite ? UIImage(named: "Favorite Filled") : nil

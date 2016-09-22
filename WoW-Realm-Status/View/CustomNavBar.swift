@@ -10,19 +10,19 @@ import UIKit
 
 class CustomNavBar: UINavigationBar
 {
-    override func drawRect(rect: CGRect)
+    override func draw(_ rect: CGRect)
     {
         // Change the font and size of nav bar text
         if let navBarFont = UIFont(name: "NotoSans", size: 16.0)
         {
             let navBarAttributesDictionary: [String: AnyObject]? = [
-                NSForegroundColorAttributeName: UIColor.whiteColor(),
+                NSForegroundColorAttributeName: UIColor.white,
                 NSFontAttributeName: navBarFont
             ]
 
             self.titleTextAttributes = navBarAttributesDictionary
         }
 
-        self.tintColor = UIColor.whiteColor()
+        self.tintColor = UIColor.white
     }
 }

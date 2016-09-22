@@ -28,7 +28,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
     lazy var refreshControl: UIRefreshControl =
     {
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(RealmStatusViewController.handleRefresh), forControlEvents: .ValueChanged)
+        refreshControl.addTarget(self, action: #selector(RealmStatusViewController.handleRefresh), for: .valueChanged)
 
         return refreshControl
     }()
@@ -43,9 +43,9 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.addSubview(refreshControl)
 
         tableView.sectionIndexBackgroundColor = UIColor.viewBackgroundColor()
-        tableView.sectionIndexColor = UIColor.whiteColor()
+        tableView.sectionIndexColor = UIColor.white
 
-        if let favRealms = Constants.UserDefaults.arrayForKey(Constants.FavoriteRealmsKey) as? [String]
+        if let favRealms = Constants.UserDefaults.array(forKey: Constants.FavoriteRealmsKey) as? [String]
         {
             favorites = favRealms
         }
@@ -54,29 +54,29 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
         bannerView.adUnitID = "ca-app-pub-9741170647819017/2972782284"
         bannerView.rootViewController = self
         bannerView.delegate = self
-        bannerView.loadRequest(GADRequest())
+        bannerView.load(GADRequest())
 
         retrieveRealms()
     }
 
     ////////////////////////////////////////////////////////////
 
-    override func viewDidAppear(animated: Bool)
+    override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
 
-        let tracker = GAI.sharedInstance().defaultTracker
-        tracker.set(kGAIScreenName, value: "Realm List")
-
-        let builder = GAIDictionaryBuilder.createScreenView()
-        tracker.send(builder.build() as [NSObject : AnyObject])
+//        let tracker = GAI.sharedInstance().defaultTracker
+//        tracker?.set(kGAIScreenName, value: "Realm List")
+//
+//        let builder = GAIDictionaryBuilder.createScreenView()
+//        tracker?.send(builder?.build() as [AnyHashable: Any])
     }
 
     ////////////////////////////////////////////////////////////
 
-    override func preferredStatusBarStyle() -> UIStatusBarStyle
+    override var preferredStatusBarStyle : UIStatusBarStyle
     {
-        return .LightContent
+        return .lightContent
     }
 
     ////////////////////////////////////////////////////////////
@@ -89,11 +89,11 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
             "apikey" : BattleNetService.sharedInstance.getAPIKey()!
         ]
 
-        Alamofire.request(.GET, BattleNetService.sharedInstance.realmStatusUrl, parameters: parameters).validate().responseJSON
+        Alamofire.request(BattleNetService.sharedInstance.realmStatusUrl, method: .get, parameters: parameters).validate().responseJSON
         { response in
             switch response.result
             {
-            case .Success:
+            case .success:
                 if let value = response.result.value
                 {
                     // If the realms array has been populated before (we are refreshing the table view),
@@ -112,7 +112,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
                         }
                     }
 
-                    dispatch_async(dispatch_get_main_queue())
+                    DispatchQueue.main.async
                     {
                         if !self.filterOnFavorites
                         {
@@ -126,7 +126,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
                 {
                     self.showErrorAlert("No realms found", msg: "There appears to be a problem retrieving realms from Battle.net.  Please try again later.")
                 }
-            case .Failure(let error):
+            case .failure(let error):
                 print(error)
                 self.showErrorAlert("Connection error", msg: "There appears to be a problem with the connection to Battle.net.  Please try again later.")
             }
@@ -135,7 +135,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
 
     ////////////////////////////////////////////////////////////
 
-    func createSections(realms: [Realm])
+    func createSections(_ realms: [Realm])
     {
         // clear sections
         sections.removeAll()
@@ -143,10 +143,10 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
         var index = 0
         for i in 0..<realms.count
         {
-            let commonPrefix = realms[i].name.commonPrefixWithString(realms[index].name, options: .CaseInsensitiveSearch)
+            let commonPrefix = realms[i].name.commonPrefix(with: realms[index].name, options: .caseInsensitive)
             if commonPrefix.characters.count == 0
             {
-                let string = realms[index].name.uppercaseString
+                let string = realms[index].name.uppercased()
                 let firstCharacter = string[string.startIndex]
                 let title = "\(firstCharacter)"
                 let newSection = (index: index, length: i - index, title: title)
@@ -158,49 +158,49 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
 
     ////////////////////////////////////////////////////////////
 
-    func showErrorAlert(title: String, msg: String)
+    func showErrorAlert(_ title: String, msg: String)
     {
-        let alert = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
-        let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(action)
-        presentViewController(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
 
     ////////////////////////////////////////////////////////////
 
-    func handleRefresh(refreshControl: UIRefreshControl)
+    func handleRefresh(_ refreshControl: UIRefreshControl)
     {
         retrieveRealms()
     }
 
     ////////////////////////////////////////////////////////////
 
-    func addToFavorites(realm: Realm)
+    func addToFavorites(_ realm: Realm)
     {
         favorites.append(realm.slug)
-        Constants.UserDefaults.setObject(favorites, forKey: Constants.FavoriteRealmsKey)
+        Constants.UserDefaults.set(favorites, forKey: Constants.FavoriteRealmsKey)
         favoriteRealms.append(realm)
     }
 
     ////////////////////////////////////////////////////////////
 
-    func removeFromFavorites(realm: Realm)
+    func removeFromFavorites(_ realm: Realm)
     {
-        if let index = favorites.indexOf(realm.slug)
+        if let index = favorites.index(of: realm.slug)
         {
-            favorites.removeAtIndex(index)
-            Constants.UserDefaults.setObject(favorites, forKey: Constants.FavoriteRealmsKey)
+            favorites.remove(at: index)
+            Constants.UserDefaults.set(favorites, forKey: Constants.FavoriteRealmsKey)
 
-            if let realmIndex = favoriteRealms.indexOf({$0.slug == realm.slug})
+            if let realmIndex = favoriteRealms.index(where: {$0.slug == realm.slug})
             {
-                favoriteRealms.removeAtIndex(realmIndex)
+                favoriteRealms.remove(at: realmIndex)
             }
         }
     }
 
     ////////////////////////////////////////////////////////////
 
-    @IBAction func toggleFavorites(sender: UIBarButtonItem)
+    @IBAction func toggleFavorites(_ sender: UIBarButtonItem)
     {
         favoritesBarButton.image = filterOnFavorites ? UIImage(named: "Favorite Outline")! : UIImage(named: "Favorite Filled")!
         filterOnFavorites = !filterOnFavorites
@@ -212,26 +212,26 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: - Table view data source
     ////////////////////////////////////////////////////////////
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    func numberOfSections(in tableView: UITableView) -> Int
     {
         return filterOnFavorites ? 1 : sections.count
     }
 
     ////////////////////////////////////////////////////////////
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return filterOnFavorites ? favoriteRealms.count : sections[section].length
     }
 
     ////////////////////////////////////////////////////////////
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let indexPathRow = filterOnFavorites ? indexPath.row : sections[indexPath.section].index + indexPath.row
+        let indexPathRow = filterOnFavorites ? (indexPath as NSIndexPath).row : sections[(indexPath as NSIndexPath).section].index + (indexPath as NSIndexPath).row
         let realm = filterOnFavorites ? favoriteRealms[indexPathRow] : realms[indexPathRow]
 
-        let cell = tableView.dequeueReusableCellWithIdentifier("RealmCell", forIndexPath: indexPath) as? RealmCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RealmCell", for: indexPath) as? RealmCell
         if let realmCell = cell
         {
             realmCell.delegate = self
@@ -247,21 +247,21 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
 
     ////////////////////////////////////////////////////////////
 
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     {
         return filterOnFavorites ? nil : sections[section].title
     }
 
     ////////////////////////////////////////////////////////////
 
-    func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]?
+    func sectionIndexTitles(for tableView: UITableView) -> [String]?
     {
         return filterOnFavorites ? nil : sections.map { $0.title }
     }
 
     ////////////////////////////////////////////////////////////
 
-    func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int
+    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int
     {
         return filterOnFavorites ? 0 : index
     }
@@ -270,23 +270,23 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: - MGSwipeTableCellDelegate
     ////////////////////////////////////////////////////////////
 
-    func swipeTableCell(cell: MGSwipeTableCell!, canSwipe direction: MGSwipeDirection) -> Bool
+    func swipeTableCell(_ cell: MGSwipeTableCell!, canSwipe direction: MGSwipeDirection) -> Bool
     {
         return true
     }
 
     ////////////////////////////////////////////////////////////
 
-    func swipeTableCell(cell: MGSwipeTableCell!, swipeButtonsForDirection direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [AnyObject]!
+    @nonobjc func swipeTableCell(_ cell: MGSwipeTableCell!, swipeButtonsFor direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [AnyObject]!
     {
-        swipeSettings.transition = .Drag
+        swipeSettings.transition = .drag
         expansionSettings.buttonIndex = 0
 
-        let indexPath = tableView.indexPathForCell(cell)
-        let indexPathRow = filterOnFavorites ? indexPath!.row : sections[indexPath!.section].index + indexPath!.row
+        let indexPath = tableView.indexPath(for: cell)
+        let indexPathRow = filterOnFavorites ? (indexPath! as NSIndexPath).row : sections[(indexPath! as NSIndexPath).section].index + (indexPath! as NSIndexPath).row
         let realm = filterOnFavorites ? favoriteRealms[indexPathRow] : realms[indexPathRow]
 
-        if (direction == .LeftToRight)
+        if (direction == .leftToRight)
         {
             expansionSettings.fillOnTrigger = false
             expansionSettings.threshold = 2
@@ -301,7 +301,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
                     return true
                 }
 
-                return [addFavoriteButton]
+                return [addFavoriteButton!]
             }
             else
             {
@@ -313,7 +313,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
                     return true
                 }
 
-                return [removeFavoriteButton]
+                return [removeFavoriteButton!]
             }
         }
 
@@ -324,12 +324,12 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: - GADBannerViewDelegate
     ////////////////////////////////////////////////////////////
 
-    func adViewDidReceiveAd(bannerView: GADBannerView!)
+    func adViewDidReceiveAd(_ bannerView: GADBannerView!)
     {
         if !adReceived
         {
             var currentRect = tableView.frame
-            currentRect.size.height -= CGRectGetHeight(bannerView.frame)
+            currentRect.size.height -= bannerView.frame.height
             tableView.frame = currentRect
             adReceived = true
         }
@@ -337,7 +337,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
 
     ////////////////////////////////////////////////////////////
 
-    func adView(bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!)
+    func adView(_ bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!)
     {
         print("adView:didFailToReceiveAdWIthError: \(error.localizedDescription)")
     }
