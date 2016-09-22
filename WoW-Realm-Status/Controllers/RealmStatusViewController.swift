@@ -12,7 +12,7 @@ import SwiftyJSON
 import GoogleMobileAds
 import MGSwipeTableCell
 
-class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, MGSwipeTableCellDelegate, GADBannerViewDelegate
+class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate
 {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var favoritesBarButton: UIBarButtonItem!
@@ -57,19 +57,6 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
         bannerView.load(GADRequest())
 
         retrieveRealms()
-    }
-
-    ////////////////////////////////////////////////////////////
-
-    override func viewDidAppear(_ animated: Bool)
-    {
-        super.viewDidAppear(animated)
-
-//        let tracker = GAI.sharedInstance().defaultTracker
-//        tracker?.set(kGAIScreenName, value: "Realm List")
-//
-//        let builder = GAIDictionaryBuilder.createScreenView()
-//        tracker?.send(builder?.build() as [AnyHashable: Any])
     }
 
     ////////////////////////////////////////////////////////////
@@ -265,11 +252,39 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
     {
         return filterOnFavorites ? 0 : index
     }
+}
+
+////////////////////////////////////////////////////////////
+// MARK: - GADBannerViewDelegate
+////////////////////////////////////////////////////////////
+
+extension RealmStatusViewController : GADBannerViewDelegate
+{
+    func adViewDidReceiveAd(_ bannerView: GADBannerView!)
+    {
+        if !adReceived
+        {
+            var currentRect = tableView.frame
+            currentRect.size.height -= bannerView.frame.height
+            tableView.frame = currentRect
+            adReceived = true
+        }
+    }
 
     ////////////////////////////////////////////////////////////
-    // MARK: - MGSwipeTableCellDelegate
-    ////////////////////////////////////////////////////////////
 
+    func adView(_ bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!)
+    {
+        print("adView:didFailToReceiveAdWIthError: \(error.localizedDescription)")
+    }
+}
+
+////////////////////////////////////////////////////////////
+// MARK: - MGSwipeTableCellDelegate
+////////////////////////////////////////////////////////////
+
+extension RealmStatusViewController : MGSwipeTableCellDelegate
+{
     func swipeTableCell(_ cell: MGSwipeTableCell!, canSwipe direction: MGSwipeDirection) -> Bool
     {
         return true
@@ -277,7 +292,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
 
     ////////////////////////////////////////////////////////////
 
-    @nonobjc func swipeTableCell(_ cell: MGSwipeTableCell!, swipeButtonsFor direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [AnyObject]!
+    func swipeTableCell(_ cell: MGSwipeTableCell!, swipeButtonsFor direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [Any]!
     {
         swipeSettings.transition = .drag
         expansionSettings.buttonIndex = 0
@@ -316,29 +331,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
                 return [removeFavoriteButton!]
             }
         }
-
+        
         return nil
-    }
-
-    ////////////////////////////////////////////////////////////
-    // MARK: - GADBannerViewDelegate
-    ////////////////////////////////////////////////////////////
-
-    func adViewDidReceiveAd(_ bannerView: GADBannerView!)
-    {
-        if !adReceived
-        {
-            var currentRect = tableView.frame
-            currentRect.size.height -= bannerView.frame.height
-            tableView.frame = currentRect
-            adReceived = true
-        }
-    }
-
-    ////////////////////////////////////////////////////////////
-
-    func adView(_ bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!)
-    {
-        print("adView:didFailToReceiveAdWIthError: \(error.localizedDescription)")
     }
 }

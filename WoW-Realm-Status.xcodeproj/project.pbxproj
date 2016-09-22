@@ -104,7 +104,6 @@
 		4292EE851C9DAB8300D56C16 /* WoW-Realm-Status */ = {
 			isa = PBXGroup;
 			children = (
-				42282B561D9417C3007D2E41 /* WoW WoW-Realm-Status.entitlements */,
 				42E57A4C1CA056D8000A79A4 /* Util */,
 				424F1A831C9F00A300FDC16E /* Resources */,
 				4292EE9D1C9DADB600D56C16 /* Controllers */,
@@ -117,6 +116,7 @@
 				4292EE921C9DAB8300D56C16 /* Info.plist */,
 				42584A6B1CA8092700DF0E11 /* APIKey.plist */,
 				42282B541D9416F5007D2E41 /* GoogleService-Info.plist */,
+				42282B561D9417C3007D2E41 /* WoW WoW-Realm-Status.entitlements */,
 			);
 			path = "WoW-Realm-Status";
 			sourceTree = "<group>";
