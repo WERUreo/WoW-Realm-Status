@@ -34,6 +34,7 @@
 		2CAAF2177BCABAA0246B7BAF /* Pods-WoW-Realm-Status.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoW-Realm-Status.release.xcconfig"; path = "Pods/Target Support Files/Pods-WoW-Realm-Status/Pods-WoW-Realm-Status.release.xcconfig"; sourceTree = "<group>"; };
 		421414BA1CA5630700EA4381 /* CustomNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomNavBar.swift; path = View/CustomNavBar.swift; sourceTree = "<group>"; };
 		42282B541D9416F5007D2E41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		42282B561D9417C3007D2E41 /* WoW WoW-Realm-Status.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WoW WoW-Realm-Status.entitlements"; sourceTree = "<group>"; };
 		423649911CADDB4000A72884 /* UIColor+WoWClassColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+WoWClassColor.swift"; path = "Util/UIColor+WoWClassColor.swift"; sourceTree = "<group>"; };
 		424F1A841C9F00F400FDC16E /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSans-Bold.ttf"; path = "Resources/NotoSans-Bold.ttf"; sourceTree = "<group>"; };
 		424F1A851C9F00F400FDC16E /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSans-BoldItalic.ttf"; path = "Resources/NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -103,6 +104,7 @@
 		4292EE851C9DAB8300D56C16 /* WoW-Realm-Status */ = {
 			isa = PBXGroup;
 			children = (
+				42282B561D9417C3007D2E41 /* WoW WoW-Realm-Status.entitlements */,
 				42E57A4C1CA056D8000A79A4 /* Util */,
 				424F1A831C9F00A300FDC16E /* Resources */,
 				4292EE9D1C9DADB600D56C16 /* Controllers */,
@@ -221,6 +223,11 @@
 						DevelopmentTeam = 4X359D924E;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -443,6 +450,7 @@
 			baseConfigurationReference = 9E7D23518BA9549B04156811 /* Pods-WoW-Realm-Status.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "WoW-Realm-Status/WoW WoW-Realm-Status.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Keli'i Martin (4YQALHJJ7G)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
@@ -462,6 +470,7 @@
 			baseConfigurationReference = 2CAAF2177BCABAA0246B7BAF /* Pods-WoW-Realm-Status.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "WoW-Realm-Status/WoW WoW-Realm-Status.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Keli'i Martin (4X359D924E)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
