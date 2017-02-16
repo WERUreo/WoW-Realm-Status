@@ -42,7 +42,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.dataSource = self
         tableView.addSubview(refreshControl)
 
-        tableView.sectionIndexBackgroundColor = UIColor.viewBackgroundColor()
+        tableView.sectionIndexBackgroundColor = UIColor.viewBackgroundColor
         tableView.sectionIndexColor = UIColor.white
 
         if let favRealms = Constants.UserDefaults.array(forKey: Constants.FavoriteRealmsKey) as? [String]
@@ -223,7 +223,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
         {
             realmCell.delegate = self
             realmCell.configureCell(realm)
-            realmCell.backgroundColor = (indexPathRow % 2 == 0) ? UIColor.cellBackgroundColor1() : UIColor.cellBackgroundColor2()
+            realmCell.backgroundColor = (indexPathRow % 2 == 0) ? UIColor.cellBackgroundColor1 : UIColor.cellBackgroundColor2
             return realmCell
         }
         else
@@ -308,7 +308,7 @@ extension RealmStatusViewController : MGSwipeTableCellDelegate
 
             if (!realm.favorite)
             {
-                let addFavoriteButton = MGSwipeButton(title: "", icon: UIImage(named: "Favorite Outline"), backgroundColor: UIColor.realmOnlineColor())
+                let addFavoriteButton = MGSwipeButton(title: "", icon: UIImage(named: "Favorite Outline"), backgroundColor: UIColor.realmOnlineColor)
                 { cell -> Bool in
                     realm.favorite = true
                     self.addToFavorites(realm)
@@ -320,7 +320,7 @@ extension RealmStatusViewController : MGSwipeTableCellDelegate
             }
             else
             {
-                let removeFavoriteButton = MGSwipeButton(title: "", icon: UIImage(named: "Remove"), backgroundColor: UIColor.realmOfflineColor())
+                let removeFavoriteButton = MGSwipeButton(title: "", icon: UIImage(named: "Remove"), backgroundColor: UIColor.realmOfflineColor)
                 { cell -> Bool in
                     realm.favorite = false
                     self.removeFromFavorites(realm)

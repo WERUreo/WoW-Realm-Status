@@ -11,78 +11,85 @@ import UIKit
 
 extension UIColor
 {
-    class func deathKnightColor() -> UIColor
+    class var deathKnightColor: UIColor
     {
-        return UIColor(red: 0.77, green: 0.12, blue: 0.23, alpha: 1.0)
+        get { return UIColor(red: 0.77, green: 0.12, blue: 0.23, alpha: 1.0) }
     }
 
     ////////////////////////////////////////////////////////////
 
-    class func druidColor() -> UIColor
+    class var demonHunterColor: UIColor
     {
-        return UIColor(red: 1.00, green: 0.49, blue: 0.04, alpha: 1.0)
+        get { return UIColor(red: 0.64, green: 0.19, blue: 0.79, alpha: 1.0) }
     }
 
     ////////////////////////////////////////////////////////////
 
-    class func hunterColor() -> UIColor
+    class var druidColor: UIColor
     {
-        return UIColor(red: 0.67, green: 0.83, blue: 0.45, alpha: 1.0)
+        get { return UIColor(red: 1.00, green: 0.49, blue: 0.04, alpha: 1.0) }
     }
 
     ////////////////////////////////////////////////////////////
 
-    class func mageColor() -> UIColor
+    class var hunterColor: UIColor
     {
-        return UIColor(red: 0.41, green: 0.80, blue: 0.94, alpha: 1.0)
+        get { return UIColor(red: 0.67, green: 0.83, blue: 0.45, alpha: 1.0) }
     }
 
     ////////////////////////////////////////////////////////////
 
-    class func monkColor() -> UIColor
+    class var mageColor: UIColor
     {
-        return UIColor(red: 0.33, green: 0.54, blue: 0.52, alpha: 1.0)
+        get { return UIColor(red: 0.41, green: 0.80, blue: 0.94, alpha: 1.0) }
     }
 
     ////////////////////////////////////////////////////////////
 
-    class func paladinColor() -> UIColor
+    class var monkColor: UIColor
     {
-        return UIColor(red: 0.96, green: 0.55, blue: 0.73, alpha: 1.0)
+        get { return UIColor(red: 0.33, green: 0.54, blue: 0.52, alpha: 1.0) }
     }
 
     ////////////////////////////////////////////////////////////
 
-    class func priestColor() -> UIColor
+    class var paladinColor: UIColor
     {
-        return UIColor.white
+        get { return UIColor(red: 0.96, green: 0.55, blue: 0.73, alpha: 1.0) }
     }
 
     ////////////////////////////////////////////////////////////
 
-    class func rogueColor() -> UIColor
+    class var priestColor: UIColor
     {
-        return UIColor(red: 1.00, green: 0.96, blue: 0.41, alpha: 1.0)
+        get { return UIColor.white }
     }
 
     ////////////////////////////////////////////////////////////
 
-    class func shamanColor() -> UIColor
+    class var rogueColor: UIColor
     {
-        return UIColor(red: 0.0, green: 0.44, blue: 0.87, alpha: 1.0)
+        get { return UIColor(red: 1.00, green: 0.96, blue: 0.41, alpha: 1.0) }
     }
 
     ////////////////////////////////////////////////////////////
 
-    class func warlockColor() -> UIColor
+    class var shamanColor: UIColor
     {
-        return UIColor(red: 0.58, green: 0.51, blue: 0.79, alpha: 1.0)
+        get { return UIColor(red: 0.0, green: 0.44, blue: 0.87, alpha: 1.0) }
     }
 
     ////////////////////////////////////////////////////////////
 
-    class func warriorColor() -> UIColor
+    class var warlockColor: UIColor
     {
-        return UIColor(red: 0.78, green: 0.61, blue: 0.43, alpha: 1.0)
+        get { return UIColor(red: 0.58, green: 0.51, blue: 0.79, alpha: 1.0) }
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    class var warriorColor: UIColor
+    {
+        get { return UIColor(red: 0.78, green: 0.61, blue: 0.43, alpha: 1.0) }
     }
 }

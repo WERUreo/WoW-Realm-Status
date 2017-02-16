@@ -95,7 +95,7 @@ enum ZoneStatus: Int
 
 class PvPZone
 {
-    var area: Int
+    let area: Int
     var controllingFaction: Faction
     var status: ZoneStatus
     var next: Date
