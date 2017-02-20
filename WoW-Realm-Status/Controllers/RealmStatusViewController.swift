@@ -316,7 +316,7 @@ extension RealmStatusViewController : MGSwipeTableCellDelegate
                     return true
                 }
 
-                return [addFavoriteButton!]
+                return [addFavoriteButton]
             }
             else
             {
@@ -328,7 +328,7 @@ extension RealmStatusViewController : MGSwipeTableCellDelegate
                     return true
                 }
 
-                return [removeFavoriteButton!]
+                return [removeFavoriteButton]
             }
         }
         
