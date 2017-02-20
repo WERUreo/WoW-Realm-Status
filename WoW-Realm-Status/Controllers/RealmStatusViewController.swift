@@ -260,7 +260,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
 
 extension RealmStatusViewController : GADBannerViewDelegate
 {
-    func adViewDidReceiveAd(_ bannerView: GADBannerView!)
+    func adViewDidReceiveAd(_ bannerView: GADBannerView)
     {
         if !adReceived
         {
@@ -273,7 +273,7 @@ extension RealmStatusViewController : GADBannerViewDelegate
 
     ////////////////////////////////////////////////////////////
 
-    func adView(_ bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!)
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError)
     {
         print("adView:didFailToReceiveAdWIthError: \(error.localizedDescription)")
     }
@@ -285,14 +285,14 @@ extension RealmStatusViewController : GADBannerViewDelegate
 
 extension RealmStatusViewController : MGSwipeTableCellDelegate
 {
-    func swipeTableCell(_ cell: MGSwipeTableCell!, canSwipe direction: MGSwipeDirection) -> Bool
+    func swipeTableCell(_ cell: MGSwipeTableCell, canSwipe direction: MGSwipeDirection) -> Bool
     {
         return true
     }
 
     ////////////////////////////////////////////////////////////
 
-    func swipeTableCell(_ cell: MGSwipeTableCell!, swipeButtonsFor direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [Any]!
+    @nonobjc func swipeTableCell(_ cell: MGSwipeTableCell!, swipeButtonsFor direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [Any]!
     {
         swipeSettings.transition = .drag
         expansionSettings.buttonIndex = 0
