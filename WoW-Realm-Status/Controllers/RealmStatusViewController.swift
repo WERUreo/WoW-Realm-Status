@@ -11,12 +11,21 @@ import Alamofire
 import SwiftyJSON
 import GoogleMobileAds
 import MGSwipeTableCell
+import BattleNetService
 
-class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate
+class RealmStatusViewController: UIViewController
 {
+    ////////////////////////////////////////////////////////////
+    // MARK: - IBOutlets
+    ////////////////////////////////////////////////////////////
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var favoritesBarButton: UIBarButtonItem!
     @IBOutlet weak var bannerView: GADBannerView!
+
+    ////////////////////////////////////////////////////////////
+    // MARK: - Properties
+    ////////////////////////////////////////////////////////////
 
     var realms = [Realm]()
     var favorites = [String]()
@@ -24,6 +33,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
     var filterOnFavorites = false
     var sections: [(index: Int, length: Int, title: String)] = Array()
     var adReceived: Bool = false
+    var battleNet: BNRequestManager?
 
     lazy var refreshControl: UIRefreshControl =
     {
@@ -33,6 +43,8 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
         return refreshControl
     }()
 
+    ////////////////////////////////////////////////////////////
+    // MARK: - View Controller Lifecycle
     ////////////////////////////////////////////////////////////
 
     override func viewDidLoad()
@@ -70,34 +82,23 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
 
     func retrieveRealms()
     {
-        let parameters =
-        [
-            "locale" : "en-US",
-            "apikey" : BattleNetService.sharedInstance.getAPIKey()!
-        ]
+        guard let battleNet = self.battleNet else
+        {
+            self.showErrorAlert("BattleNetService Error", msg: "There was a problem with the BattleNetService framework.")
+            return
+        }
 
-        Alamofire.request(BattleNetService.sharedInstance.realmStatusUrl, method: .get, parameters: parameters).validate().responseJSON
-        { response in
-            switch response.result
+        battleNet.requestRealms
+        { realms, error in
+            if let error = error
             {
-            case .success:
-                if let value = response.result.value
+                self.showErrorAlert("Request Error", msg: error.localizedDescription)
+            }
+            else
+            {
+                if let retrievedRealms = realms
                 {
-                    // If the realms array has been populated before (we are refreshing the table view),
-                    // we must clear the array before re-populating it.
-                    self.realms.removeAll()
-                    self.favoriteRealms.removeAll()
-                    
-                    let json = JSON(value)
-                    for (_, subJson) in json["realms"]
-                    {
-                        let realm = Realm(json: subJson)
-                        self.realms.append(realm)
-                        if realm.favorite
-                        {
-                            self.favoriteRealms.append(realm)
-                        }
-                    }
+                    self.realms = retrievedRealms
 
                     DispatchQueue.main.async
                     {
@@ -109,15 +110,56 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
                         self.refreshControl.endRefreshing()
                     }
                 }
-                else
-                {
-                    self.showErrorAlert("No realms found", msg: "There appears to be a problem retrieving realms from Battle.net.  Please try again later.")
-                }
-            case .failure(let error):
-                print(error)
-                self.showErrorAlert("Connection error", msg: "There appears to be a problem with the connection to Battle.net.  Please try again later.")
             }
         }
+//        let parameters =
+//        [
+//            "locale" : "en-US",
+//            "apikey" : BattleNetService.sharedInstance.getAPIKey()!
+//        ]
+//
+//        Alamofire.request(BattleNetService.sharedInstance.realmStatusUrl, method: .get, parameters: parameters).validate().responseJSON
+//        { response in
+//            switch response.result
+//            {
+//            case .success:
+//                if let value = response.result.value
+//                {
+//                    // If the realms array has been populated before (we are refreshing the table view),
+//                    // we must clear the array before re-populating it.
+//                    self.realms.removeAll()
+//                    self.favoriteRealms.removeAll()
+//                    
+//                    let json = JSON(value)
+//                    for (_, subJson) in json["realms"]
+//                    {
+//                        let realm = Realm(json: subJson)
+//                        self.realms.append(realm)
+//                        if realm.favorite
+//                        {
+//                            self.favoriteRealms.append(realm)
+//                        }
+//                    }
+//
+//                    DispatchQueue.main.async
+//                    {
+//                        if !self.filterOnFavorites
+//                        {
+//                            self.createSections(self.realms)
+//                        }
+//                        self.tableView.reloadData()
+//                        self.refreshControl.endRefreshing()
+//                    }
+//                }
+//                else
+//                {
+//                    self.showErrorAlert("No realms found", msg: "There appears to be a problem retrieving realms from Battle.net.  Please try again later.")
+//                }
+//            case .failure(let error):
+//                print(error)
+//                self.showErrorAlert("Connection error", msg: "There appears to be a problem with the connection to Battle.net.  Please try again later.")
+//            }
+//        }
     }
 
     ////////////////////////////////////////////////////////////
@@ -194,11 +236,14 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
 
         tableView.reloadData()
     }
+}
 
-    ////////////////////////////////////////////////////////////
-    // MARK: - Table view data source
-    ////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+// MARK: - UITableViewDelegate, UITableViewDataSource
+////////////////////////////////////////////////////////////
 
+extension RealmStatusViewController : UITableViewDelegate, UITableViewDataSource
+{
     func numberOfSections(in tableView: UITableView) -> Int
     {
         return filterOnFavorites ? 1 : sections.count
@@ -299,7 +344,7 @@ extension RealmStatusViewController : MGSwipeTableCellDelegate
 
         let indexPath = tableView.indexPath(for: cell)
         let indexPathRow = filterOnFavorites ? (indexPath! as NSIndexPath).row : sections[(indexPath! as NSIndexPath).section].index + (indexPath! as NSIndexPath).row
-        let realm = filterOnFavorites ? favoriteRealms[indexPathRow] : realms[indexPathRow]
+        var realm = filterOnFavorites ? favoriteRealms[indexPathRow] : realms[indexPathRow]
 
         if (direction == .leftToRight)
         {

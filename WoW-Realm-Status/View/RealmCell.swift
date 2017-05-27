@@ -8,6 +8,7 @@
 
 import UIKit
 import MGSwipeTableCell
+import BattleNetService
 
 @IBDesignable
 class RealmCell: MGSwipeTableCell
@@ -42,7 +43,7 @@ class RealmCell: MGSwipeTableCell
         realmStatusView.backgroundColor = realm.status ? UIColor.realmOnlineColor : UIColor.realmOfflineColor
         realmStatusView.roundCorners([.topLeft, .bottomLeft], radius: 2.0)
         realmPopulation.text = realm.population
-        realmType.text = realm.type.toString()
+        realmType.text = realm.type.description
         favoriteIcon.image = realm.favorite ? UIImage(named: "Favorite Filled") : nil
     }
 }

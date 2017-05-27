@@ -11,14 +11,14 @@ import UIKit
 
 extension UIColor
 {
-    class var realmOnlineColor: UIColor
+    @nonobjc class var realmOnlineColor: UIColor
     {
         get { return UIColor(red:0.30, green:0.69, blue:0.31, alpha:1.00) }
     }
 
     ////////////////////////////////////////////////////////////
 
-    class var realmOfflineColor: UIColor
+    @nonobjc class var realmOfflineColor: UIColor
     {
         get { return UIColor(red:0.96, green:0.26, blue:0.21, alpha:1.00) }
     }

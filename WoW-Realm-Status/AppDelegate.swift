@@ -8,12 +8,12 @@
 
 import UIKit
 import Firebase
+import BattleNetService
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
@@ -27,6 +27,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             //UINavigationBar.appearance().
             UIBarButtonItem.appearance().setTitleTextAttributes(navBarAttributesDictionary, for: UIControlState())
+        }
+
+        // injecting BattleNetService singleton into the view controller
+        let battleNet = BNRequestManager.shared
+        if let navController = window?.rootViewController as? UINavigationController,
+           let viewController = navController.topViewController as? RealmStatusViewController
+        {
+            viewController.battleNet = battleNet
         }
 
         FIRApp.configure()

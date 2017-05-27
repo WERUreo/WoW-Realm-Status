@@ -8,8 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		40B85E3DA00BA02BC4AB5467 /* Pods_WoW_Realm_Status.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFC93EE2CDAF3551847ADBED /* Pods_WoW_Realm_Status.framework */; };
+		420D29F61E88805E00231896 /* BNError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D29F51E88805E00231896 /* BNError.swift */; };
 		421414BB1CA5630700EA4381 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421414BA1CA5630700EA4381 /* CustomNavBar.swift */; };
 		42282B551D9416F5007D2E41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42282B541D9416F5007D2E41 /* GoogleService-Info.plist */; };
+		42346A0B1E7E008A00DCD6F0 /* RealmType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42346A0A1E7E008A00DCD6F0 /* RealmType.swift */; };
+		42346A0D1E7E2BCC00DCD6F0 /* Factions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42346A0C1E7E2BCC00DCD6F0 /* Factions.swift */; };
+		42346A0F1E7E2C4100DCD6F0 /* ZoneStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42346A0E1E7E2C4100DCD6F0 /* ZoneStatus.swift */; };
+		42346A111E7E2D1900DCD6F0 /* PvPZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42346A101E7E2D1900DCD6F0 /* PvPZone.swift */; };
 		423649921CADDB4000A72884 /* UIColor+WoWClassColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423649911CADDB4000A72884 /* UIColor+WoWClassColor.swift */; };
 		424F1A881C9F00F400FDC16E /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 424F1A841C9F00F400FDC16E /* NotoSans-Bold.ttf */; };
 		424F1A891C9F00F400FDC16E /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 424F1A851C9F00F400FDC16E /* NotoSans-BoldItalic.ttf */; };
@@ -17,6 +22,11 @@
 		424F1A8B1C9F00F400FDC16E /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 424F1A871C9F00F400FDC16E /* NotoSans-Regular.ttf */; };
 		424F1A8D1C9FA07500FDC16E /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424F1A8C1C9FA07500FDC16E /* Realm.swift */; };
 		42584A6C1CA8092700DF0E11 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42584A6B1CA8092700DF0E11 /* APIKey.plist */; };
+		426802391E5E6C1500B17D04 /* BattleNetService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426802301E5E6C1500B17D04 /* BattleNetService.framework */; };
+		426802401E5E6C1500B17D04 /* BattleNetServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4268023F1E5E6C1500B17D04 /* BattleNetServiceTests.swift */; };
+		426802421E5E6C1500B17D04 /* BattleNetService.h in Headers */ = {isa = PBXBuildFile; fileRef = 426802321E5E6C1500B17D04 /* BattleNetService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		426802451E5E6C1500B17D04 /* BattleNetService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426802301E5E6C1500B17D04 /* BattleNetService.framework */; };
+		426802461E5E6C1500B17D04 /* BattleNetService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 426802301E5E6C1500B17D04 /* BattleNetService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4292EE871C9DAB8300D56C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4292EE861C9DAB8300D56C16 /* AppDelegate.swift */; };
 		4292EE8C1C9DAB8300D56C16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4292EE8A1C9DAB8300D56C16 /* Main.storyboard */; };
 		4292EE8E1C9DAB8300D56C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4292EE8D1C9DAB8300D56C16 /* Assets.xcassets */; };
@@ -27,14 +37,60 @@
 		42C263D91CBB0440004918C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C263D81CBB0440004918C4 /* Constants.swift */; };
 		42CC174E1CAB2C92006292A6 /* UIColor+DarkThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CC174D1CAB2C92006292A6 /* UIColor+DarkThemeColors.swift */; };
 		42CC17501CAB4B09006292A6 /* UIColor+RealmStatusColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CC174F1CAB4B09006292A6 /* UIColor+RealmStatusColors.swift */; };
+		42E357F01E828ECF0034A366 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E357EF1E828ECF0034A366 /* Realm.swift */; };
+		42E357F21E82C5EC0034A366 /* BNRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E357F11E82C5EC0034A366 /* BNRequestManager.swift */; };
 		42E57A491CA017E5000A79A4 /* RealmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E57A481CA017E5000A79A4 /* RealmCell.swift */; };
+		B52627AE1E0C02B43A0EEA27 /* Pods_BattleNetService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5567E308B4A5D71D4C724C6F /* Pods_BattleNetService.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4268023A1E5E6C1500B17D04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4292EE7B1C9DAB8300D56C16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4268022F1E5E6C1500B17D04;
+			remoteInfo = BattleNetService;
+		};
+		4268023C1E5E6C1500B17D04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4292EE7B1C9DAB8300D56C16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4292EE821C9DAB8300D56C16;
+			remoteInfo = "WoW-Realm-Status";
+		};
+		426802431E5E6C1500B17D04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4292EE7B1C9DAB8300D56C16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4268022F1E5E6C1500B17D04;
+			remoteInfo = BattleNetService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4268024C1E5E6C1600B17D04 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				426802461E5E6C1500B17D04 /* BattleNetService.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2CAAF2177BCABAA0246B7BAF /* Pods-WoW-Realm-Status.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoW-Realm-Status.release.xcconfig"; path = "Pods/Target Support Files/Pods-WoW-Realm-Status/Pods-WoW-Realm-Status.release.xcconfig"; sourceTree = "<group>"; };
+		420D29F51E88805E00231896 /* BNError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BNError.swift; path = Enums/BNError.swift; sourceTree = "<group>"; };
 		421414BA1CA5630700EA4381 /* CustomNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomNavBar.swift; path = View/CustomNavBar.swift; sourceTree = "<group>"; };
 		42282B541D9416F5007D2E41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		42282B561D9417C3007D2E41 /* WoW WoW-Realm-Status.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WoW WoW-Realm-Status.entitlements"; sourceTree = "<group>"; };
+		42346A0A1E7E008A00DCD6F0 /* RealmType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmType.swift; path = Enums/RealmType.swift; sourceTree = "<group>"; };
+		42346A0C1E7E2BCC00DCD6F0 /* Factions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Factions.swift; path = Enums/Factions.swift; sourceTree = "<group>"; };
+		42346A0E1E7E2C4100DCD6F0 /* ZoneStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZoneStatus.swift; path = Enums/ZoneStatus.swift; sourceTree = "<group>"; };
+		42346A101E7E2D1900DCD6F0 /* PvPZone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PvPZone.swift; path = Models/PvPZone.swift; sourceTree = "<group>"; };
 		423649911CADDB4000A72884 /* UIColor+WoWClassColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+WoWClassColor.swift"; path = "Util/UIColor+WoWClassColor.swift"; sourceTree = "<group>"; };
 		424F1A841C9F00F400FDC16E /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSans-Bold.ttf"; path = "Resources/NotoSans-Bold.ttf"; sourceTree = "<group>"; };
 		424F1A851C9F00F400FDC16E /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSans-BoldItalic.ttf"; path = "Resources/NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -42,6 +98,12 @@
 		424F1A871C9F00F400FDC16E /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSans-Regular.ttf"; path = "Resources/NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		424F1A8C1C9FA07500FDC16E /* Realm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Realm.swift; path = Model/Realm.swift; sourceTree = "<group>"; };
 		42584A6B1CA8092700DF0E11 /* APIKey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
+		426802301E5E6C1500B17D04 /* BattleNetService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BattleNetService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		426802321E5E6C1500B17D04 /* BattleNetService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleNetService.h; sourceTree = "<group>"; };
+		426802331E5E6C1500B17D04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		426802381E5E6C1500B17D04 /* BattleNetServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BattleNetServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4268023F1E5E6C1500B17D04 /* BattleNetServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleNetServiceTests.swift; sourceTree = "<group>"; };
+		426802411E5E6C1500B17D04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4292EE831C9DAB8300D56C16 /* WoW WoW-Realm-Status.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WoW WoW-Realm-Status.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4292EE861C9DAB8300D56C16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4292EE8B1C9DAB8300D56C16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,16 +117,38 @@
 		42C263D81CBB0440004918C4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Util/Constants.swift; sourceTree = "<group>"; };
 		42CC174D1CAB2C92006292A6 /* UIColor+DarkThemeColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+DarkThemeColors.swift"; path = "Util/UIColor+DarkThemeColors.swift"; sourceTree = "<group>"; };
 		42CC174F1CAB4B09006292A6 /* UIColor+RealmStatusColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+RealmStatusColors.swift"; path = "Util/UIColor+RealmStatusColors.swift"; sourceTree = "<group>"; };
+		42E357EF1E828ECF0034A366 /* Realm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Realm.swift; path = Models/Realm.swift; sourceTree = "<group>"; };
+		42E357F11E82C5EC0034A366 /* BNRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNRequestManager.swift; sourceTree = "<group>"; };
 		42E57A481CA017E5000A79A4 /* RealmCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmCell.swift; path = View/RealmCell.swift; sourceTree = "<group>"; };
+		5567E308B4A5D71D4C724C6F /* Pods_BattleNetService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BattleNetService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E7D23518BA9549B04156811 /* Pods-WoW-Realm-Status.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoW-Realm-Status.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WoW-Realm-Status/Pods-WoW-Realm-Status.debug.xcconfig"; sourceTree = "<group>"; };
+		CCFD135DEE64AEC79BA5739D /* Pods-BattleNetService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BattleNetService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BattleNetService/Pods-BattleNetService.debug.xcconfig"; sourceTree = "<group>"; };
+		D18A687007473FEECC2F31A6 /* Pods-BattleNetService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BattleNetService.release.xcconfig"; path = "Pods/Target Support Files/Pods-BattleNetService/Pods-BattleNetService.release.xcconfig"; sourceTree = "<group>"; };
 		EFC93EE2CDAF3551847ADBED /* Pods_WoW_Realm_Status.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WoW_Realm_Status.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4268022C1E5E6C1500B17D04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B52627AE1E0C02B43A0EEA27 /* Pods_BattleNetService.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		426802351E5E6C1500B17D04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				426802391E5E6C1500B17D04 /* BattleNetService.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4292EE801C9DAB8300D56C16 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				426802451E5E6C1500B17D04 /* BattleNetService.framework in Frameworks */,
 				40B85E3DA00BA02BC4AB5467 /* Pods_WoW_Realm_Status.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +156,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42346A081E7DFF2000DCD6F0 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				42346A0A1E7E008A00DCD6F0 /* RealmType.swift */,
+				42346A0C1E7E2BCC00DCD6F0 /* Factions.swift */,
+				42346A0E1E7E2C4100DCD6F0 /* ZoneStatus.swift */,
+				420D29F51E88805E00231896 /* BNError.swift */,
+			);
+			name = Enums;
+			sourceTree = "<group>";
+		};
+		42346A091E7DFF2900DCD6F0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				42346A101E7E2D1900DCD6F0 /* PvPZone.swift */,
+				42E357EF1E828ECF0034A366 /* Realm.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		424F1A831C9F00A300FDC16E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,10 +187,33 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		426802311E5E6C1500B17D04 /* BattleNetService */ = {
+			isa = PBXGroup;
+			children = (
+				42346A091E7DFF2900DCD6F0 /* Models */,
+				42346A081E7DFF2000DCD6F0 /* Enums */,
+				426802321E5E6C1500B17D04 /* BattleNetService.h */,
+				42E357F11E82C5EC0034A366 /* BNRequestManager.swift */,
+				426802331E5E6C1500B17D04 /* Info.plist */,
+			);
+			path = BattleNetService;
+			sourceTree = "<group>";
+		};
+		4268023E1E5E6C1500B17D04 /* BattleNetServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				4268023F1E5E6C1500B17D04 /* BattleNetServiceTests.swift */,
+				426802411E5E6C1500B17D04 /* Info.plist */,
+			);
+			path = BattleNetServiceTests;
+			sourceTree = "<group>";
+		};
 		4292EE7A1C9DAB8300D56C16 = {
 			isa = PBXGroup;
 			children = (
 				4292EE851C9DAB8300D56C16 /* WoW-Realm-Status */,
+				426802311E5E6C1500B17D04 /* BattleNetService */,
+				4268023E1E5E6C1500B17D04 /* BattleNetServiceTests */,
 				4292EE841C9DAB8300D56C16 /* Products */,
 				462425EEAF795840362DC7EF /* Frameworks */,
 				B5622473CA336F35E065B5FC /* Pods */,
@@ -97,6 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				4292EE831C9DAB8300D56C16 /* WoW WoW-Realm-Status.app */,
+				426802301E5E6C1500B17D04 /* BattleNetService.framework */,
+				426802381E5E6C1500B17D04 /* BattleNetServiceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,6 +301,7 @@
 			children = (
 				42BC6D001CA3311A00B9880A /* iAd.framework */,
 				EFC93EE2CDAF3551847ADBED /* Pods_WoW_Realm_Status.framework */,
+				5567E308B4A5D71D4C724C6F /* Pods_BattleNetService.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -181,13 +311,65 @@
 			children = (
 				9E7D23518BA9549B04156811 /* Pods-WoW-Realm-Status.debug.xcconfig */,
 				2CAAF2177BCABAA0246B7BAF /* Pods-WoW-Realm-Status.release.xcconfig */,
+				CCFD135DEE64AEC79BA5739D /* Pods-BattleNetService.debug.xcconfig */,
+				D18A687007473FEECC2F31A6 /* Pods-BattleNetService.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		4268022D1E5E6C1500B17D04 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				426802421E5E6C1500B17D04 /* BattleNetService.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		4268022F1E5E6C1500B17D04 /* BattleNetService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4268024B1E5E6C1600B17D04 /* Build configuration list for PBXNativeTarget "BattleNetService" */;
+			buildPhases = (
+				9775D2D009EA55686501C169 /* [CP] Check Pods Manifest.lock */,
+				4268022B1E5E6C1500B17D04 /* Sources */,
+				4268022C1E5E6C1500B17D04 /* Frameworks */,
+				4268022D1E5E6C1500B17D04 /* Headers */,
+				4268022E1E5E6C1500B17D04 /* Resources */,
+				11A6260138F3F97C9A02A117 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BattleNetService;
+			productName = BattleNetService;
+			productReference = 426802301E5E6C1500B17D04 /* BattleNetService.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		426802371E5E6C1500B17D04 /* BattleNetServiceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4268024D1E5E6C1600B17D04 /* Build configuration list for PBXNativeTarget "BattleNetServiceTests" */;
+			buildPhases = (
+				426802341E5E6C1500B17D04 /* Sources */,
+				426802351E5E6C1500B17D04 /* Frameworks */,
+				426802361E5E6C1500B17D04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4268023B1E5E6C1500B17D04 /* PBXTargetDependency */,
+				4268023D1E5E6C1500B17D04 /* PBXTargetDependency */,
+			);
+			name = BattleNetServiceTests;
+			productName = BattleNetServiceTests;
+			productReference = 426802381E5E6C1500B17D04 /* BattleNetServiceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		4292EE821C9DAB8300D56C16 /* WoW-Realm-Status */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4292EE951C9DAB8300D56C16 /* Build configuration list for PBXNativeTarget "WoW-Realm-Status" */;
@@ -198,10 +380,12 @@
 				4292EE811C9DAB8300D56C16 /* Resources */,
 				EA27CA7E8CBF63703B526D36 /* [CP] Embed Pods Frameworks */,
 				87BFB089027DA5B6081C357E /* [CP] Copy Pods Resources */,
+				4268024C1E5E6C1600B17D04 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				426802441E5E6C1500B17D04 /* PBXTargetDependency */,
 			);
 			name = "WoW-Realm-Status";
 			productName = "WoW Database";
@@ -214,10 +398,22 @@
 		4292EE7B1C9DAB8300D56C16 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = WERUreo;
 				TargetAttributes = {
+					4268022F1E5E6C1500B17D04 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 4X359D924E;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+					426802371E5E6C1500B17D04 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 4X359D924E;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4292EE821C9DAB8300D56C16;
+					};
 					4292EE821C9DAB8300D56C16 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 4X359D924E;
@@ -245,11 +441,27 @@
 			projectRoot = "";
 			targets = (
 				4292EE821C9DAB8300D56C16 /* WoW-Realm-Status */,
+				4268022F1E5E6C1500B17D04 /* BattleNetService */,
+				426802371E5E6C1500B17D04 /* BattleNetServiceTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4268022E1E5E6C1500B17D04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		426802361E5E6C1500B17D04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4292EE811C9DAB8300D56C16 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -269,6 +481,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		11A6260138F3F97C9A02A117 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BattleNetService/Pods-BattleNetService-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		87BFB089027DA5B6081C357E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -282,6 +509,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WoW-Realm-Status/Pods-WoW-Realm-Status-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9775D2D009EA55686501C169 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EA27CA7E8CBF63703B526D36 /* [CP] Embed Pods Frameworks */ = {
@@ -317,6 +559,28 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4268022B1E5E6C1500B17D04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42E357F01E828ECF0034A366 /* Realm.swift in Sources */,
+				420D29F61E88805E00231896 /* BNError.swift in Sources */,
+				42346A0F1E7E2C4100DCD6F0 /* ZoneStatus.swift in Sources */,
+				42346A0D1E7E2BCC00DCD6F0 /* Factions.swift in Sources */,
+				42346A111E7E2D1900DCD6F0 /* PvPZone.swift in Sources */,
+				42346A0B1E7E008A00DCD6F0 /* RealmType.swift in Sources */,
+				42E357F21E82C5EC0034A366 /* BNRequestManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		426802341E5E6C1500B17D04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				426802401E5E6C1500B17D04 /* BattleNetServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4292EE7F1C9DAB8300D56C16 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -336,6 +600,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4268023B1E5E6C1500B17D04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4268022F1E5E6C1500B17D04 /* BattleNetService */;
+			targetProxy = 4268023A1E5E6C1500B17D04 /* PBXContainerItemProxy */;
+		};
+		4268023D1E5E6C1500B17D04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4292EE821C9DAB8300D56C16 /* WoW-Realm-Status */;
+			targetProxy = 4268023C1E5E6C1500B17D04 /* PBXContainerItemProxy */;
+		};
+		426802441E5E6C1500B17D04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4268022F1E5E6C1500B17D04 /* BattleNetService */;
+			targetProxy = 426802431E5E6C1500B17D04 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4292EE8A1C9DAB8300D56C16 /* Main.storyboard */ = {
@@ -357,6 +639,99 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		426802471E5E6C1600B17D04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCFD135DEE64AEC79BA5739D /* Pods-BattleNetService.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Keli'i Martin (4YQALHJJ7G)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4X359D924E;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = BattleNetService/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.werureo.BattleNetService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		426802481E5E6C1600B17D04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D18A687007473FEECC2F31A6 /* Pods-BattleNetService.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Keli'i Martin (4X359D924E)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4X359D924E;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = BattleNetService/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.werureo.BattleNetService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		426802491E5E6C1600B17D04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = 4X359D924E;
+				INFOPLIST_FILE = BattleNetServiceTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.werureo.BattleNetServiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WoW WoW-Realm-Status.app/WoW WoW-Realm-Status";
+			};
+			name = Debug;
+		};
+		4268024A1E5E6C1600B17D04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = 4X359D924E;
+				INFOPLIST_FILE = BattleNetServiceTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.werureo.BattleNetServiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WoW WoW-Realm-Status.app/WoW WoW-Realm-Status";
+			};
+			name = Release;
+		};
 		4292EE931C9DAB8300D56C16 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -490,6 +865,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4268024B1E5E6C1600B17D04 /* Build configuration list for PBXNativeTarget "BattleNetService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				426802471E5E6C1600B17D04 /* Debug */,
+				426802481E5E6C1600B17D04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4268024D1E5E6C1600B17D04 /* Build configuration list for PBXNativeTarget "BattleNetServiceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				426802491E5E6C1600B17D04 /* Debug */,
+				4268024A1E5E6C1600B17D04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4292EE7E1C9DAB8300D56C16 /* Build configuration list for PBXProject "WoW-Realm-Status" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
