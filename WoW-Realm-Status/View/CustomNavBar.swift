@@ -15,9 +15,9 @@ class CustomNavBar: UINavigationBar
         // Change the font and size of nav bar text
         if let navBarFont = UIFont(name: "NotoSans", size: 16.0)
         {
-            let navBarAttributesDictionary: [String: AnyObject]? = [
-                NSForegroundColorAttributeName: UIColor.white,
-                NSFontAttributeName: navBarFont
+            let navBarAttributesDictionary: [NSAttributedStringKey: Any]? = [
+                NSAttributedStringKey.foregroundColor: UIColor.white,
+                NSAttributedStringKey.font: navBarFont
             ]
 
             self.titleTextAttributes = navBarAttributesDictionary

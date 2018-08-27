@@ -1,16 +1,21 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hiw-Sx-Flz">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hiw-Sx-Flz">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="NotoSans-Regular.ttf">
+        <array key="NotoSans-Italic.ttf">
+            <string>NotoSans-Italic</string>
+        </array>
+        <array key="NotoSans-Regular.ttf">
             <string>NotoSans</string>
-            <string>NotoSans</string>
-            <string>NotoSans</string>
-        </mutableArray>
+        </array>
     </customFonts>
     <scenes>
         <!--Realm Status-->
@@ -22,50 +27,50 @@
                         <viewControllerLayoutGuide type="bottom" id="auC-lM-N9C"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EyF-WY-RSq">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z7g-ZT-izC">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" red="0.12941176470588234" green="0.22745098039215686" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.12941176470588234" green="0.22745098039215686" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RealmCell" id="yzV-jp-fji" customClass="RealmCell" customModule="WoW_WoW_Realm_Status" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yzV-jp-fji" id="ALM-VF-lve">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGM-9e-B9s">
                                                     <rect key="frame" x="0.0" y="0.0" width="10" height="42"/>
-                                                    <color key="backgroundColor" red="0.95686274509803915" green="0.2627450980392157" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.95686274509803915" green="0.2627450980392157" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="10" id="IJN-f0-IFq"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="high" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8l-Pl-vED">
-                                                    <rect key="frame" x="564" y="13" width="28" height="18"/>
+                                                    <rect key="frame" x="18" y="13" width="342" height="18"/>
                                                     <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="13"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jv6-JM-TuX">
-                                                    <rect key="frame" x="18" y="10" width="168" height="24"/>
+                                                    <rect key="frame" x="18" y="10.5" width="165.5" height="23.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Realm Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWH-HT-FgL">
-                                                            <rect key="frame" x="0.0" y="0.0" width="103" height="24"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="102.5" height="23.5"/>
                                                             <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PvP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIw-Ur-WZ9">
-                                                            <rect key="frame" x="113" y="3" width="23" height="18"/>
-                                                            <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="13"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <rect key="frame" x="112.5" y="3" width="21" height="18"/>
+                                                            <fontDescription key="fontDescription" name="NotoSans-Italic" family="Noto Sans" pointSize="13"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m09-SX-OIh">
-                                                            <rect key="frame" x="146" y="1" width="22" height="22"/>
+                                                            <rect key="frame" x="143.5" y="1" width="22" height="22"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="22" id="suo-BC-Zi7"/>
                                                                 <constraint firstAttribute="height" constant="22" id="u2Q-D7-2or"/>
@@ -73,7 +78,6 @@
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="m09-SX-OIh" firstAttribute="centerY" secondItem="jv6-JM-TuX" secondAttribute="centerY" id="DzS-NM-Gam"/>
                                                         <constraint firstItem="MWH-HT-FgL" firstAttribute="centerY" secondItem="jv6-JM-TuX" secondAttribute="centerY" id="Hfg-6C-eCC"/>
                                                     </constraints>
                                                 </stackView>
@@ -84,11 +88,12 @@
                                                 <constraint firstItem="jv6-JM-TuX" firstAttribute="leading" secondItem="iGM-9e-B9s" secondAttribute="trailing" constant="8" id="R9o-ac-mvV"/>
                                                 <constraint firstItem="iGM-9e-B9s" firstAttribute="leading" secondItem="ALM-VF-lve" secondAttribute="leading" id="Ur1-BA-eCF"/>
                                                 <constraint firstItem="iGM-9e-B9s" firstAttribute="top" secondItem="ALM-VF-lve" secondAttribute="top" id="Vtg-w5-IKG"/>
+                                                <constraint firstItem="d8l-Pl-vED" firstAttribute="leading" secondItem="jv6-JM-TuX" secondAttribute="leading" id="jwa-8E-ogW"/>
                                                 <constraint firstItem="d8l-Pl-vED" firstAttribute="centerY" secondItem="ALM-VF-lve" secondAttribute="centerY" id="u6Z-Bs-lFA"/>
                                                 <constraint firstItem="jv6-JM-TuX" firstAttribute="centerY" secondItem="ALM-VF-lve" secondAttribute="centerY" id="vsn-ds-H0b"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.11764705882352941" green="0.20392156862745098" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.11764705882352941" green="0.20392156862745098" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="favoriteIcon" destination="m09-SX-OIh" id="aSN-2S-BLm"/>
                                             <outlet property="realmName" destination="MWH-HT-FgL" id="wnl-gv-Yez"/>
@@ -100,14 +105,14 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEE-bW-7tR" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="3b8-Sd-Xif"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.12941176470588234" green="0.22745098039215686" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.12941176470588234" green="0.22745098039215686" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Z7g-ZT-izC" secondAttribute="trailing" id="9F0-1j-IeE"/>
                             <constraint firstItem="Z7g-ZT-izC" firstAttribute="top" secondItem="9sj-5M-SLw" secondAttribute="bottom" id="CbM-iq-bWQ"/>
@@ -120,7 +125,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Realm Status" id="n5F-Ic-GmL">
                         <barButtonItem key="leftBarButtonItem" image="Favorite Outline" id="mmb-uA-Grl">
-                            <color key="tintColor" red="0.83333333333333337" green="0.78260724742706278" blue="0.0085340219526822136" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.83333333333333337" green="0.78260724742706278" blue="0.0085340219526822136" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="toggleFavorites:" destination="otr-Jz-ADX" id="Y6d-zu-S70"/>
                             </connections>
@@ -142,9 +147,9 @@
                 <navigationController id="hiw-Sx-Flz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="rai-Oi-MxO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="eK7-rF-VLT" customClass="CustomNavBar" customModule="WoW_WoW_Realm_Status" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.10196078431372549" green="0.1764705882352941" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.10196078431372549" green="0.1764705882352941" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="otr-Jz-ADX" kind="relationship" relationship="rootViewController" id="hL1-UG-WTc"/>

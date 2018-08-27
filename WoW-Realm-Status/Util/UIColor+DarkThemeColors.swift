@@ -25,14 +25,14 @@ extension UIColor
 
     ////////////////////////////////////////////////////////////
 
-    class func cellBackgroundColor1() -> UIColor
+    class var cellBackgroundColor1: UIColor
     {
         return UIColor(red:0.12, green:0.20, blue:0.27, alpha:1.00)
     }
 
     ////////////////////////////////////////////////////////////
 
-    class func cellBackgroundColor2() -> UIColor
+    class var cellBackgroundColor2: UIColor
     {
         return UIColor(red:0.15, green:0.24, blue:0.31, alpha:1.00)
     }

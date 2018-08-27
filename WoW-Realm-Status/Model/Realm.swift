@@ -13,24 +13,18 @@ import SwiftyJSON
 
 enum RealmType: String
 {
-    case PvP = "pvp"
-    case PvE = "pve"
-    case RP = "rp"
-    case RPPvP = "rppvp"
+    case normal = "normal"
+    case rp = "roleplaying"
 
     func toString() -> String
     {
         var returnString: String
         switch self
         {
-        case .PvP:
-            returnString = "PvP"
-        case .PvE:
-            returnString = "PvE"
-        case .RP:
-            returnString = "RP"
-        case .RPPvP:
-            returnString = "RPPvP"
+        case .normal:
+            returnString = "normal"
+        case .rp:
+            returnString = "rp"
         }
         return returnString
     }
