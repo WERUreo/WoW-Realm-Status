@@ -92,6 +92,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
                     for (_, subJson) in json["realms"]
                     {
                         let realm = Realm(json: subJson)
+                        print(realm.name)
                         self.realms.append(realm)
                         if realm.favorite
                         {
@@ -128,15 +129,16 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
         sections.removeAll()
 
         var index = 0
-        for i in 0..<realms.count
+        for i in 0 ..< realms.count
         {
             let commonPrefix = realms[i].name.commonPrefix(with: realms[index].name, options: .caseInsensitive)
-            if commonPrefix.characters.count == 0
+            if commonPrefix.count == 0
             {
                 let string = realms[index].name.uppercased()
                 let firstCharacter = string[string.startIndex]
                 let title = "\(firstCharacter)"
                 let newSection = (index: index, length: i - index, title: title)
+                print(newSection)
                 sections.append(newSection)
                 index = i
             }
@@ -155,7 +157,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
 
     ////////////////////////////////////////////////////////////
 
-    func handleRefresh(_ refreshControl: UIRefreshControl)
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl)
     {
         retrieveRealms()
     }
@@ -223,7 +225,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
         {
             realmCell.delegate = self
             realmCell.configureCell(realm)
-            realmCell.backgroundColor = (indexPathRow % 2 == 0) ? UIColor.cellBackgroundColor1() : UIColor.cellBackgroundColor2()
+            realmCell.backgroundColor = (indexPathRow % 2 == 0) ? UIColor.cellBackgroundColor1 : UIColor.cellBackgroundColor2
             return realmCell
         }
         else
@@ -260,7 +262,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UITableV
 
 extension RealmStatusViewController : GADBannerViewDelegate
 {
-    func adViewDidReceiveAd(_ bannerView: GADBannerView!)
+    func adViewDidReceiveAd(_ bannerView: GADBannerView)
     {
         if !adReceived
         {
@@ -273,7 +275,7 @@ extension RealmStatusViewController : GADBannerViewDelegate
 
     ////////////////////////////////////////////////////////////
 
-    func adView(_ bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!)
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError)
     {
         print("adView:didFailToReceiveAdWIthError: \(error.localizedDescription)")
     }
@@ -285,14 +287,14 @@ extension RealmStatusViewController : GADBannerViewDelegate
 
 extension RealmStatusViewController : MGSwipeTableCellDelegate
 {
-    func swipeTableCell(_ cell: MGSwipeTableCell!, canSwipe direction: MGSwipeDirection) -> Bool
+    func swipeTableCell(_ cell: MGSwipeTableCell, canSwipe direction: MGSwipeDirection) -> Bool
     {
         return true
     }
 
     ////////////////////////////////////////////////////////////
 
-    func swipeTableCell(_ cell: MGSwipeTableCell!, swipeButtonsFor direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [Any]!
+    @nonobjc func swipeTableCell(_ cell: MGSwipeTableCell!, swipeButtonsFor direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [Any]!
     {
         swipeSettings.transition = .drag
         expansionSettings.buttonIndex = 0
@@ -316,7 +318,7 @@ extension RealmStatusViewController : MGSwipeTableCellDelegate
                     return true
                 }
 
-                return [addFavoriteButton!]
+                return [addFavoriteButton]
             }
             else
             {
@@ -328,7 +330,7 @@ extension RealmStatusViewController : MGSwipeTableCellDelegate
                     return true
                 }
 
-                return [removeFavoriteButton!]
+                return [removeFavoriteButton]
             }
         }
         

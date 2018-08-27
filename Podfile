@@ -8,5 +8,7 @@ target 'WoW-Realm-Status' do
   pod 'MGSwipeTableCell'
   pod 'Firebase/Core'
   pod 'Firebase/AdMob'
+  pod 'Fabric'
+  pod 'Crashlytics'
 end
 
