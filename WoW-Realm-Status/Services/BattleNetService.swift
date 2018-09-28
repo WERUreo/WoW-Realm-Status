@@ -9,10 +9,15 @@
 import Foundation
 
 let BASE_URL = "https://us.api.battle.net/wow/"
+let REALM_STATUS_URL = "\(BASE_URL)realm/status"
+
+typealias RetrieveAllRealmsCompletion = (_ realms: [Realm]?, _ error: Error?) -> Void
 
 struct BattleNetService
 {
     static let sharedInstance = BattleNetService()
+    
+    private init() {}
 
     // MARK: - Private instance variables
 
@@ -52,5 +57,12 @@ struct BattleNetService
         }
 
         return nil
+    }
+    
+    ////////////////////////////////////////////////////////////
+
+    func retrieveAllRealms(_ completion: RetrieveAllRealmsCompletion)
+    {
+        
     }
 }

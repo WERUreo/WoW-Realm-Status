@@ -15,18 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
         // Change the font and size of nav bar text
         if let navBarFont = UIFont(name: "NotoSans", size: 16.0)
         {
-            let navBarAttributesDictionary: [NSAttributedStringKey: Any]? = [
-                NSAttributedStringKey.foregroundColor: UIColor.white,
-                NSAttributedStringKey.font: navBarFont
+            let navBarAttributesDictionary: [NSAttributedString.Key: Any]? = [
+                NSAttributedString.Key.foregroundColor: UIColor.white,
+                NSAttributedString.Key.font: navBarFont
             ]
 
             //UINavigationBar.appearance().
-            UIBarButtonItem.appearance().setTitleTextAttributes(navBarAttributesDictionary, for: UIControlState())
+            UIBarButtonItem.appearance().setTitleTextAttributes(navBarAttributesDictionary, for: UIControl.State())
         }
 
         FirebaseApp.configure()

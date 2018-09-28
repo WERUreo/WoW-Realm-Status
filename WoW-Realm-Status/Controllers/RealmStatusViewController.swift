@@ -294,21 +294,21 @@ extension RealmStatusViewController : MGSwipeTableCellDelegate
 
     ////////////////////////////////////////////////////////////
 
-    @nonobjc func swipeTableCell(_ cell: MGSwipeTableCell!, swipeButtonsFor direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [Any]!
+    func swipeTableCell(_ cell: MGSwipeTableCell, swipeButtonsFor direction: MGSwipeDirection, swipeSettings: MGSwipeSettings, expansionSettings: MGSwipeExpansionSettings) -> [UIView]?
     {
         swipeSettings.transition = .drag
         expansionSettings.buttonIndex = 0
-
+        
         let indexPath = tableView.indexPath(for: cell)
         let indexPathRow = filterOnFavorites ? (indexPath! as NSIndexPath).row : sections[(indexPath! as NSIndexPath).section].index + (indexPath! as NSIndexPath).row
         let realm = filterOnFavorites ? favoriteRealms[indexPathRow] : realms[indexPathRow]
-
-        if (direction == .leftToRight)
+        
+        if direction == .leftToRight
         {
             expansionSettings.fillOnTrigger = false
             expansionSettings.threshold = 2
-
-            if (!realm.favorite)
+            
+            if !realm.favorite
             {
                 let addFavoriteButton = MGSwipeButton(title: "", icon: UIImage(named: "Favorite Outline"), backgroundColor: UIColor.realmOnlineColor())
                 { cell -> Bool in
@@ -317,7 +317,7 @@ extension RealmStatusViewController : MGSwipeTableCellDelegate
                     self.tableView.reloadData()
                     return true
                 }
-
+                
                 return [addFavoriteButton]
             }
             else
@@ -329,7 +329,7 @@ extension RealmStatusViewController : MGSwipeTableCellDelegate
                     self.tableView.reloadData()
                     return true
                 }
-
+                
                 return [removeFavoriteButton]
             }
         }
