@@ -11,5 +11,6 @@ import Foundation
 struct Constants
 {
     static let FavoriteRealmsKey = "Favorites"
+    static let AccessTokenKey = "AccessToken"
     static let UserDefaults = Foundation.UserDefaults.standard
 }
