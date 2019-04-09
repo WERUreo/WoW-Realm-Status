@@ -22,7 +22,6 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UINaviga
     var favorites = [String]()
     var favoriteRealms = [Realm]()
     var filterOnFavorites = false
-    var sections: [(index: Int, length: Int, title: String)] = Array()
     var sortedSections = [RealmSection]()
     var adReceived: Bool = false
 
@@ -53,27 +52,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UINaviga
             favorites = favRealms
         }
         
-        if let accessToken = Constants.UserDefaults.string(forKey: Constants.AccessTokenKey)
-        {
-            retrieveRealms(accessToken)
-        }
-        else
-        {
-            BattleNetService.sharedInstance.requestAccessToken
-            { token, error in
-                if let token = token
-                {
-                    Constants.UserDefaults.set(token, forKey: Constants.AccessTokenKey)
-                    self.retrieveRealms(token)
-                }
-                else if let error = error
-                {
-                    print("***** ERROR : \(error.localizedDescription) *****")
-                    self.showErrorAlert("Authentication error", msg: "There appears to be a problem authenticating to Battle.net.  Please try again later.")
-
-                }
-            }
-        }
+        retrieveRealms()
 
         bannerView.adSize = kGADAdSizeSmartBannerPortrait
         bannerView.adUnitID = "ca-app-pub-9741170647819017/2972782284"
@@ -91,59 +70,44 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UINaviga
 
     ////////////////////////////////////////////////////////////
 
-    func retrieveRealms(_ accessToken: String)
+    func retrieveRealms()
     {
-        let headers: HTTPHeaders =
-        [
-            "Authorization" : "Bearer \(accessToken)"
-        ]
-        
-        Alamofire.request(BattleNetService.sharedInstance.realmStatusUrl,
-                          method: .get,
-                          parameters: nil,
-                          encoding: JSONEncoding.default,
-                          headers: headers)
-            .validate()
-            .responseJSON()
-        { response in
-            switch response.result
+        BattleNetService.sharedInstance.retrieveAllRealms
+        { (realms, favoriteRealms, error) in
+            if error == nil
             {
-            case .success:
-                if let value = response.result.value
+                // If the realms array has been populated before (we are refreshing the table view),
+                // we must clear the array before re-populating it.
+                self.realms.removeAll()
+                self.favoriteRealms.removeAll()
+                
+                if let realms = realms
                 {
-                    // If the realms array has been populated before (we are refreshing the table view),
-                    // we must clear the array before re-populating it.
-                    self.realms.removeAll()
-                    self.favoriteRealms.removeAll()
-                    
-                    let json = JSON(value)
-                    for (_, subJson) in json["realms"]
-                    {
-                        let realm = Realm(json: subJson)
-                        self.realms.append(realm)
-                        if realm.favorite
-                        {
-                            self.favoriteRealms.append(realm)
-                        }
-                    }
+                    self.realms = realms
+                }
+                
+                if let favoriteRealms = favoriteRealms
+                {
+                    self.favoriteRealms = favoriteRealms
+                }
 
-                    DispatchQueue.main.async
-                    {
-                        if !self.filterOnFavorites
-                        {
-                            self.createSections(self.realms)
-                        }
-                        self.tableView.reloadData()
-                        self.refreshControl.endRefreshing()
-                    }
-                }
-                else
+                DispatchQueue.main.async
                 {
-                    self.showErrorAlert("No realms found", msg: "There appears to be a problem retrieving realms from Battle.net.  Please try again later.")
+                    if !self.filterOnFavorites
+                    {
+                        print("**** Creating sections ****")
+                        self.createSections(self.realms)
+                    }
+                    self.tableView.reloadData()
+                    self.refreshControl.endRefreshing()
                 }
-            case .failure(let error):
-                print(error)
-                self.showErrorAlert("Connection error", msg: "There appears to be a problem with the connection to Battle.net.  Please try again later.")
+            }
+            else
+            {
+                if let error = error
+                {
+                    print(error.localizedDescription)
+                }
             }
         }
     }
@@ -154,25 +118,6 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UINaviga
     {
         let sections = Dictionary(grouping: realms) { String($0.name.prefix(1)) }
         self.sortedSections = sections.map(RealmSection.init(index:realms:)).sorted()
-
-//        // clear sections
-//        sections.removeAll()
-//
-//        var index = 0
-//        for i in 0 ..< realms.count
-//        {
-//            let commonPrefix = realms[i].name.commonPrefix(with: realms[index].name, options: .caseInsensitive)
-//            if commonPrefix.count == 0
-//            {
-//                let string = realms[index].name.uppercased()
-//                let firstCharacter = string[string.startIndex]
-//                let title = "\(firstCharacter)"
-//                let newSection = (index: index, length: i - index, title: title)
-//                print(newSection)
-//                sections.append(newSection)
-//                index = i
-//            }
-//        }
     }
 
     ////////////////////////////////////////////////////////////
@@ -189,10 +134,7 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UINaviga
 
     @objc func handleRefresh(_ refreshControl: UIRefreshControl)
     {
-        if let accessToken = UserDefaults.standard.string(forKey: Constants.AccessTokenKey)
-        {
-            retrieveRealms(accessToken)
-        }
+        retrieveRealms()
     }
 
     ////////////////////////////////////////////////////////////
@@ -208,12 +150,12 @@ class RealmStatusViewController: UIViewController, UITableViewDelegate, UINaviga
 
     func removeFromFavorites(_ realm: Realm)
     {
-        if let index = favorites.index(of: realm.slug)
+        if let index = favorites.firstIndex(of: realm.slug)
         {
             favorites.remove(at: index)
             Constants.UserDefaults.set(favorites, forKey: Constants.FavoriteRealmsKey)
 
-            if let realmIndex = favoriteRealms.index(where: {$0.slug == realm.slug})
+            if let realmIndex = favoriteRealms.firstIndex(where: {$0.slug == realm.slug})
             {
                 favoriteRealms.remove(at: realmIndex)
             }
@@ -334,9 +276,8 @@ extension RealmStatusViewController : MGSwipeTableCellDelegate
         swipeSettings.transition = .drag
         expansionSettings.buttonIndex = 0
         
-        let indexPath = tableView.indexPath(for: cell)
-        let indexPathRow = filterOnFavorites ? (indexPath! as NSIndexPath).row : sections[(indexPath! as NSIndexPath).section].index + (indexPath! as NSIndexPath).row
-        let realm = filterOnFavorites ? favoriteRealms[indexPathRow] : realms[indexPathRow]
+        guard let indexPath = tableView.indexPath(for: cell) else { return nil }
+        let realm = filterOnFavorites ? favoriteRealms[indexPath.row] : sortedSections[indexPath.section].realms[indexPath.row]
         
         if direction == .leftToRight
         {
