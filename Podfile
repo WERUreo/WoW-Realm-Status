@@ -1,14 +1,12 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.0'
+platform :ios, '12.0'
 use_frameworks!
 
 target 'WoW-Realm-Status' do
-  pod 'Alamofire', '~> 4.0'
-  pod 'SwiftyJSON'
+  pod 'Alamofire', '~> 5.2'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'AppCenter'
   pod 'MGSwipeTableCell'
-  pod 'Firebase/Core'
-  pod 'Firebase/AdMob'
-  pod 'Fabric'
-  pod 'Crashlytics'
+  pod 'Google-Mobile-Ads-SDK'
 end
 

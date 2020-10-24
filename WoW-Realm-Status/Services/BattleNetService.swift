@@ -19,12 +19,11 @@ final class BattleNetService
 {
     static let sharedInstance = BattleNetService()
     fileprivate var accessToken: String?
-    fileprivate let sessionManager: SessionManager =
+    fileprivate let sessionManager: Session =
     {
-        let configuration = URLSessionConfiguration.default
-        configuration.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
+		let configuration = URLSessionConfiguration.af.default
         
-        return SessionManager(configuration: configuration)
+        return Session(configuration: configuration)
     }()
     
     private init()
@@ -159,6 +158,10 @@ final class BattleNetService
 
 extension BattleNetService : RequestAdapter
 {
+	func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
+		<#code#>
+	}
+	
     func adapt(_ urlRequest: URLRequest) throws -> URLRequest
     {
         var urlRequest = urlRequest
@@ -180,7 +183,11 @@ extension BattleNetService : RequestAdapter
 
 extension BattleNetService : RequestRetrier
 {
-    func should(_ manager: SessionManager, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion)
+	func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) {
+		<#code#>
+	}
+	
+    func should(_ manager: Session, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion)
     {
         guard let response = request.task?.response as? HTTPURLResponse,
             response.statusCode == 401 else

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,8 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //UINavigationBar.appearance().
             UIBarButtonItem.appearance().setTitleTextAttributes(navBarAttributesDictionary, for: UIControl.State())
         }
-
-        FirebaseApp.configure()
 
         return true
     }

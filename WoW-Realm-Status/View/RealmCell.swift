@@ -39,7 +39,7 @@ class RealmCell: MGSwipeTableCell
     func configureCell(_ realm: Realm)
     {
         realmName.text = realm.name
-        realmStatusView.backgroundColor = realm.status ? UIColor.realmOnlineColor() : UIColor.realmOfflineColor()
+        realmStatusView.backgroundColor = realm.status ? UIColor(named: "realmOnline")! : UIColor(named: "realmOffline")!
         realmStatusView.roundCorners([.topLeft, .bottomLeft], radius: 2.0)
         realmPopulation.text = realm.population
         realmType.text = realm.type.toString()

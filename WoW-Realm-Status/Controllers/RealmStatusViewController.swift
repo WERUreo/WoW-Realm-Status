@@ -202,7 +202,7 @@ extension RealmStatusViewController : UITableViewDataSource
         {
             realmCell.delegate = self
             realmCell.configureCell(realm)
-            realmCell.backgroundColor = (indexPath.row % 2 == 0) ? UIColor.cellBackgroundColor1 : UIColor.cellBackgroundColor2
+            realmCell.backgroundColor = (indexPath.row % 2 == 0) ? UIColor(named: "cellBackground1")! : UIColor(named: "cellBackground2")!
             return realmCell
         }
         else
