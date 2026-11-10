@@ -1,9 +1,0 @@
-language: objective-c
-
-before_install:
-  - rvm install 2.2.2
-  - sudo gem install cocoapods --pre
-
-osx_image: xcode8
-xcode_workspace: WoW\ Database.xcworkspace
-xcode_sdk: iphonesimulator10.0
