@@ -36,4 +36,28 @@ struct BlizzardAuthServiceTests {
             #expect(token.expiresIn == 3600)
         }
     }
+    
+    @Test("Rejects failed OAuth authentication")
+    func rejectsFailedAuthentication() async throws {
+        try await withApp(configure: configure) { app in
+            let credentials = try BlizzardCredentials(
+                clientID: "test-client-id",
+                clientSecret: "text-client-secret"
+            )
+            
+            let mockClient = MockClient(
+                eventLoop: app.eventLoopGroup.next(),
+                responseStatus: .unauthorized
+            )
+            
+            let authService = BlizzardAuthService(
+                credentials: credentials,
+                client: mockClient
+            )
+            
+            await #expect(throws: Abort.self) {
+                try await authService.requestAccessToken()
+            }
+        }
+    }
 }

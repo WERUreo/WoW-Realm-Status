@@ -9,9 +9,14 @@ import Vapor
 
 struct MockClient: Client {
     let eventLoop: any EventLoop
+    let responseStatus: HTTPResponseStatus
     
-    init(eventLoop: any EventLoop) {
+    init(
+        eventLoop: any EventLoop,
+        responseStatus: HTTPResponseStatus = .ok
+    ) {
         self.eventLoop = eventLoop
+        self.responseStatus = responseStatus
     }
     
     func send(_ request: Vapor.ClientRequest) -> NIOCore.EventLoopFuture<Vapor.ClientResponse> {
@@ -47,7 +52,7 @@ struct MockClient: Client {
         }
         
         let response = ClientResponse(
-            status: .ok,
+            status: responseStatus,
             headers: HTTPHeaders([
                 ("content-type", "application/json")
             ]),
@@ -64,6 +69,9 @@ struct MockClient: Client {
     }
     
     func delegating(to eventLoop: any NIOCore.EventLoop) -> any Vapor.Client {
-        MockClient(eventLoop: eventLoop)
-    }    
+        MockClient(
+            eventLoop: eventLoop,
+            responseStatus: responseStatus
+        )
+    }
 }
