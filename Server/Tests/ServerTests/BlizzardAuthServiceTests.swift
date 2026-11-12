@@ -17,7 +17,7 @@ struct BlizzardAuthServiceTests {
         try await withApp(configure: configure) { app in
             let credentials = try BlizzardCredentials(
                 clientID: "test-client-id",
-                clientSecret: "test-client-secret"
+                clientSecret: "test-secret"
             )
             
             let mockClient = MockClient(
@@ -42,7 +42,7 @@ struct BlizzardAuthServiceTests {
         try await withApp(configure: configure) { app in
             let credentials = try BlizzardCredentials(
                 clientID: "test-client-id",
-                clientSecret: "text-client-secret"
+                clientSecret: "test-secret"
             )
             
             let mockClient = MockClient(
@@ -55,8 +55,14 @@ struct BlizzardAuthServiceTests {
                 client: mockClient
             )
             
-            await #expect(throws: Abort.self) {
+            await #expect {
                 try await authService.requestAccessToken()
+            } throws: { error in
+                guard let abort = error as? Abort else {
+                    return false
+                }
+                
+                return abort.status == .badGateway
             }
         }
     }

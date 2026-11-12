@@ -34,10 +34,10 @@ struct BlizzardCredentialsTests {
     func validCredentials() throws {
         let credentials = try BlizzardCredentials(
             clientID: "test-client-id",
-            clientSecret: "test-client-secret"
+            clientSecret: "test-secret"
         )
         
         #expect(credentials.clientID == "test-client-id")
-        #expect(credentials.clientSecret == "test-client-secret")
+        #expect(credentials.clientSecret == "test-secret")
     }
 }

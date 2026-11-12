@@ -33,7 +33,7 @@ struct MockClient: Client {
         }
         
         guard request.headers.basicAuthorization?.username == "test-client-id",
-              request.headers.basicAuthorization?.password == "test-client-secret" else {
+              request.headers.basicAuthorization?.password == "test-secret" else {
             return eventLoop.makeFailedFuture(
                 Abort(.badRequest, reason: "Invalid Basic Authorization")
             )
