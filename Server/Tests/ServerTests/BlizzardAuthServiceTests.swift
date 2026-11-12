@@ -66,4 +66,19 @@ struct BlizzardAuthServiceTests {
             }
         }
     }
+    
+    @Test("Registers Blizzard authentication service")
+    func registersBlizzardAuthService() async throws {
+        try await withApp(configure: { app in
+            app.blizzardAuthService = BlizzardAuthService(
+                credentials: try BlizzardCredentials(
+                    clientID: "test-client-id",
+                    clientSecret: "test-secret"
+                ),
+                client: app.client
+            )
+        }) { app in
+            #expect(app.blizzardAuthService != nil)
+        }
+    }
 }
