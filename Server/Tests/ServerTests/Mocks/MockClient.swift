@@ -6,20 +6,32 @@
 //
 
 import Vapor
+import NIOCore
 
 struct MockClient: Client {
     let eventLoop: any EventLoop
     let responseStatus: HTTPResponseStatus
+    let requestCounter: RequestCounter?
+    let tokenExpiresIn: Int
+    let responseDelay: TimeAmount
     
     init(
         eventLoop: any EventLoop,
-        responseStatus: HTTPResponseStatus = .ok
+        responseStatus: HTTPResponseStatus = .ok,
+        requestCounter: RequestCounter? = nil,
+        tokenExpiresIn: Int = 3600,
+        responseDelay: TimeAmount = .milliseconds(0)
     ) {
         self.eventLoop = eventLoop
         self.responseStatus = responseStatus
+        self.requestCounter = requestCounter
+        self.tokenExpiresIn = tokenExpiresIn
+        self.responseDelay = responseDelay
     }
     
     func send(_ request: Vapor.ClientRequest) -> NIOCore.EventLoopFuture<Vapor.ClientResponse> {
+        requestCounter?.increment()
+        
         guard request.method == .POST else {
             return eventLoop.makeFailedFuture(
                 Abort(.badRequest, reason: "Expected POST request")
@@ -60,18 +72,25 @@ struct MockClient: Client {
                 {
                     "access_token": "test-access-token",
                     "token_type": "bearer",
-                    "expires_in": 3600
+                    "expires_in": \(tokenExpiresIn)
                 }
                 """)
         )
         
-        return eventLoop.makeSucceededFuture(response)
+        return eventLoop.scheduleTask(
+            in: responseDelay
+        ) {
+            response
+        }.futureResult
     }
     
     func delegating(to eventLoop: any NIOCore.EventLoop) -> any Vapor.Client {
         MockClient(
             eventLoop: eventLoop,
-            responseStatus: responseStatus
+            responseStatus: responseStatus,
+            requestCounter: requestCounter,
+            tokenExpiresIn: tokenExpiresIn,
+            responseDelay: responseDelay
         )
     }
 }

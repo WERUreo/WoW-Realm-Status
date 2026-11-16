@@ -13,10 +13,18 @@ func configure(_ app: Application) async throws {
         clientSecret: clientSecret
     )
     
+    app.realmCache = RealmCache()
+
     if let credentials {
-        app.blizzardAuthService = BlizzardAuthService(
+        let authService = BlizzardAuthService(
             credentials: credentials,
             client: app.client
+        )
+        
+        app.blizzardAuthService = authService
+        
+        app.blizzardTokenManager = BlizzardTokenManager(
+            authService: authService
         )
     } else {
         app.logger.warning(
