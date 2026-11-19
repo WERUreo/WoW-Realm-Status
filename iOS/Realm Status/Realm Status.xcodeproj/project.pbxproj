@@ -1,0 +1,556 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 110;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		42C2107730AC8F4C00BC20EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42C2106130AC8F4A00BC20EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42C2106830AC8F4B00BC20EA;
+			remoteInfo = "Realm Status";
+		};
+		42C2108130AC8F4C00BC20EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42C2106130AC8F4A00BC20EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42C2106830AC8F4B00BC20EA;
+			remoteInfo = "Realm Status";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		42C2106930AC8F4B00BC20EA /* Realm Status.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Realm Status.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42C2107630AC8F4C00BC20EA /* Realm StatusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Realm StatusTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42C2108030AC8F4C00BC20EA /* Realm StatusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Realm StatusUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		42C2106B30AC8F4B00BC20EA /* Realm Status */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Realm Status";
+			sourceTree = "<group>";
+		};
+		42C2107930AC8F4C00BC20EA /* Realm StatusTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Realm StatusTests";
+			sourceTree = "<group>";
+		};
+		42C2108330AC8F4C00BC20EA /* Realm StatusUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Realm StatusUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42C2106630AC8F4B00BC20EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		42C2107330AC8F4C00BC20EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		42C2107D30AC8F4C00BC20EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42C2106030AC8F4A00BC20EA = {
+			isa = PBXGroup;
+			children = (
+				42C2106B30AC8F4B00BC20EA /* Realm Status */,
+				42C2107930AC8F4C00BC20EA /* Realm StatusTests */,
+				42C2108330AC8F4C00BC20EA /* Realm StatusUITests */,
+				42C2106A30AC8F4B00BC20EA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42C2106A30AC8F4B00BC20EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42C2106930AC8F4B00BC20EA /* Realm Status.app */,
+				42C2107630AC8F4C00BC20EA /* Realm StatusTests.xctest */,
+				42C2108030AC8F4C00BC20EA /* Realm StatusUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42C2106830AC8F4B00BC20EA /* Realm Status */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42C2108830AC8F4C00BC20EA /* Build configuration list for PBXNativeTarget "Realm Status" */;
+			buildPhases = (
+				42C2106530AC8F4B00BC20EA /* Sources */,
+				42C2106630AC8F4B00BC20EA /* Frameworks */,
+				42C2106730AC8F4B00BC20EA /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				42C2106B30AC8F4B00BC20EA /* Realm Status */,
+			);
+			name = "Realm Status";
+			productName = "Realm Status";
+			productReference = 42C2106930AC8F4B00BC20EA /* Realm Status.app */;
+			productType = "com.apple.product-type.application";
+		};
+		42C2107530AC8F4C00BC20EA /* Realm StatusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42C2108B30AC8F4C00BC20EA /* Build configuration list for PBXNativeTarget "Realm StatusTests" */;
+			buildPhases = (
+				42C2107230AC8F4C00BC20EA /* Sources */,
+				42C2107330AC8F4C00BC20EA /* Frameworks */,
+				42C2107430AC8F4C00BC20EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42C2107830AC8F4C00BC20EA /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				42C2107930AC8F4C00BC20EA /* Realm StatusTests */,
+			);
+			name = "Realm StatusTests";
+			productName = "Realm StatusTests";
+			productReference = 42C2107630AC8F4C00BC20EA /* Realm StatusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		42C2107F30AC8F4C00BC20EA /* Realm StatusUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42C2108E30AC8F4C00BC20EA /* Build configuration list for PBXNativeTarget "Realm StatusUITests" */;
+			buildPhases = (
+				42C2107C30AC8F4C00BC20EA /* Sources */,
+				42C2107D30AC8F4C00BC20EA /* Frameworks */,
+				42C2107E30AC8F4C00BC20EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42C2108230AC8F4C00BC20EA /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				42C2108330AC8F4C00BC20EA /* Realm StatusUITests */,
+			);
+			name = "Realm StatusUITests";
+			productName = "Realm StatusUITests";
+			productReference = 42C2108030AC8F4C00BC20EA /* Realm StatusUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42C2106130AC8F4A00BC20EA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2700;
+				LastUpgradeCheck = 2700;
+				TargetAttributes = {
+					42C2106830AC8F4B00BC20EA = {
+						CreatedOnToolsVersion = 27.0;
+					};
+					42C2107530AC8F4C00BC20EA = {
+						CreatedOnToolsVersion = 27.0;
+						TestTargetID = 42C2106830AC8F4B00BC20EA;
+					};
+					42C2107F30AC8F4C00BC20EA = {
+						CreatedOnToolsVersion = 27.0;
+						TestTargetID = 42C2106830AC8F4B00BC20EA;
+					};
+				};
+			};
+			buildConfigurationList = 42C2106430AC8F4A00BC20EA /* Build configuration list for PBXProject "Realm Status" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 42C2106030AC8F4A00BC20EA;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 42C2106A30AC8F4B00BC20EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42C2106830AC8F4B00BC20EA /* Realm Status */,
+				42C2107530AC8F4C00BC20EA /* Realm StatusTests */,
+				42C2107F30AC8F4C00BC20EA /* Realm StatusUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42C2106730AC8F4B00BC20EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		42C2107430AC8F4C00BC20EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		42C2107E30AC8F4C00BC20EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42C2106530AC8F4B00BC20EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		42C2107230AC8F4C00BC20EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		42C2107C30AC8F4C00BC20EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42C2107830AC8F4C00BC20EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42C2106830AC8F4B00BC20EA /* Realm Status */;
+			targetProxy = 42C2107730AC8F4C00BC20EA /* PBXContainerItemProxy */;
+		};
+		42C2108230AC8F4C00BC20EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42C2106830AC8F4B00BC20EA /* Realm Status */;
+			targetProxy = 42C2108130AC8F4C00BC20EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		42C2108630AC8F4C00BC20EA /* Debug configuration for PBXProject "Realm Status" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 4X359D924E;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		42C2108730AC8F4C00BC20EA /* Release configuration for PBXProject "Realm Status" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 4X359D924E;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		42C2108930AC8F4C00BC20EA /* Debug configuration for PBXNativeTarget "Realm Status" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4X359D924E;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.werureo.WoW-Realm-Status";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		42C2108A30AC8F4C00BC20EA /* Release configuration for PBXNativeTarget "Realm Status" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4X359D924E;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.werureo.WoW-Realm-Status";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		42C2108C30AC8F4C00BC20EA /* Debug configuration for PBXNativeTarget "Realm StatusTests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4X359D924E;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.werureo.Realm-StatusTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Realm Status.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Realm Status";
+			};
+			name = Debug;
+		};
+		42C2108D30AC8F4C00BC20EA /* Release configuration for PBXNativeTarget "Realm StatusTests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4X359D924E;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.werureo.Realm-StatusTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Realm Status.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Realm Status";
+			};
+			name = Release;
+		};
+		42C2108F30AC8F4C00BC20EA /* Debug configuration for PBXNativeTarget "Realm StatusUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4X359D924E;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.werureo.Realm-StatusUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Realm Status";
+			};
+			name = Debug;
+		};
+		42C2109030AC8F4C00BC20EA /* Release configuration for PBXNativeTarget "Realm StatusUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4X359D924E;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.werureo.Realm-StatusUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Realm Status";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42C2106430AC8F4A00BC20EA /* Build configuration list for PBXProject "Realm Status" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42C2108630AC8F4C00BC20EA /* Debug configuration for PBXProject "Realm Status" */,
+				42C2108730AC8F4C00BC20EA /* Release configuration for PBXProject "Realm Status" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		42C2108830AC8F4C00BC20EA /* Build configuration list for PBXNativeTarget "Realm Status" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42C2108930AC8F4C00BC20EA /* Debug configuration for PBXNativeTarget "Realm Status" */,
+				42C2108A30AC8F4C00BC20EA /* Release configuration for PBXNativeTarget "Realm Status" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		42C2108B30AC8F4C00BC20EA /* Build configuration list for PBXNativeTarget "Realm StatusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42C2108C30AC8F4C00BC20EA /* Debug configuration for PBXNativeTarget "Realm StatusTests" */,
+				42C2108D30AC8F4C00BC20EA /* Release configuration for PBXNativeTarget "Realm StatusTests" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		42C2108E30AC8F4C00BC20EA /* Build configuration list for PBXNativeTarget "Realm StatusUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42C2108F30AC8F4C00BC20EA /* Debug configuration for PBXNativeTarget "Realm StatusUITests" */,
+				42C2109030AC8F4C00BC20EA /* Release configuration for PBXNativeTarget "Realm StatusUITests" */,
+			);
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 42C2106130AC8F4A00BC20EA /* Project object */;
+	validationLevel = 1;
+}
