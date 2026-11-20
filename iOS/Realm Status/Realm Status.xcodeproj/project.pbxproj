@@ -27,6 +27,7 @@
 		42C2106930AC8F4B00BC20EA /* Realm Status.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Realm Status.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42C2107630AC8F4C00BC20EA /* Realm StatusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Realm StatusTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42C2108030AC8F4C00BC20EA /* Realm StatusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Realm StatusUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42C2109D30AF783800BC20EA /* Realm-Status-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Realm-Status-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -69,6 +70,7 @@
 		42C2106030AC8F4A00BC20EA = {
 			isa = PBXGroup;
 			children = (
+				42C2109D30AF783800BC20EA /* Realm-Status-Info.plist */,
 				42C2106B30AC8F4B00BC20EA /* Realm Status */,
 				42C2107930AC8F4C00BC20EA /* Realm StatusTests */,
 				42C2108330AC8F4C00BC20EA /* Realm StatusUITests */,
@@ -374,6 +376,7 @@
 				DEVELOPMENT_TEAM = 4X359D924E;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Realm-Status-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -407,6 +410,7 @@
 				DEVELOPMENT_TEAM = 4X359D924E;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Realm-Status-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
